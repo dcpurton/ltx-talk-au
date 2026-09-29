@@ -1,0 +1,21 @@
+\DocumentMetadata{
+  , lang        = en
+  , pdfstandard = ua-2
+  , tagging     = on
+}
+\input{regression-test}
+\documentclass[testnational2]{ltx-talk-au}
+\AddToDocumentProperties[hyperref]
+  {pdftitle}
+  {ltx-talk-au statement with image test file}
+\begin{document}
+\START
+\showoutput
+\begin{frame}[design=statement-image, theme=limestone]
+  \TalkAUFrameImage[a, alt=Example Image A]{example-image-a.jpg}
+  \TalkAUFrameImage[b, alt=Example Image B]{example-image-b.jpg}
+
+  Simple statement—as appropriate in key statements and quotes, a key word or
+  short phrase may be in another colour for \alert{emphasis}.
+\end{frame}
+\end{document}

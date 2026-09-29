@@ -1,0 +1,15 @@
+\DocumentMetadata{
+  , lang        = en
+  , pdfstandard = ua-2
+  , tagging     = on
+}
+\input{regression-test}
+\documentclass[testnational2]{ltx-talk-au}
+\AddToDocumentProperties[hyperref]
+  {pdftitle}
+  {ltx-talk-au section test file}
+\begin{document}
+\START
+\showoutput
+\section[theme=purple]{Divider headline here}
+\end{document}

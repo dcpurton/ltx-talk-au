@@ -1,0 +1,20 @@
+\DocumentMetadata{
+  , lang        = en-AU
+  , pdfstandard = ua-2
+  , tagging     = on
+}
+\input{regression-test}
+\documentclass[testnational2]{ltx-talk-au}
+\AddToDocumentProperties[hyperref]
+  {pdftitle}
+  {ltx-talk-au grid test file}
+\SetKeys[talk/frame]{grid, logo=false, framestyle=plain}
+\begin{document}
+\START
+\showoutput
+\begin{frame}[design=cover]
+\end{frame}
+
+\begin{frame}
+\end{frame}
+\end{document}

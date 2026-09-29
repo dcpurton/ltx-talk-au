@@ -1,0 +1,2131 @@
+% \iffalse meta-comment
+%
+% Copyright (c) 2026 David Purton <david.purton@adelaide.edu.au>
+%
+% This work may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3c of this license
+% or (at your option) any later version. The latest version of this
+% license is in
+%    http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+%<*driver>
+\RequirePackage{pdfmanagement}
+\documentclass[a4paper]{l3doc}
+
+\usepackage{microtype}
+\usepackage[australian, provide*=*]{babel}
+\babelfont{rm}{Roboto Serif}
+\babelfont{sf}[Scale=MatchLowercase]{Roboto}
+\babelfont{tt}
+  [
+    , Scale    = MatchLowercase
+    , FontFace = {lc}{n}{Font=IBM Plex Mono}
+  ]
+  {IBM Plex Mono}
+
+\RenewDocumentCommand \MacroFont { }
+  { \footnotesize\ttfamily }
+
+\usepackage{unicode-math}
+\setmathfont{STIX Two Math}[Scale=MatchLowercase]
+\setmathrm{Roboto Serif}[Scale=MatchLowercase]
+
+\AddToHook{env/macrocode/before}{%
+  \addvspace{\medskipamount}}
+\AddToHook{env/macro/before}{%
+  \addvspace{\medskipamount}}
+\AddToHook{env/macro/after}{%
+  \addvspace{\medskipamount}}
+\AddToHook{env/arguments/after}{%
+  \addvspace{\medskipamount}}
+
+\ExplSyntaxOn
+\msg_redirect_name:nnn { l3doc } { foreign-internal } { log }
+\ExplSyntaxOff
+
+\begin{document}
+\DocInput{\jobname.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \title{The \pkg{ltx-talk-au} Class}
+% \author{David Purton\thanks{Email: \url{david.purton@adelaide.edu.au}}}
+% \date{2026-09-02 v1.0}
+%
+% \maketitle
+%
+% \section{Implementation}
+%
+%    \begin{macrocode}
+%<*class>
+%<@@=talkau>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesExplClass{ltx-talk-au}{2026-09-02}{1.0}
+  {Adelaide University ltx-talk theme (DCP)}
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\clist_new:N \l_@@_options_clist
+\clist_set:Nn \l_@@_options_clist { font-size = 10pt }
+\keys_define:nn { talkau }
+  {
+    , testnational2 .bool_set:N       = \l_@@_use_testnational_font_bool
+    , testnational2 .value_required:n = false
+    , testnational2 .default:n        = true
+    , testnational2 .initial:n        = false
+    , unknown       .code:n           = \clist_put_right:NV
+                                          \l_@@_options_clist
+                                          \CurrentOption
+  }
+\ProcessKeyOptions [ talkau ]
+\exp_args:NV \PassOptionsToClass \l_@@_options_clist { ltx-talk }
+\LoadClass { ltx-talk }
+%    \end{macrocode}
+%
+% Always use Roboto Serif for body font since this font is in TeXLive. Use
+% Stix 2 for maths.
+%
+% Heading font is more complicated. Use real National 2 Condensed if
+% available, otherwise fall back to Barlow Condensed (you'll need to download
+% and install this font).
+%
+% For testing, a test version of National 2 Condensed with limited character
+% support and no OpenType features exists.  \pkg{ltx-talk-au} can be
+% instructed to use this font, falling back to Barlow Condensed for missing
+% characters.
+%
+%    \begin{macrocode}
+\RequirePackage { fontspec }
+\ExplSyntaxOff
+\directlua{
+  luaotfload.add_fallback("barlow-medium", {
+    "BarlowCondensedMedium:mode=node;"
+  })
+  luaotfload.add_fallback("barlow-bold", {
+    "BarlowCondensedBold:mode=node;"
+  })
+}
+\ExplSyntaxOn
+\setmainfont { Roboto ~ Serif }
+\fontspec_font_if_exist:nTF { National2Condensed-Medium.otf }
+  {
+    \setsansfont { National2Condensed-Medium.otf }
+      [
+        , ItalicFont     = TestNational2Condensed-MediumItalic.otf
+        , BoldFont       = TestNational2Condensed-Bold.otf
+        , BoldItalicFont = TestNational2Condensed-BoldItalic.otf
+      ]
+  }
+  {
+    \bool_if:NTF \l_@@_use_testnational_font_bool
+      {
+        \setsansfont { TestNational2Condensed-Medium.otf }
+          [
+            , RawFeature     = { fallback = barlow-medium }
+            , ItalicFont     = BarlowCondensed-MediumItalic.ttf
+            , BoldFont       = TestNational2Condensed-Bold.otf
+            , BoldFeatures   = { RawFeature = { fallback = barlow-bold } }
+            , BoldItalicFont = BarlowCondensed-BoldItalic.ttf
+          ]
+      }
+      {
+        \setsansfont { BarlowCondensed-Medium.ttf }
+          [
+            , ItalicFont     = BarlowCondensed-MediumItalic.ttf
+            , BoldFont       = BarlowCondensed-Bold.ttf
+            , BoldItalicFont = BarlowCondensed-BoldItalic.ttf
+          ]
+      }
+  }
+\setmathfont { STIX ~ Two ~ Math } [ Scale = MatchLowercase ]
+\setmathrm { Roboto ~ Serif }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\cs_new:Nn \@@_font_capheight_to_size:n
+  {
+    \fp_to_decimal:n
+      {
+        \dim_to_decimal:n {#1} *
+        \f@size /
+        \dim_to_decimal:n { \fontcharht \font ` X }
+      }
+    pt
+  }
+\cs_new:Nn \@@_fontsize_from_capheight:nn
+  {
+    \exp_args:Nee
+      \fontsize
+        { \@@_font_capheight_to_size:n {#1} }
+        {
+          \dim_eval:n { \@@_font_capheight_to_size:n {#1} * #2 }
+        }
+    \selectfont
+  }
+%    \end{macrocode}
+%
+% \subsection{Frame Text Set Up}
+%
+%    \begin{macrocode}
+\RequirePackage { parskip }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\cs_set:Npn \labelitemiii { \labelitemfont \textgreater }
+\cs_set:Npn \labelitemiv  { \labelitemfont \textasteriskcentered }
+%    \end{macrocode}
+%
+% Change default date style to Australian.
+%
+%    \begin{macrocode}
+\cs_set_nopar:Npn \today
+  {
+    \number \day
+    \space
+    \ifcase \month \or
+      January \or
+      February \or
+      March \or
+      April \or
+      May \or
+      June \or
+      July \or
+      August \or
+      September \or
+      October \or
+      November \or
+      December
+    \fi
+    \space
+    \number \year
+  }
+%    \end{macrocode}
+%
+% \subsection{Frame headings}
+%
+%    \begin{macrocode}
+\tagpdfsetup
+  {
+    , role / new-tag = frame-heading / H5
+    , role / new-tag = frame-subheading / H6
+  }
+\AssignStructureRole { sec / 5 / title } { frame-heading }
+\NewStructureName    { sec / 6 }
+\AssignStructureRole { sec / 6 } { Sect }
+\NewStructureName    { sec / 6 / title }
+\AssignStructureRole { sec / 6 / title } { frame-subheading }
+\NewStructureName    { sec / 6 / number }
+% Rename section-number to heading-number at next LaTeX release
+\AssignStructureRole { sec / 6 / number } { section-number }
+\NewStructureName    { sec / 6 / fragment }
+\AssignStructureRole { sec / 6 / fragment } { Span }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\DeclareInstance { heading } { frame-heading } { display }
+  {
+    , name                = frame-heading
+    , level               = 5
+    , before-vspace       = \medskipamount
+    , after-vspace        = \smallskipamount
+    , heading-decls       = \sffamily \Large \bfseries
+    , headformat-instance = frame-heading
+  }
+\DeclareInstance { heading } { frame-subheading } { display }
+  {
+    , name                = frame-subheading
+    , level               = 6
+    , before-vspace       = \medskipamount
+    , after-vspace        = \smallskipamount
+    , heading-decls       = \sffamily \large
+    , headformat-instance = frame-subheading
+  }
+\DeclareInstanceCopy { headformat } { frame-heading } { std }
+\DeclareInstanceCopy { headformat } { frame-subheading } { std }
+\NewDocumentCommand \TalkAUFrameHeading { D <> { all } m }
+  {
+    \__talk_if_overlay:nT {#1}
+      {
+        \ParseLaTeXeHeading { frame-heading } { \BooleanTrue } { } {#2}
+      }
+  }
+\NewDocumentCommand \TalkAUFrameSubheading { D <> { all } m }
+  {
+    \__talk_if_overlay:nT {#1}
+      {
+        \ParseLaTeXeHeading { frame-subheading } { \BooleanTrue } { } {#2}
+      }
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\keys_set:nn { talk }
+  {
+    , frame / vertical-alignment = top
+  }
+%    \end{macrocode}
+%
+% \subsection{Colours}
+%
+% Define the Adelaide University brand colours: Dark Blue, North Terrace
+% Purple, Bright Blue and South Coast Limestone.
+%
+%    \begin{macrocode}
+\DeclareColor { darkblue }   [ RGB ] {  20 ,  15 ,  80 }
+\DeclareColor { purple }     [ RGB ] { 131 , 107 , 255 }
+\DeclareColor { brightblue } [ RGB ] {  20 ,  72 , 255 }
+\DeclareColor { limestone }  [ RGB ] { 248 , 239 , 224 }
+\prop_new:N \g_@@_theme_background_prop
+\prop_new:N \g_@@_theme_structure_prop
+\prop_new:N \g_@@_theme_alert_prop
+\prop_new:N \g_@@_theme_example_prop
+\tl_new:N   \l_@@_colour_background_tl
+\tl_new:N   \l_@@_colour_structure_tl
+\tl_new:N   \l_@@_colour_alert_tl
+\tl_new:N   \l_@@_colour_example_tl
+\keys_define:nn { talkau / colours }
+  {
+    , background .tl_set:N         = \l_@@_colour_background_tl
+    , background .value_required:n = true
+    , background .initial:n        = white
+    , structure  .tl_set:N         = \l_@@_colour_structure_tl
+    , structure  .value_required:n = true
+    , strucuture .initial:n        = darkblue
+    , alert      .tl_set:N         = \l_@@_colour_alert_tl
+    , alert      .value_required:n = true
+    , alert      .initial:n        = brightblue
+    , example    .tl_set:N         = \l_@@_colour_example_tl
+    , example    .value_required:n = true
+    , example    .initial:n        = purple
+  }
+\cs_new_protected:Nn \@@_theme_save:nn
+  {
+    \keys_set:nn { talkau / colours } {#2}
+    \prop_gput:NnV \g_@@_theme_background_prop
+      {#1} \l_@@_colour_background_tl
+    \prop_gput:NnV \g_@@_theme_structure_prop
+      {#1} \l_@@_colour_structure_tl
+    \prop_gput:NnV \g_@@_theme_alert_prop
+      {#1} \l_@@_colour_alert_tl
+    \prop_gput:NnV \g_@@_theme_example_prop
+      {#1} \l_@@_colour_example_tl
+  }
+\cs_new_protected:Nn \@@_theme_select:n
+  {
+    \exp_args:Nne \DeclareColor
+      { background }
+      { \prop_item:Nn \g_@@_theme_background_prop {#1} }
+    \exp_args:Nne \DeclareColor
+      { structure }
+      { \prop_item:Nn \g_@@_theme_structure_prop {#1} }
+    \exp_args:Nne \DeclareColor
+      { alert }
+      { \prop_item:Nn \g_@@_theme_alert_prop {#1} }
+    \exp_args:Nne \DeclareColor
+      { example }
+      { \prop_item:Nn \g_@@_theme_example_prop {#1} }
+    \color { structure }
+  }
+\@@_theme_save:nn { std }
+  {
+    , background = white
+    , structure  = darkblue
+    , alert      = brightblue
+    , example    = purple
+  }
+\@@_theme_save:nn { darkblue }
+  {
+    , background = darkblue
+    , structure  = white
+    , alert      = purple
+    , example    = limestone
+  }
+\@@_theme_save:nn { limestone }
+  {
+    , background = limestone
+    , structure  = darkblue
+    , alert      = brightblue
+    , example    = purple
+  }
+\@@_theme_save:nn { brightblue }
+  {
+    , background = brightblue
+    , structure  = white
+    , alert      = limestone
+    , example    = purple
+  }
+\@@_theme_save:nn { purple }
+  {
+    , background = purple!20
+    , structure  = darkblue
+    , alert      = purple
+    , example    = brightblue
+  }
+\@@_theme_select:n { std }
+\cs_new_protected:Nn \@@_frame_background_draw:
+  {
+    \draw_begin:
+      \color_select:n { background }
+      \bool_set_false:N \l_draw_bb_update_bool
+      \draw_path_rectangle:nn
+        { 0pt , 0pt } { \paperwidth , - \paperheight }
+      \draw_path_use_clear:n { fill }
+    \draw_end:
+  }
+%    \end{macrocode}
+%
+% \subsection{Grid}
+%
+%    \begin{macrocode}
+\dim_const:Nn \c_@@_grid_column_sep_dim    { 0.010417 \paperwidth }
+\dim_const:Nn \c_@@_margin_footer_dim { 0.038372 \paperheight }
+\dim_const:Nn \c_@@_margin_cover_dim  { 2 \c_@@_margin_footer_dim }
+\dim_const:Nn \c_@@_page_width_dim
+  { \paperwidth - 2 \c_@@_margin_cover_dim }
+\dim_const:Nn \c_@@_page_height_cover_dim
+  { \paperheight - 2 \c_@@_margin_cover_dim }
+\dim_const:Nn \c_@@_page_height_std_dim
+  {
+    \paperheight -
+    \c_@@_margin_cover_dim -
+    \c_@@_margin_footer_dim
+  }
+\dim_const:Nn \c_@@_grid_column_width_dim
+  {
+    0.083333 \c_@@_page_width_dim -
+    0.91667 \c_@@_grid_column_sep_dim
+  }
+\dim_const:Nn \c_@@_grid_row_cover_dim
+  { 0.083333 \c_@@_page_height_cover_dim }
+\dim_const:Nn \c_@@_grid_row_std_dim
+  { 0.055556 \c_@@_page_height_std_dim }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\EditInstance { header } { std }
+  {
+    , height       = \c_@@_margin_cover_dim +
+                     3 \c_@@_grid_row_std_dim
+    , left-hspace  = \c_@@_margin_cover_dim
+    , right-hspace = \c_@@_margin_cover_dim
+  }
+\EditInstance { frametitle } { header }
+  {
+    , font = \sffamily
+             \@@_fontsize_from_capheight:nn
+               { \c_@@_grid_row_std_dim } { 1 }
+             \bfseries
+  }
+\EditInstance { footer } { std }
+  {
+    , color        = structure
+    , left-hspace  = \c_@@_margin_cover_dim
+    , right-hspace = \c_@@_margin_cover_dim
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\geometry
+  {
+    , tmargin    = \c_@@_margin_cover_dim +
+                   3 \c_@@_grid_row_std_dim
+    , bmargin    = \c_@@_margin_footer_dim +
+                   2 \c_@@_grid_row_std_dim
+    , lmargin    = \c_@@_margin_cover_dim
+    , rmargin    = \c_@@_margin_cover_dim
+    , footskip   = 2 \c_@@_grid_row_std_dim
+    , headheight = \c_@@_margin_cover_dim +
+                   \c_@@_grid_row_std_dim
+    , headsep    = 2 \c_@@_grid_row_std_dim
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\RequirePackage { l3draw }
+\cs_new_protected:Nn \@@_grid_draw_set_up:
+  {
+      \bool_set_false:N \l_draw_bb_update_bool
+      \draw_set_linewidth:n { 0.4pt }
+      \color_select:n { black!20 }
+  }
+\cs_new_protected:Nn \@@_grid_draw_vertical_cover:
+  {
+    \draw_begin:
+      \@@_grid_draw_set_up:
+      \draw_transform_shift:n
+        {
+          \c_@@_margin_cover_dim ,
+          \c_@@_margin_cover_dim - \paperheight
+        }
+      \draw_path_grid:nnnn
+        { \c_@@_grid_column_width_dim + \c_@@_grid_column_sep_dim }
+        { \c_@@_page_height_cover_dim }
+        { 0pt , 0pt }
+        {
+          \c_@@_page_width_dim -
+          \c_@@_grid_column_width_dim ,
+          \c_@@_page_height_cover_dim
+        }
+      \draw_transform_shift:n
+        { \c_@@_grid_column_width_dim , 0pt }
+      \draw_path_grid:nnnn
+        { \c_@@_grid_column_width_dim + \c_@@_grid_column_sep_dim }
+        { \c_@@_page_height_std_dim }
+        { 0pt , 0pt }
+        {
+          \c_@@_page_width_dim -
+          \c_@@_grid_column_width_dim ,
+          \c_@@_page_height_cover_dim
+        }
+      \draw_path_use_clear:n { stroke }
+    \draw_end:
+  }
+\cs_new_protected:Nn \@@_grid_draw_vertical_std:
+  {
+    \draw_begin:
+      \@@_grid_draw_set_up:
+      \draw_transform_shift:n
+        {
+          \c_@@_margin_cover_dim ,
+          \c_@@_margin_footer_dim - \paperheight
+        }
+      \draw_path_grid:nnnn
+        { \c_@@_grid_column_width_dim + \c_@@_grid_column_sep_dim }
+        { \c_@@_page_height_std_dim }
+        { 0pt , 0pt }
+        { \c_@@_page_width_dim - \c_@@_grid_column_width_dim ,
+          \c_@@_page_height_std_dim }
+      \draw_transform_shift:n
+        { \c_@@_grid_column_width_dim , 0pt }
+      \draw_path_grid:nnnn
+        { \c_@@_grid_column_width_dim + \c_@@_grid_column_sep_dim }
+        { \c_@@_page_height_std_dim }
+        { 0pt , 0pt }
+        { \c_@@_page_width_dim - \c_@@_grid_column_width_dim ,
+          \c_@@_page_height_std_dim }
+      \draw_path_use_clear:n { stroke }
+    \draw_end:
+  }
+\cs_new_protected:Nn \@@_grid_draw_horizontal_cover:
+  {
+    \draw_begin:
+      \@@_grid_draw_set_up:
+      \draw_transform_shift:n
+        {
+          \c_@@_margin_cover_dim ,
+          \c_@@_margin_cover_dim - \paperheight
+        }
+      \draw_path_grid:nnnn
+        { \c_@@_page_width_dim }
+        { \c_@@_grid_row_cover_dim }
+        { 0pt , 0pt }
+        { \c_@@_page_width_dim , \c_@@_page_height_cover_dim }
+      \draw_path_use_clear:n { stroke }
+    \draw_end:
+  }
+\cs_new_protected:Nn \@@_grid_draw_horizontal_std:
+  {
+    \draw_begin:
+      \@@_grid_draw_set_up:
+      \draw_transform_shift:n
+        {
+          \c_@@_margin_cover_dim ,
+          \c_@@_margin_footer_dim - \paperheight
+        }
+      \draw_path_grid:nnnn
+        { \c_@@_page_width_dim }
+        { \c_@@_grid_row_std_dim }
+        { 0pt , 0pt }
+        { \c_@@_page_width_dim , \c_@@_page_height_std_dim }
+      \draw_path_use_clear:n { stroke }
+    \draw_end:
+  }
+\socket_new:nn { talkau / grid } { 0 }
+\socket_new_plug:nnn { talkau / grid } { cover }
+  {
+    \@@_grid_draw_vertical_cover:
+    \@@_grid_draw_horizontal_cover:
+  }
+\socket_new_plug:nnn { talkau / grid } { std }
+  {
+    \@@_grid_draw_vertical_std:
+    \@@_grid_draw_horizontal_std:
+  }
+\socket_assign_plug:nn { talkau / grid } { std }
+\hook_gput_code:nnn { shipout / foreground } { . }
+  {
+    \bool_if:NT \l_@@_grid_bool
+      {
+        \socket_use:nn { talkau / grid }
+      }
+  }
+%    \end{macrocode}
+%
+% \subsection{Logo}
+%
+% Create a PDF XForm object of the Adelaide University logo and insert this
+% into appropriately sized \LaTeX{} boxes for use on |std| and |cover| slides.
+% Similarly for the super graphic.
+%
+%    \begin{macrocode}
+\file_input:n { ltx-talk-au-logo.def }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\box_new:N \l_@@_logo_std_box
+\box_new:N \l_@@_logo_cover_box
+\box_new:N \l_@@_logo_super_box
+\pdfxform_new:nnn { talkau / logo / primary } { }
+  {
+    \raisebox { -19.496pt }
+      {
+        \cs_set_eq:NN \color_ensure_current: \prg_do_nothing:
+        \@@_logo_primary:
+      }
+  }
+\hbox_set:Nn \l_@@_logo_std_box
+  {
+    \pdfxform_use:n { talkau / logo / primary }
+  }
+\box_set_eq:NN
+  \l_@@_logo_cover_box \l_@@_logo_std_box
+\box_resize_to_ht:Nn \l_@@_logo_std_box
+  { \c_@@_grid_row_std_dim }
+\box_resize_to_ht:Nn \l_@@_logo_cover_box
+  { \c_@@_grid_row_cover_dim }
+\socket_new:nn { talkau / logo } { 1 }
+\socket_new_plug:nnn { talkau / logo } { std }
+  {
+    \put
+      (
+        \c_@@_margin_cover_dim ,
+        \c_@@_margin_footer_dim - \paperheight
+      )
+      {
+        \color_select:n {#1}
+        \box_use:N \l_@@_logo_std_box
+      }
+  }
+\socket_new_plug:nnn { talkau / logo } { cover }
+  {
+    \put
+      (
+        \c_@@_margin_cover_dim ,
+        - \c_@@_margin_cover_dim - \c_@@_grid_row_cover_dim
+      )
+      {
+        \color_select:n {#1}
+        \box_use:N \l_@@_logo_cover_box
+      }
+  }
+\socket_assign_plug:nn { talkau / logo } { std }
+\hook_gput_code:nnn { shipout / foreground } { . }
+  {
+    \bool_if:NT \l_@@_logo_bool
+      {
+        \socket_use:nn { talkau / logo } { structure }
+      }
+  }
+\pdfxform_new:nnn { talkau / logo / super } { }
+  {
+    \raisebox { -2.160pt }
+      {
+        \cs_set_eq:NN \color_ensure_current: \prg_do_nothing:
+        \@@_logo_super:
+      }
+  }
+\hbox_set:Nn \l_@@_logo_super_box
+  {
+    \pdfxform_use:n { talkau / logo / super }
+  }
+\box_resize_to_ht:Nn \l_@@_logo_super_box { \paperheight }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\EditInstance { footer } { std }
+  {
+    , element-order = { framenumber }
+    , font = \raggedleft \fontsize { 8pt } { 10pt } \selectfont
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\hook_gput_code:nnn { begindocument } { . }
+  {
+    \DeclareInstanceCopy { header } { cover } { std }
+    \EditInstance { header } { cover }
+      {
+        , height = \c_@@_margin_cover_dim +
+                   2 \c_@@_grid_row_cover_dim
+        , print-frame-title = false
+      }
+    \DeclareInstanceCopy { footer } { cover } { std }
+    \EditInstance { footer } { cover }
+      {
+        , element-order =
+      }
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\keys_define:nn { talk / frame }
+  {
+    , design     .code:n           = \UseInstance { frame-design } {#1}
+    , font       .code:n           = #1
+    , font       .value_required:n = true
+    , grid       .bool_set:N       = \l_@@_grid_bool
+    , grid       .default:n        = true
+    , framestyle .code:n           = \pagestyle {#1}
+    , framestyle .value_required:n = true
+    , logo       .bool_set:N       = \l_@@_logo_bool
+    , logo       .default:n        = true
+    , logo       .initial:n        = true
+    , theme      .code:n           = \@@_theme_select:n {#1}
+    , theme      .value_required:n = true
+    , theme      .initial:n        = std
+  }
+%    \end{macrocode}
+%
+% \subsection{Background Graphics}
+%
+% \subsubsection{Grid Placement}
+%
+% \begin{macro}{\@@_grid_x:nn}
+%   \begin{arguments}
+%     \item $x$ grid cell position (|l| \textbar{} |c| \textbar{} |r|
+%       \textbar{} fraction)
+%     \item $x$ grid cell number (1–12)
+%   \end{arguments}
+%
+%   Convert a grid cell $x$ position to a value suitable for a |picture|
+%   environment \cs{put} command.
+%
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_x:nn
+  {
+    \dim_eval:n
+      {
+        \c_@@_margin_cover_dim + 
+        \int_eval:n { #2 - 1 } \c_@@_grid_column_width_dim +
+        \int_eval:n { #2 - 1 } \c_@@_grid_column_sep_dim +
+        \str_case:nnF {#1}
+          {
+            { l } { 0 }
+            { c } { 0.5 }
+            { r } { }
+          }
+          {#1}
+        \c_@@_grid_column_width_dim
+      }
+  }
+%    \end{macrocode}
+%
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_y:nn}
+%   \begin{arguments}
+%     \item $y$ grid cell position (|b| \textbar{} |c| \textbar{} |t|
+%       \textbar{} fraction)
+%     \item $y$ grid cell number (1–18 for std layout and 1–12 for cover
+%       layout)
+%   \end{arguments}
+%
+%   Convert a grid cell $y$ position to a value suitable for a |picture|
+%   environment \cs{put} command.
+%
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_y:nn
+  {
+    \bool_if:NTF \g_@@_frame_design_grid_cover_bool
+      {
+        \dim_eval:n
+          {
+            - \paperheight +
+             \c_@@_margin_cover_dim +
+            \int_eval:n { #2 - 1 } \c_@@_grid_row_cover_dim +
+            \str_case:nnF {#1}
+              {
+                { b } { 0 }
+                { c } { 0.5 }
+                { t } { }
+              }
+              {#1}
+            \c_@@_grid_row_cover_dim
+          }
+      }
+      {
+        \dim_eval:n
+          {
+            - \paperheight +
+            \c_@@_margin_footer_dim +
+            \int_eval:n { #2 - 1 } \c_@@_grid_row_std_dim +
+            \str_case:nnF {#1}
+              {
+                { b } { 0 }
+                { c } { 0.5 }
+                { t } { }
+              }
+              {#1}
+            \c_@@_grid_row_std_dim
+          }
+      }
+  }
+%    \end{macrocode}
+%
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_xy:nnnn}
+%   \begin{arguments}
+%     \item $x$ grid cell position (|l| \textbar{} |c| \textbar{} |r|
+%       \textbar{} fraction)
+%     \item $x$ grid cell number (1–12)
+%     \item $y$ grid cell position (|b| \textbar{} |m| \textbar{} |t|
+%       \textbar{} fraction)
+%     \item $y$ grid cell number (1–18 for std layout and 1–12 for cover
+%       layout)
+%   \end{arguments}
+%
+%   Convert a grid cell position to to values suitable for a |picture|
+%   environment \cs{put} command.
+%
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_xy:nnnn
+  {
+    \@@_grid_x:nn {#1} {#2} , \@@_grid_y:nn {#3} {#4}
+  }
+%    \end{macrocode}
+%   
+% \end{macro}
+%   
+% \begin{macro}{\@@_grid_rect:nnnnnnnn}
+%   \begin{arguments}
+%     \item bottom left $x$ grid cell position (|l| \textbar{} |c| \textbar{}
+%       |r| \textbar{} fraction)
+%     \item bottom left $x$ grid cell number (1–12)
+%     \item bottom left $y$ grid cell position (|b| \textbar{} |c| \textbar{}
+%       |t| \textbar{} fraction)
+%     \item bottom left $y$ grid cell number (1–18 for std layout and 1–12 for
+%       cover layout)
+%     \item top right $x$ grid cell position (|l| \textbar{} |c| \textbar{}
+%       |r| \textbar{} fraction)
+%     \item top right $x$ grid cell number (1–12)
+%     \item top right $y$ grid cell position (|b| \textbar{} |c| \textbar{}
+%       |t| \textbar{} fraction)
+%     \item top right $y$ grid cell number (1–18 for std layout and 1–12 for
+%       cover layout)
+%   \end{arguments}
+%
+%   Convert a grid cell rectangle to values suitable for a |picture|
+%   environment \cs{put} command.
+%
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_rect:nnnnnnnn
+  {
+    \@@_grid_x:nn {#1} {#2} , \@@_grid_y:nn {#3} {#4} ,
+    \@@_grid_x:nn {#5} {#6} , \@@_grid_y:nn {#7} {#8} ,
+  }
+%    \end{macrocode}
+%   
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_dx:nnn}
+%   \begin{arguments}
+%     \item set to |true| to calculate the distance from the centre of the
+%       cells
+%     \item left-hand $x$ grid cell number (1–12)
+%     \item right-hand $x$ grid cell number (1–12)
+%   \end{arguments}
+%
+%   Calculate the distance between the left-hand side of |#2| and the
+%   right-hand side of |#3| in points. If |#1| is |true| then calculate the
+%   distance between the centre of the cells.
+%
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_dx:nnn
+  {
+    \dim_abs:n
+      {
+        \bool_if:nTF {#1}
+          {
+            \@@_grid_x:nn { c } {#3} - \@@_grid_x:nn { c } {#2}
+          }
+          {
+            \@@_grid_x:nn { r } {#3} - \@@_grid_x:nn { l } {#2}
+          }
+      }
+  }
+%    \end{macrocode}
+%
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_dy:nnn}
+%   \begin{arguments}
+%     \item set to |true| to calculate the distance from the centre of the
+%       cells
+%     \item bottom $y$ grid cell number (1–18 for std layout and 1–12 for
+%       cover layout)
+%     \item top $y$ grid cell number (1–18 for std layout and 1–12 for cover
+%     layout)
+%   \end{arguments}
+%
+%   Calculate the distance between the bottom side of |#2| and the top side of
+%   |#3| into points. If |#1| is |true| then calculate the distance between
+%   the centre of the cells.
+%
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_dy:nnn
+  {
+    \dim_abs:n
+      {
+        \bool_if:nTF {#1}
+          {
+            \@@_grid_y:nn { c } {#3} - \@@_grid_y:nn { c } {#2}
+          }
+          {
+            \@@_grid_y:nn { t } {#3} - \@@_grid_y:nn { b } {#2}
+          }
+      }
+  }
+%    \end{macrocode}
+%
+% \end{macro}
+%
+% \begin{macro}{\TalkAUx, \TalkAUy, \TalkAUxy, \Talkdx, \Talkdy}
+%
+%   \LaTeX{} interfaces for \cs{@@_grid_x:nn}, \cs{@@_grid_y:nn},
+%   \cs{@@_grid_xy:nnnn}, \cs{@@_grid_rect:nnnnnnnn} ,\cs{@@_grid_dx:nnn} and
+%   \cs{@@_grid_dy:nnn}.
+%
+%    \begin{macrocode}
+\NewExpandableDocumentCommand \TalkAUx { O { c } m }
+  {
+    \@@_grid_x:nn {#1} {#2}
+  }
+\NewExpandableDocumentCommand \TalkAUy { O { c } m }
+  {
+    \@@_grid_y:nn {#1} {#2}
+  }
+\NewExpandableDocumentCommand \TalkAUxy { O { c } m O { c } m }
+  {
+    \@@_grid_xy:nnnn {#1} {#2} {#3} {#4}
+  }
+\NewExpandableDocumentCommand \TalkAUrect
+  { O { c } m O { c } m O { c } m O { c } m }
+  {
+    \@@_grid_rect:nnnnnnnn {#1} {#2} {#3} {#4} {#5} {#6} {#7} {#8}
+  }
+\NewExpandableDocumentCommand \TalkAUdx { s m m }
+  {
+    \@@_grid_dx:nnn {#1} {#2} {#3}
+  }
+\NewExpandableDocumentCommand \TalkAUdy { s m m }
+  {
+    \@@_grid_dy:nnn {#1} {#2} {#3}
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{Background Images}
+%
+% Background images need to be tagged as figures and inserted into the
+% previous frame structure. Set up tagging sockets to surround images with the
+% following structure:
+%
+% \begin{verbatim}
+%   text-unit
+%   └─Div
+%     └─float
+% \end{verbatim}
+%
+% The |parent| of the |text-unit| is set to \cs{g__talk_frame_struct_int} in
+% order to insert the figure into the current frame structure.
+%
+%    \begin{macrocode}
+\NewTaggingSocket { talkau / background / figure / begin } { 0 }
+\NewTaggingSocket { talkau / background / figure / end } { 0 }
+\NewTaggingSocketPlug { talkau / background / figure / begin } { default }
+  {
+    \tag_struct_begin:n
+      {
+        , tag    = text-unit
+        , parent = \int_use:N \g__talk_frame_struct_int
+      }
+      \tag_struct_begin:n { tag = Div }
+        \tag_struct_begin:n { tag = float }
+  }
+\NewTaggingSocketPlug { talkau / background / figure / end } { default }
+  {
+        \tag_struct_end:
+      \tag_struct_end:
+    \tag_struct_end:
+  }
+\AssignTaggingSocketPlug { talkau / background / figure / begin } { default }
+\AssignTaggingSocketPlug { talkau / background / figure / end } { default }
+%    \end{macrocode}
+%
+% \begin{macro}{\@@_image_fill_area:nnnnnnnn}
+%   \begin{arguments}
+%     \item $x$-coordinate of lower left of image area
+%     \item $y$-coordinate of lower left of image area
+%     \item $x$-coordinate of upper right of image area
+%     \item $y$-coordinate of upper right of image area
+%     \item width of image area
+%     \item height of image area
+%     \item additional horizontal offset of placed image
+%     \item additional vertical offset of placed image
+%     \item alt text for image
+%     \item image file name
+%   \end{arguments}
+%
+%   Scale an image to fill a rectangular area, clipping overlapping parts. The
+%   image is centred in the area then offset by the supplied additional
+%   horizontal and vertical offsets.
+%
+%    \begin{macrocode}
+\box_new:N    \l_@@_image_box
+\coffin_new:N \l_@@_image_coffin
+\dim_new:N    \l_@@_image_viewport_width_dim
+\dim_new:N    \l_@@_image_viewport_height_dim
+\fp_new:N     \l_@@_image_ratio_fp
+\fp_new:N     \l_@@_image_viewport_ratio_fp
+\cs_new_protected:Nn \@@_image_fill_area:nnnnnnnn
+  {
+    \dim_set:Nn \l_@@_image_viewport_width_dim
+      { \dim_abs:n { #3 - #1 } }
+    \dim_set:Nn \l_@@_image_viewport_height_dim
+      { \dim_abs:n { #4 - #2 } }
+    \hbox_set:Nn \l_@@_image_box
+      {
+        \includegraphics [ #7 ] {#8}
+      }
+    \fp_set:Nn \l_@@_image_ratio_fp
+      {
+        \dim_ratio:nn
+          { \box_wd:N \l_@@_image_box }
+          { \box_ht:N \l_@@_image_box }
+      }
+    \fp_set:Nn \l_@@_image_viewport_ratio_fp
+      {
+        \dim_ratio:nn
+          { \l_@@_image_viewport_width_dim }
+          { \l_@@_image_viewport_height_dim }
+      }
+    \fp_compare:nNnTF
+      { \l_@@_image_ratio_fp } > { \l_@@_image_viewport_ratio_fp }
+      {
+        \box_resize_to_ht:Nn \l_@@_image_box
+          { \l_@@_image_viewport_height_dim }
+      }
+      {
+        \box_resize_to_wd:Nn \l_@@_image_box
+          { \l_@@_image_viewport_width_dim }
+      }
+    \hcoffin_set:Nn \l_@@_image_coffin
+      { \box_use_drop:N \l_@@_image_box }
+    \draw_begin:
+      \bool_set_false:N \l_draw_bb_update_bool
+      \draw_path_rectangle:nn
+        { #1 , #2 }
+        {
+          \l_@@_image_viewport_width_dim ,
+          \l_@@_image_viewport_height_dim
+        }
+      \draw_path_use_clear:n { clip }
+      \put ( #1 , #2 )
+        {
+          \coffin_typeset:Nnnnn \l_@@_image_coffin
+            { hc } { vc }
+            { #5 + \l_@@_image_viewport_width_dim / 2 }
+            { #5 + \l_@@_image_viewport_height_dim / 2 }
+        }
+    \draw_end:
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\TalkAUFrameImage}
+%   \begin{arguments}
+%     \item options
+%     \item image file name
+%   \end{arguments}
+%
+%   Set the file name and properties for a standard image in the current frame
+%   design.
+%
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_frame_image_bg_draw: { }
+\cs_new_protected:Nn \@@_frame_image_a_draw:  { }
+\cs_new_protected:Nn \@@_frame_image_b_draw:  { }
+\cs_new_protected:Nn \@@_frame_angle_draw:    { }
+\cs_new_protected:Nn \@@_frame_super_draw:    { }
+\cs_new_protected:Nn \@@_frame_image_clear_all:
+  {
+    \cs_gset_protected:Nn \@@_frame_image_bg_draw: { }    
+    \cs_gset_protected:Nn \@@_frame_image_a_draw:  { }
+    \cs_gset_protected:Nn \@@_frame_image_b_draw:  { }    
+    \cs_gset_protected:Nn \@@_frame_angle_draw:    { }
+    \cs_gset_protected:Nn \@@_frame_super_draw:    { }
+  }
+\keys_define:nn { talkau / frame / image }
+  {
+    , a        .meta:n            = { slot = a }
+    , a        .value_forbidden:n = true
+    , b        .meta:n            = { slot = b }
+    , b        .value_forbidden:n = true
+    , bg       .meta:n            = { slot = bg }
+    , bg       .value_forbidden:n = true
+    , slot     .choices:nn        = { a , b , bg }
+                                    {
+                                      \str_set_eq:NN
+                                        \l_@@_frame_image_slot_str
+                                        \l_keys_choice_str
+                                    }
+    , slot     .initial:n         = a
+  }
+\NewDocumentCommand \TalkAUFrameImage { D <> { all } o m }
+  {
+    \__talk_if_overlay:nT {#1}
+      {
+        \bool_set_false:N \l_@@_frame_image_artifact_bool
+        \tl_clear:N \l_@@_frame_image_alt_tl
+        \keys_set_known:nn { talkau / frame / image } {#2}
+        \cs_gset_protected:ce
+          { @@_frame_image_ \l_@@_frame_image_slot_str _draw: }
+          {
+            \exp_not:N
+              \UseTemplate { frame-image } { talkau } { }
+                {
+                  , slot = \l_@@_frame_image_slot_str
+                  , #2
+                  , image-filename = #3
+                }
+          }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% Code to draw an Adelaide University angle element at the specified position
+% in specified colour.
+%
+% \begin{macro}{\@@_frame_angle_draw:nnn}
+%   \begin{arguments}
+%     \item colour of angle
+%     \item $x$-coordinate of lower left of angle
+%     \item $y$-coordinate of lower left of angle
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_frame_angle_draw:nnn
+  {
+    \draw_begin:
+      \color_select:n {#1}
+      \bool_set_false:N \l_draw_bb_update_bool
+      \draw_transform_shift:n { #2 , #3 }
+      \bool_if:NTF \g_@@_frame_design_grid_cover_bool
+        {
+          \draw_path_rectangle:nn
+            { 0pt , 0pt }
+            {
+              4 \c_@@_grid_row_cover_dim ,
+              4 \c_@@_grid_row_cover_dim
+            }
+        }
+        {
+          \draw_path_rectangle:nn
+            { 0pt , 0pt }
+            {
+              6 \c_@@_grid_row_std_dim ,
+              6 \c_@@_grid_row_std_dim
+            }
+        }
+      \draw_path_use_clear:n { clip }
+      \draw_path_moveto:n { 0pt, 0pt }
+      \draw_path_lineto:n { 5.27164pt, 0pt }
+      \draw_path_lineto:n { 73.58719pt, 83.79454pt }
+      \draw_path_lineto:n { 68.31555pt, 83.79454pt }
+      \draw_path_close:
+      \draw_path_use_clear:n { fill }
+    \draw_end:
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% Code to draw an Adelaide University super graphic in the specified colour
+% on the specified background colour.
+%
+% \begin{macro}{\@@_frame_super_draw:nn}
+%   \begin{arguments}
+%     \item colour of background
+%     \item colour of super graphic
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_frame_super_draw:nn
+  {
+    \draw_begin:
+      \color_select:n {#1}
+      \bool_set_false:N \l_draw_bb_update_bool
+      \draw_path_rectangle:nn
+        { 0pt , 0pt } { \paperwidth , - \paperheight }
+      \draw_path_use_clear:n { fill }
+    \draw_end:
+    \put ( 0pt , - \paperheight )
+      {
+        \color_select:n {#2}
+        \box_use:N \l_@@_logo_super_box
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% Add |shipout/background| hook to each page for drawing background images.
+%
+%    \begin{macrocode}
+\hook_gput_code:nnn { shipout / background } { . }
+  {
+    \@@_frame_background_draw:
+    \@@_frame_super_draw:
+    \@@_frame_image_bg_draw:
+    \@@_frame_image_a_draw:
+    \@@_frame_image_b_draw:
+    \@@_frame_angle_draw:
+  }
+%    \end{macrocode}
+%
+% \subsection{Slide Designs}
+%
+%    \begin{macrocode}
+\tl_new:N \l_@@_frame_image_slot_tl
+\NewTemplateType { frame-image } { 1 }
+\DeclareTemplateInterface { frame-image } { talkau } { 1 }
+  {
+    , slot           : choice { a , b , bg } = a
+    , image-filename : tokenlist
+    , offset         : commalist = { 0pt , 0pt }
+    , alt            : tokenlist
+    , artifact       : boolean
+  }
+\DeclareTemplateCode { frame-image } { talkau } { 1 }
+  {
+    , slot =
+        {
+          , a  = \tl_set:Nn \l_@@_frame_image_slot_tl { a }
+          , b  = \tl_set:Nn \l_@@_frame_image_slot_tl { b }
+          , bg = \tl_set:Nn \l_@@_frame_image_slot_tl { bg }
+        }
+    , image-filename = \l_@@_frame_image_filename_tl
+    , offset         = \l_@@_frame_image_offset_clist
+    , alt            = \l_@@_frame_image_alt_tl
+    , artifact       = \l_@@_frame_image_artifact_bool
+  }
+  {
+    \SetKnownTemplateKeys { frame-image } { talkau } {#1}
+    \clist_set:Ne \l_tmpa_clist
+      {
+        \tl_use:c
+          {
+            g_@@_frame_design_image_
+              \l_@@_frame_image_slot_tl
+                _area_tl
+          }
+      }
+    \clist_if_empty:NF \l_tmpa_clist
+      {
+        \bool_if:NTF \l_@@_frame_image_artifact_bool
+          {
+            \@@_image_fill_area:nnnnnnnn
+              { \clist_item:Nn \l_tmpa_clist { 1 } }
+              { \clist_item:Nn \l_tmpa_clist { 2 } }
+              { \clist_item:Nn \l_tmpa_clist { 3 } }
+              { \clist_item:Nn \l_tmpa_clist { 4 } }
+              { \clist_item:Nn \l_@@_frame_image_offset_clist { 1 } }
+              { \clist_item:Nn \l_@@_frame_image_offset_clist { 2 } }
+              { artifact }
+              { \l_@@_frame_image_filename_tl }
+          }
+          {
+            \UseTaggingSocket { talkau / background / figure / begin }
+            \@@_image_fill_area:nnnnnnnn
+              { \clist_item:Nn \l_tmpa_clist { 1 } }
+              { \clist_item:Nn \l_tmpa_clist { 2 } }
+              { \clist_item:Nn \l_tmpa_clist { 3 } }
+              { \clist_item:Nn \l_tmpa_clist { 4 } }
+              { \clist_item:Nn \l_@@_frame_image_offset_clist { 1 } }
+              { \clist_item:Nn \l_@@_frame_image_offset_clist { 2 } }
+              { alt = \l_@@_frame_image_alt_tl }
+              { \l_@@_frame_image_filename_tl }
+            \UseTaggingSocket { talkau / background / figure / end }
+          }
+      }
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\bool_new:N \g_@@_frame_design_grid_cover_bool
+\dim_new:N  \l_@@_xa_dim
+\dim_new:N  \l_@@_ya_dim
+\dim_new:N  \l_@@_xb_dim
+\dim_new:N  \l_@@_yb_dim
+\int_new:N  \l_@@_grid_rows_int
+\tl_new:N   \l_@@_frame_design_grid_layout_tl
+\tl_new:N   \l_@@_frame_design_frame_keys_tl
+\NewTemplateType { frame-design } { 0 }
+\DeclareTemplateInterface { frame-design } { talkau } { 0 }
+  {
+    , name           : tokenlist = std
+    , grid-layout    : choice { std , cover } = std
+    , text-area      : tokenlist = \TalkAUrect
+                                     [ l ] {  1 } [ b ] {  3 }
+                                     [ r ] { 12 } [ t ] { 15 }
+    , logo           : boolean   = true
+    , image-a-area   : tokenlist
+    , image-b-area   : tokenlist
+    , image-bg-area  : tokenlist = { 0pt , - \paperheight , \paperwidth , 0pt }
+    , angle-color    : tokenlist = alert
+    , angle-position : tokenlist
+    , super-bg-color : tokenlist
+    , super-fg-color : tokenlist
+    , frame-keys     : tokenlist
+  }
+\DeclareTemplateCode { frame-design } { talkau } { 0 }
+  {
+    , name           = global \g_@@_frame_design_name_tl
+    , grid-layout    =
+        {
+          , std      = \tl_set:Nn \l_@@_frame_design_grid_layout_tl
+                         { std }
+          , cover    = \tl_set:Nn \l_@@_frame_design_grid_layout_tl
+                         { cover }
+        }
+    , text-area      = \l_@@_frame_design_text_area_tl
+    , logo           = \l_@@_frame_design_logo_bool
+    , image-a-area   = global \g_@@_frame_design_image_a_area_tl
+    , image-b-area   = global \g_@@_frame_design_image_b_area_tl
+    , image-bg-area  = global \g_@@_frame_design_image_bg_area_tl
+    , angle-color    = \l_@@_frame_design_angle_colour_tl
+    , angle-position = \l_@@_frame_design_angle_position_tl
+    , super-bg-color = \l_@@_frame_design_super_bg_colour_tl
+    , super-fg-color = \l_@@_frame_design_super_fg_colour_tl
+    , frame-keys     = \l_@@_frame_design_frame_keys_tl
+  }
+  {
+    \str_if_eq:VnTF \l_@@_frame_design_grid_layout_tl { std }
+      {
+        \bool_gset_false:N \g_@@_frame_design_grid_cover_bool
+        \int_set:Nn \l_@@_grid_rows_int { 18 }
+        \socket_assign_plug:nn { talkau / grid } { std }
+        \socket_assign_plug:nn { talkau / logo } { std }
+      }
+      {
+        \bool_gset_true:N \g_@@_frame_design_grid_cover_bool
+        \int_set:Nn \l_@@_grid_rows_int { 12 }
+        \socket_assign_plug:nn { talkau / grid } { cover }
+        \socket_assign_plug:nn { talkau / logo } { cover }
+      }
+    \clist_set:Ne \l_tmpa_clist { \l_@@_frame_design_text_area_tl }
+    \dim_set:Nn \l_@@_xa_dim { \clist_item:Nn \l_tmpa_clist { 1 } }
+    \dim_set:Nn \l_@@_ya_dim { \clist_item:Nn \l_tmpa_clist { 2 } }
+    \dim_set:Nn \l_@@_xb_dim { \clist_item:Nn \l_tmpa_clist { 3 } }
+    \dim_set:Nn \l_@@_yb_dim { \clist_item:Nn \l_tmpa_clist { 4 } }
+    \newgeometry
+      {
+        , lmargin    = \l_@@_xa_dim
+        , rmargin    = \paperwidth - \l_@@_xb_dim
+        , tmargin    = - \l_@@_yb_dim
+        , bmargin    = \paperheight + \l_@@_ya_dim
+        , footskip   = \l_@@_ya_dim -  \@@_grid_y:nn { b } { 1 }
+        , headsep    = \@@_grid_y:nn
+                         { b } { \int_use:N \l_@@_grid_rows_int } -
+                         \l_@@_yb_dim
+        , headheight = \dim_abs:n
+                         {
+                           \l_@@_yb_dim -
+                           \@@_grid_y:nn
+                             { b } { \l_@@_grid_rows_int }
+                         } +
+                       \c_@@_margin_cover_dim
+      }
+    \tl_if_empty:NF \l_@@_frame_design_angle_position_tl
+      {
+        \clist_set:Ne \l_tmpa_clist
+          { \l_@@_frame_design_angle_position_tl }
+        \dim_set:Nn \l_@@_xa_dim { \clist_item:Nn \l_tmpa_clist { 1 } }
+        \dim_set:Nn \l_@@_ya_dim { \clist_item:Nn \l_tmpa_clist { 2 } }
+        \cs_gset_protected:Ne \@@_frame_angle_draw:
+          {
+            \exp_not:N \@@_frame_angle_draw:nnn
+              { \l_@@_frame_design_angle_colour_tl }
+              { \l_@@_xa_dim }
+              { \l_@@_ya_dim }
+          }
+      }
+    \tl_if_empty:NF \l_@@_frame_design_super_fg_colour_tl
+      {
+        \cs_gset_protected:Ne \@@_frame_super_draw:
+          {
+            \exp_not:N \@@_frame_super_draw:nn
+              { \l_@@_frame_design_super_bg_colour_tl }
+              { \l_@@_frame_design_super_fg_colour_tl }
+          }
+      }
+    \keys_set:nV { talk / frame } \l_@@_frame_design_frame_keys_tl
+  }
+\DeclareInstance { frame-design } { std } { talkau } { }
+\EditInstance { titlepage-element } { title }
+  {
+    , before-skip = 0pt
+    , font        = \sffamily
+                      \@@_fontsize_from_capheight:nn
+                        { 1.5 \c_@@_grid_row_cover_dim } { 1 }
+                    \bfseries
+  }
+\EditInstance { titlepage-element } { subtitle }
+  {
+    , before-skip = 0.3 \c_@@_grid_row_cover_dim
+    , color       = alert
+    , font        = \sffamily
+                      \@@_fontsize_from_capheight:nn
+                        { 0.6 \c_@@_grid_row_cover_dim } { 1 }
+  }
+\EditInstance { titlepage-element } { date }
+  {
+    , before-skip = 0.3 \c_@@_grid_row_cover_dim
+    , font        = \@@_fontsize_from_capheight:nn
+                      { 0.3 \c_@@_grid_row_cover_dim } { 1 }
+  }
+\EditTemplateDefaults { titlepage } { talk }
+  {
+    , element-order        = { title , subtitle , date }
+    , framestyle           = plain
+    , horizontal-alignment = left
+  }
+\DeclareInstance { frame-design } { cover } { talkau }
+  {
+    , name        = cover
+    , grid-layout = cover
+    , text-area   = \TalkAUrect
+                      [ l ] {  1 } [ b ] {  2 }
+                      [ r ] { 12 } [ t ] { 10 }
+    , frame-keys  = {
+                      , framestyle         = plain
+                      , vertical-alignment = center
+                    }
+  }
+\DeclareInstance { frame-design } { cover-angle } { talkau }
+  {
+    , name           = cover-angle
+    , grid-layout    = cover
+    , text-area      = \TalkAUrect
+                         [ l ] { 1 } [ b ] {  2 }
+                         [ r ] { 8 } [ t ] { 10 }
+    , image-a-area   = {
+                         \TalkAUx  { 5 } , - \paperheight ,
+                         \TalkAUxy [ l ] { 11 } { 4 }
+                       }
+    , image-b-area   = {
+                         \TalkAUxy  { 10 } { 9 } ,
+                         \TalkAUx [ r ] { 12 } , 0pt
+                       }
+    , angle-position = \TalkAUxy [ r ] { 9 } [ b ] { 5 }
+    , frame-keys     = {
+                         , framestyle         = plain
+                         , vertical-alignment = center
+                       }
+  }
+\DeclareInstance { frame-design } { cover-super } { talkau }
+  {
+    , name           = cover-super
+    , grid-layout    = cover
+    , text-area      = \TalkAUrect
+                         [ l ] {  1 } [ b ] {  2 }
+                         [ r ] { 12 } [ t ] { 10 }
+    , super-bg-color = black!10
+    , super-fg-color = white
+    , frame-keys     = {
+                         , framestyle         = plain
+                         , vertical-alignment = center
+                       }
+  }
+\DeclareInstance { frame-design } { section } { talkau }
+  {
+    , name           = section
+    , text-area      = \TalkAUrect
+                         [ l ] {  1 } [ b ] {  3 }
+                         [ r ] { 12 } [ c ] { 14 }
+    , angle-color    = purple
+    , angle-position = \TalkAUxy [ l ] { 1 } [ b ] { 9 }
+    , frame-keys     = {
+                         , font = \sffamily \bfseries
+                                  \@@_fontsize_from_capheight:nn
+                                    { 1.8 \c_@@_grid_row_std_dim } { 1 }
+                       }
+  }
+\DeclareInstance { frame-design } { proven ~ a } { talkau }
+  {
+    , name         = proven ~ a
+    , text-area    = \TalkAUrect
+                       [ l ] { 1 } [ b ] {  3 }
+                       [ r ] { 6 } [ t ] { 15 }
+    , image-a-area = \TalkAUrect
+                       [ l ] {  7 } [ b ] {  3 }
+                       [ r ] { 12 } [ t ] { 18 }
+  }
+\DeclareInstance { frame-design } { proven ~ b } { talkau }
+  {
+    , name         = proven ~ b
+    , text-area    = \TalkAUrect
+                       [ l ] {  7 } [ b ] { 14 }
+                       [ r ] { 12 } [ t ] { 18 }
+    , image-a-area = \TalkAUrect
+                       [ l ] {  1 } [ b ] {  3 }
+                       [ r ] { 12 } [ t ] { 12 }
+  }
+\DeclareInstance { frame-design } { audacious } { talkau }
+  {
+    , name         = audacious
+    , text-area    = \TalkAUrect
+                       [ l ] {  6 } [ b ] { 11 }
+                       [ r ] { 12 } [ t ] { 18 }
+    , image-a-area = \TalkAUrect
+                       [ l ] { 1 } [ b ] { 10 }
+                       [ l ] { 4 } [ t ] { 16 }
+    , image-b-area = \TalkAUrect
+                       [ l ] {  4 } [ b ] { 3 }
+                       [ r ] { 12 } [ t ] { 9 }
+  }
+\DeclareInstance { frame-design } { statement-image } { talkau }
+  {
+    , name           = statement-image
+    , text-area      = \TalkAUrect
+                         [ c ] {  4 } [ b ] { 3 }
+                         [ r ] { 12 } [ t ] { 8 }
+    , image-a-area   = \TalkAUrect
+                         [ l ] { 1 } [ b ] {  3 }
+                         [ r ] { 3 } [ t ] { 12 }
+    , image-b-area   = \TalkAUrect
+                         [ c ] {  4 } [ b ] { 10 }
+                         [ r ] { 12 } [ t ] { 18 }
+    , angle-position = \TalkAUxy [ 0.2 ] { 3 } [ b ] { 11 }
+    , frame-keys     = {
+                         , font = \sffamily \bfseries
+                                    \@@_fontsize_from_capheight:nn
+                                      { \c_@@_grid_row_std_dim } { 1 }
+                       }
+  }
+\DeclareInstance { frame-design } { statement } { talkau }
+  {
+    , name        = statement
+    , text-area   = \TalkAUrect
+                      [ l ] {  1 } [ b ] {  3 }
+                      [ r ] { 12 } [ t ] { 18 }
+    , frame-keys  = {
+                      , font = \sffamily \bfseries
+                               \@@_fontsize_from_capheight:nn
+                                 { 1.6 \c_@@_grid_row_std_dim } { 1 }
+                    }
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\hook_gput_code:nnn { env / frame / begin } { . }
+  {
+    \@@_frame_image_clear_all:
+    \keys_set:nn { talk / frame } { design = std }
+    \AssignTaggingSocketPlug { sec / begin } { noop }
+    \AssignTaggingSocketPlug { sec / end } { noop }
+  }
+%    \end{macrocode}
+%
+% Redefine \cs{maketitle} to use a plain |cover| design by default.
+%
+%    \begin{macrocode}
+\ExpandArgs { Nne } \RenewDocumentCommand \maketitle { O {} }
+  {
+    \exp_not:N \bool_if:NTF \exp_not:N \l__talk_frame_bool
+      { \exp_not:N \UseTemplate { titlepage } { talk } {#1} }
+      {
+        \exp_not:N \begin { frame } [ design = cover ]
+          \bool_if:NT \l__talk_frame_title_bool { { } }
+          \exp_not:N \UseTemplate { titlepage } { talk } {#1}
+        \exp_not:N \end { frame }
+      }
+  }
+%    \end{macrocode}
+%
+% Section slides
+%
+%    \begin{macrocode}
+\NewTemplateType { section-frame } { 1 }
+\DeclareTemplateInterface { section-frame } { talkau } { 1 }
+  {
+    , numbered : boolean   = true
+    , theme    : tokenlist = std
+  }
+\DeclareTemplateCode { section-frame } { talkau } { 1 }
+  {
+    , numbered = \l_@@_section_frame_numbered_bool
+    , theme    = \l_@@_section_frame_theme_tl
+  }
+  {
+    %\exp_args:Nnne
+      \SetKnownTemplateKeys { section-frame } { talkau } {#1}
+    \use:e
+      {
+        \exp_not:N \begin { frame }
+            [
+              , tag-slides = 0
+              , design     = section
+              , theme      = \l_@@_section_frame_theme_tl
+            ]
+      }
+      \int_compare:nNnT { \c@section } < { 10 } { 0 }
+      \thesection
+      \par
+      \skip_vertical:n { 0.25 \c_@@_grid_row_std_dim }
+      \skip_set:Nn \leftskip
+        {
+          \TalkAUx [ 0.2 ] { 2 } - \TalkAUx [ l ] { 1 }
+        }
+      \l__talk_section_tl
+    \end { frame }
+  }
+\keys_define:nn { talk / heading }
+  {
+    , unknown .code:n =
+  }
+\RenewDocumentCommand \section
+  { s D <> { all } = { shorttitle } O {#4} m }
+  {
+    \bool_if:NF \l__talk_frame_bool
+      {
+        \__talk_if_overlay:nT {#2}
+          {
+            \use:c { __talk_head_1:Nnn } #1 {#3} {#4}
+            \UseTemplate { section-frame } { talkau } { } {#3}
+          }
+      }
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%</class>
+%    \end{macrocode}
+%
+% \iffalse
+%<*logo>
+%<@@=talkau>
+\ProvidesExplFile{ltx-talk-au-logo.def}{2026-09-13}{1.0}
+  {Adelaide University logos for l3draw (DCP)}
+\cs_new_protected:Nn \@@_logo_primary:
+  {
+    \draw_begin:
+      \draw_path_moveto:n { 532.641pt , 112.672pt }
+      \draw_path_lineto:n { 532.641pt , 137.336pt }
+      \draw_path_curveto:nnn { 532.641pt , 145.977pt }
+        { 526.340pt , 150.902pt } { 515.941pt , 150.902pt }
+      \draw_path_curveto:nnn { 498.254pt , 150.902pt }
+        { 494.043pt , 139.453pt } { 496.945pt , 133.230pt }
+      \draw_path_lineto:n { 508.426pt , 135.996pt }
+      \draw_path_lineto:n { 508.426pt , 136.699pt }
+      \draw_path_curveto:nnn { 506.410pt , 142.289pt }
+        { 508.488pt , 148.016pt } { 513.836pt , 148.016pt }
+      \draw_path_curveto:nnn { 518.156pt , 148.016pt }
+        { 519.758pt , 143.926pt } { 519.758pt , 139.770pt }
+      \draw_path_lineto:n { 519.758pt , 131.688pt }
+      \draw_path_curveto:nnn { 503.824pt , 127.203pt }
+        { 494.328pt , 122.504pt } { 494.328pt , 113.266pt }
+      \draw_path_curveto:nnn { 494.328pt , 106.180pt }
+        { 499.309pt , 102.570pt } { 506.586pt , 102.570pt }
+      \draw_path_curveto:nnn { 510.742pt , 102.570pt }
+        { 516.055pt , 103.863pt } { 520.113pt , 109.539pt }
+      \draw_path_lineto:n { 520.113pt , 103.520pt }
+      \draw_path_lineto:n { 538.004pt , 103.520pt }
+      \draw_path_lineto:n { 538.004pt , 104.227pt }
+      \draw_path_curveto:nnn { 534.820pt , 106.223pt }
+        { 532.641pt , 108.457pt } { 532.641pt , 112.672pt }
+      \draw_path_moveto:n { 519.758pt , 113.430pt }
+      \draw_path_curveto:nnn { 517.531pt , 110.625pt }
+        { 514.570pt , 108.535pt } { 511.684pt , 108.535pt }
+      \draw_path_curveto:nnn { 508.258pt , 108.535pt }
+        { 506.453pt , 111.719pt } { 506.453pt , 115.535pt }
+      \draw_path_curveto:nnn { 506.453pt , 122.504pt }
+        { 513.430pt , 126.371pt } { 519.758pt , 128.617pt }
+      \draw_path_close:
+      \draw_path_moveto:n { 643.105pt , 102.570pt }
+      \draw_path_curveto:nnn { 657.375pt , 102.570pt }
+        { 662.457pt , 113.594pt } { 663.105pt , 119.055pt }
+      \draw_path_lineto:n { 662.402pt , 119.055pt }
+      \draw_path_curveto:nnn { 659.887pt , 113.953pt }
+        { 654.344pt , 111.512pt } { 649.098pt , 111.512pt }
+      \draw_path_curveto:nnn { 637.648pt , 111.512pt }
+        { 633.590pt , 119.090pt } { 632.988pt , 129.008pt }
+      \draw_path_lineto:n { 663.066pt , 129.008pt }
+      \draw_path_curveto:nnn { 664.027pt , 143.082pt }
+        { 655.750pt , 150.902pt } { 644.289pt , 150.902pt }
+      \draw_path_curveto:nnn { 630.168pt , 150.902pt }
+        { 620.559pt , 139.902pt } { 620.559pt , 127.258pt }
+      \draw_path_curveto:nnn { 620.559pt , 114.324pt }
+        { 628.840pt , 102.570pt } { 643.105pt , 102.570pt }
+      \draw_path_moveto:n { 642.797pt , 147.898pt }
+      \draw_path_curveto:nnn { 648.020pt , 147.898pt }
+        { 651.094pt , 142.199pt } { 650.695pt , 132.023pt }
+      \draw_path_lineto:n { 632.918pt , 132.023pt }
+      \draw_path_curveto:nnn { 633.031pt , 140.910pt }
+        { 637.047pt , 147.898pt } { 642.797pt , 147.898pt }
+      \draw_path_moveto:n { 441.996pt , 102.570pt }
+      \draw_path_curveto:nnn { 456.266pt , 102.570pt }
+        { 461.348pt , 113.594pt } { 461.996pt , 119.055pt }
+      \draw_path_lineto:n { 461.293pt , 119.055pt }
+      \draw_path_curveto:nnn { 458.777pt , 113.953pt }
+        { 453.234pt , 111.512pt } { 447.984pt , 111.512pt }
+      \draw_path_curveto:nnn { 436.539pt , 111.512pt }
+        { 432.480pt , 119.090pt } { 431.879pt , 129.008pt }
+      \draw_path_lineto:n { 461.957pt , 129.008pt }
+      \draw_path_curveto:nnn { 462.914pt , 143.082pt }
+        { 454.637pt , 150.902pt } { 443.180pt , 150.902pt }
+      \draw_path_curveto:nnn { 429.059pt , 150.902pt }
+        { 419.449pt , 139.902pt } { 419.449pt , 127.258pt }
+      \draw_path_curveto:nnn { 419.449pt , 114.324pt }
+        { 427.730pt , 102.570pt } { 441.996pt , 102.570pt }
+      \draw_path_moveto:n { 441.688pt , 147.898pt }
+      \draw_path_curveto:nnn { 446.910pt , 147.898pt }
+        { 449.984pt , 142.199pt } { 449.586pt , 132.023pt }
+      \draw_path_lineto:n { 431.805pt , 132.023pt }
+      \draw_path_curveto:nnn { 431.922pt , 140.910pt }
+        { 435.938pt , 147.898pt } { 441.688pt , 147.898pt }
+      \draw_path_moveto:n { 471.469pt , 154.453pt }
+      \draw_path_lineto:n { 471.469pt , 112.672pt }
+      \draw_path_curveto:nnn { 471.469pt , 108.406pt }
+        { 469.289pt , 106.223pt } { 466.105pt , 104.223pt }
+      \draw_path_lineto:n { 466.105pt , 103.520pt }
+      \draw_path_lineto:n { 489.699pt , 103.520pt }
+      \draw_path_lineto:n { 489.699pt , 104.223pt }
+      \draw_path_curveto:nnn { 486.520pt , 106.223pt }
+        { 484.336pt , 108.461pt } { 484.336pt , 112.672pt }
+      \draw_path_lineto:n { 484.336pt , 168.555pt }
+      \draw_path_lineto:n { 483.633pt , 168.555pt }
+      \draw_path_lineto:n { 466.062pt , 164.320pt }
+      \draw_path_lineto:n { 466.062pt , 163.617pt }
+      \draw_path_curveto:nnn { 469.660pt , 161.715pt }
+        { 471.469pt , 159.125pt } { 471.469pt , 154.453pt }
+      \draw_path_moveto:n { 546.742pt , 136.801pt }
+      \draw_path_lineto:n { 546.742pt , 112.672pt }
+      \draw_path_curveto:nnn { 546.742pt , 108.414pt }
+        { 544.562pt , 106.223pt } { 541.379pt , 104.227pt }
+      \draw_path_lineto:n { 541.379pt , 103.516pt }
+      \draw_path_lineto:n { 564.973pt , 103.516pt }
+      \draw_path_lineto:n { 564.973pt , 104.227pt }
+      \draw_path_curveto:nnn { 561.789pt , 106.223pt }
+        { 559.609pt , 108.461pt } { 559.609pt , 112.672pt }
+      \draw_path_lineto:n { 559.609pt , 150.902pt }
+      \draw_path_lineto:n { 558.906pt , 150.902pt }
+      \draw_path_lineto:n { 541.336pt , 146.672pt }
+      \draw_path_lineto:n { 541.336pt , 145.965pt }
+      \draw_path_curveto:nnn { 544.934pt , 144.066pt }
+        { 546.742pt , 141.477pt } { 546.742pt , 136.801pt }
+      \draw_path_moveto:n { 553.176pt , 155.059pt }
+      \draw_path_curveto:nnn { 557.488pt , 155.059pt }
+        { 560.992pt , 158.562pt } { 560.992pt , 162.875pt }
+      \draw_path_curveto:nnn { 560.992pt , 167.188pt }
+        { 557.488pt , 170.695pt } { 553.176pt , 170.695pt }
+      \draw_path_curveto:nnn { 548.863pt , 170.695pt }
+        { 545.359pt , 167.188pt } { 545.359pt , 162.875pt }
+      \draw_path_curveto:nnn { 545.359pt , 158.562pt }
+        { 548.863pt , 155.059pt } { 553.176pt , 155.059pt }
+      \draw_path_moveto:n { 324.094pt , 104.227pt }
+      \draw_path_curveto:nnn { 317.871pt , 106.445pt }
+        { 313.383pt , 109.074pt } { 318.953pt , 122.574pt }
+      \draw_path_lineto:n { 341.691pt , 122.574pt }
+      \draw_path_lineto:n { 343.918pt , 117.180pt }
+      \draw_path_curveto:nnn { 347.023pt , 109.652pt }
+        { 344.500pt , 105.820pt } { 338.848pt , 104.227pt }
+      \draw_path_lineto:n { 338.848pt , 103.516pt }
+      \draw_path_lineto:n { 367.223pt , 103.516pt }
+      \draw_path_lineto:n { 367.223pt , 104.227pt }
+      \draw_path_curveto:nnn { 363.844pt , 106.297pt }
+        { 361.832pt , 109.332pt } { 359.578pt , 114.734pt }
+      \draw_path_lineto:n { 337.109pt , 168.551pt }
+      \draw_path_lineto:n { 334.219pt , 168.551pt }
+      \draw_path_lineto:n { 314.879pt , 122.059pt }
+      \draw_path_curveto:nnn { 310.113pt , 110.602pt }
+        { 308.102pt , 106.988pt } { 302.129pt , 104.227pt }
+      \draw_path_lineto:n { 302.129pt , 103.516pt }
+      \draw_path_lineto:n { 324.094pt , 103.516pt }
+      \draw_path_close:
+      \draw_path_moveto:n { 330.324pt , 150.105pt }
+      \draw_path_lineto:n { 340.277pt , 126.004pt }
+      \draw_path_lineto:n { 320.371pt , 126.004pt }
+      \draw_path_close:
+      \draw_path_moveto:n { 611.879pt , 112.672pt }
+      \draw_path_lineto:n { 611.879pt , 168.551pt }
+      \draw_path_lineto:n { 611.168pt , 168.551pt }
+      \draw_path_lineto:n { 593.602pt , 164.324pt }
+      \draw_path_lineto:n { 593.602pt , 163.613pt }
+      \draw_path_curveto:nnn { 597.199pt , 161.719pt }
+        { 599.008pt , 159.129pt } { 599.008pt , 154.453pt }
+      \draw_path_lineto:n { 599.008pt , 148.047pt }
+      \draw_path_curveto:nnn { 596.598pt , 149.879pt }
+        { 592.980pt , 150.902pt } { 589.258pt , 150.902pt }
+      \draw_path_curveto:nnn { 577.438pt , 150.902pt }
+        { 568.512pt , 141.578pt } { 568.512pt , 126.078pt }
+      \draw_path_curveto:nnn { 568.512pt , 111.598pt }
+        { 575.371pt , 102.570pt } { 586.199pt , 102.570pt }
+      \draw_path_curveto:nnn { 592.008pt , 102.570pt }
+        { 596.371pt , 105.270pt } { 599.363pt , 109.637pt }
+      \draw_path_lineto:n { 599.363pt , 103.520pt }
+      \draw_path_lineto:n { 617.238pt , 103.520pt }
+      \draw_path_lineto:n { 617.238pt , 104.227pt }
+      \draw_path_curveto:nnn { 614.055pt , 106.223pt }
+        { 611.879pt , 108.457pt } { 611.879pt , 112.672pt }
+      \draw_path_moveto:n { 592.551pt , 109.418pt }
+      \draw_path_curveto:nnn { 584.211pt , 109.418pt }
+        { 581.613pt , 118.875pt } { 581.613pt , 128.402pt }
+      \draw_path_curveto:nnn { 581.613pt , 142.254pt }
+        { 586.887pt , 147.016pt } { 591.902pt , 147.016pt }
+      \draw_path_curveto:nnn { 595.973pt , 147.016pt }
+        { 599.008pt , 142.621pt } { 599.008pt , 137.113pt }
+      \draw_path_lineto:n { 599.008pt , 112.082pt }
+      \draw_path_curveto:nnn { 597.133pt , 110.633pt }
+        { 594.684pt , 109.418pt } { 592.551pt , 109.418pt }
+      \draw_path_moveto:n { 410.766pt , 112.672pt }
+      \draw_path_lineto:n { 410.766pt , 168.551pt }
+      \draw_path_lineto:n { 410.059pt , 168.551pt }
+      \draw_path_lineto:n { 392.492pt , 164.324pt }
+      \draw_path_lineto:n { 392.492pt , 163.613pt }
+      \draw_path_curveto:nnn { 396.086pt , 161.719pt }
+        { 397.898pt , 159.129pt } { 397.898pt , 154.453pt }
+      \draw_path_lineto:n { 397.898pt , 148.047pt }
+      \draw_path_curveto:nnn { 395.492pt , 149.879pt }
+        { 391.871pt , 150.902pt } { 388.148pt , 150.902pt }
+      \draw_path_curveto:nnn { 376.328pt , 150.902pt }
+        { 367.398pt , 141.578pt } { 367.398pt , 126.078pt }
+      \draw_path_curveto:nnn { 367.398pt , 111.598pt }
+        { 374.262pt , 102.570pt } { 385.086pt , 102.570pt }
+      \draw_path_curveto:nnn { 390.895pt , 102.570pt }
+        { 395.262pt , 105.270pt } { 398.250pt , 109.637pt }
+      \draw_path_lineto:n { 398.250pt , 103.520pt }
+      \draw_path_lineto:n { 416.129pt , 103.520pt }
+      \draw_path_lineto:n { 416.129pt , 104.227pt }
+      \draw_path_curveto:nnn { 412.945pt , 106.223pt }
+        { 410.766pt , 108.457pt } { 410.766pt , 112.672pt }
+      \draw_path_moveto:n { 391.441pt , 109.418pt }
+      \draw_path_curveto:nnn { 383.102pt , 109.418pt }
+        { 380.504pt , 118.875pt } { 380.504pt , 128.402pt }
+      \draw_path_curveto:nnn { 380.504pt , 142.254pt }
+        { 385.777pt , 147.016pt } { 390.793pt , 147.016pt }
+      \draw_path_curveto:nnn { 394.863pt , 147.016pt }
+        { 397.898pt , 142.621pt } { 397.898pt , 137.113pt }
+      \draw_path_lineto:n { 397.898pt , 112.082pt }
+      \draw_path_curveto:nnn { 396.020pt , 110.633pt }
+        { 393.574pt , 109.418pt } { 391.441pt , 109.418pt }
+      \draw_path_moveto:n { 569.445pt , 66.879pt }
+      \draw_path_curveto:nnn { 564.836pt , 66.879pt }
+        { 559.453pt , 63.500pt } { 556.426pt , 56.438pt }
+      \draw_path_lineto:n { 556.426pt , 66.879pt }
+      \draw_path_lineto:n { 555.723pt , 66.879pt }
+      \draw_path_lineto:n { 538.508pt , 62.648pt }
+      \draw_path_lineto:n { 538.508pt , 61.941pt }
+      \draw_path_curveto:nnn { 542.102pt , 60.043pt }
+        { 543.910pt , 57.453pt } { 543.910pt , 52.777pt }
+      \draw_path_lineto:n { 543.910pt , 28.652pt }
+      \draw_path_curveto:nnn { 543.910pt , 24.387pt }
+        { 541.730pt , 22.203pt } { 538.551pt , 20.203pt }
+      \draw_path_lineto:n { 538.551pt , 19.496pt }
+      \draw_path_lineto:n { 564.191pt , 19.496pt }
+      \draw_path_lineto:n { 564.191pt , 20.203pt }
+      \draw_path_curveto:nnn { 559.863pt , 22.098pt }
+        { 556.781pt , 24.543pt } { 556.781pt , 28.652pt }
+      \draw_path_lineto:n { 556.781pt , 52.395pt }
+      \draw_path_curveto:nnn { 560.875pt , 56.043pt }
+        { 567.359pt , 57.215pt } { 572.723pt , 52.285pt }
+      \draw_path_lineto:n { 573.430pt , 52.285pt }
+      \draw_path_lineto:n { 573.430pt , 65.340pt }
+      \draw_path_curveto:nnn { 572.590pt , 66.395pt }
+        { 570.980pt , 66.879pt } { 569.445pt , 66.879pt }
+      \draw_path_moveto:n { 634.559pt , 28.652pt }
+      \draw_path_lineto:n { 634.559pt , 66.879pt }
+      \draw_path_lineto:n { 633.852pt , 66.879pt }
+      \draw_path_lineto:n { 616.285pt , 62.648pt }
+      \draw_path_lineto:n { 616.285pt , 61.941pt }
+      \draw_path_curveto:nnn { 619.879pt , 60.043pt }
+        { 621.688pt , 57.453pt } { 621.688pt , 52.777pt }
+      \draw_path_lineto:n { 621.688pt , 28.652pt }
+      \draw_path_curveto:nnn { 621.688pt , 24.387pt }
+        { 619.508pt , 22.203pt } { 616.328pt , 20.203pt }
+      \draw_path_lineto:n { 616.328pt , 19.496pt }
+      \draw_path_lineto:n { 639.918pt , 19.496pt }
+      \draw_path_lineto:n { 639.918pt , 20.203pt }
+      \draw_path_curveto:nnn { 636.738pt , 22.203pt }
+        { 634.559pt , 24.438pt } { 634.559pt , 28.652pt }
+      \draw_path_moveto:n { 628.125pt , 71.039pt }
+      \draw_path_curveto:nnn { 632.438pt , 71.039pt }
+        { 635.941pt , 74.539pt } { 635.941pt , 78.855pt }
+      \draw_path_curveto:nnn { 635.941pt , 83.168pt }
+        { 632.438pt , 86.672pt } { 628.125pt , 86.672pt }
+      \draw_path_curveto:nnn { 623.812pt , 86.672pt }
+        { 620.309pt , 83.168pt } { 620.309pt , 78.855pt }
+      \draw_path_curveto:nnn { 620.309pt , 74.539pt }
+        { 623.812pt , 71.039pt } { 628.125pt , 71.039pt }
+      \draw_path_moveto:n { 439.242pt , 28.652pt }
+      \draw_path_lineto:n { 439.242pt , 66.879pt }
+      \draw_path_lineto:n { 438.531pt , 66.879pt }
+      \draw_path_lineto:n { 420.969pt , 62.648pt }
+      \draw_path_lineto:n { 420.969pt , 61.941pt }
+      \draw_path_curveto:nnn { 424.562pt , 60.043pt }
+        { 426.371pt , 57.453pt } { 426.371pt , 52.777pt }
+      \draw_path_lineto:n { 426.371pt , 28.652pt }
+      \draw_path_curveto:nnn { 426.371pt , 24.387pt }
+        { 424.191pt , 22.203pt } { 421.012pt , 20.203pt }
+      \draw_path_lineto:n { 421.012pt , 19.496pt }
+      \draw_path_lineto:n { 444.602pt , 19.496pt }
+      \draw_path_lineto:n { 444.602pt , 20.203pt }
+      \draw_path_curveto:nnn { 441.422pt , 22.203pt }
+        { 439.242pt , 24.438pt } { 439.242pt , 28.652pt }
+      \draw_path_moveto:n { 424.992pt , 78.855pt }
+      \draw_path_curveto:nnn { 424.992pt , 74.543pt }
+        { 428.496pt , 71.035pt } { 432.809pt , 71.035pt }
+      \draw_path_curveto:nnn { 437.121pt , 71.035pt }
+        { 440.625pt , 74.543pt } { 440.625pt , 78.855pt }
+      \draw_path_curveto:nnn { 440.625pt , 83.168pt }
+        { 437.121pt , 86.672pt } { 432.809pt , 86.672pt }
+      \draw_path_curveto:nnn { 428.496pt , 86.672pt }
+        { 424.992pt , 83.168pt } { 424.992pt , 78.855pt }
+      \draw_path_moveto:n { 412.270pt , 28.648pt }
+      \draw_path_lineto:n { 412.270pt , 52.105pt }
+      \draw_path_curveto:nnn { 412.270pt , 61.258pt }
+        { 406.605pt , 66.879pt } { 397.789pt , 66.879pt }
+      \draw_path_curveto:nnn { 391.676pt , 66.879pt }
+        { 386.910pt , 63.754pt } { 383.480pt , 59.250pt }
+      \draw_path_lineto:n { 383.480pt , 66.879pt }
+      \draw_path_lineto:n { 382.777pt , 66.879pt }
+      \draw_path_lineto:n { 365.562pt , 62.648pt }
+      \draw_path_lineto:n { 365.562pt , 61.941pt }
+      \draw_path_curveto:nnn { 369.156pt , 60.043pt }
+        { 370.965pt , 57.453pt } { 370.965pt , 52.777pt }
+      \draw_path_lineto:n { 370.965pt , 28.648pt }
+      \draw_path_curveto:nnn { 370.965pt , 24.387pt }
+        { 368.785pt , 22.199pt } { 365.605pt , 20.203pt }
+      \draw_path_lineto:n { 365.605pt , 19.496pt }
+      \draw_path_lineto:n { 389.199pt , 19.496pt }
+      \draw_path_lineto:n { 389.199pt , 20.203pt }
+      \draw_path_curveto:nnn { 386.016pt , 22.199pt }
+        { 383.836pt , 24.438pt } { 383.836pt , 28.648pt }
+      \draw_path_lineto:n { 383.836pt , 54.695pt }
+      \draw_path_curveto:nnn { 385.613pt , 57.738pt }
+        { 388.910pt , 60.160pt } { 392.176pt , 60.160pt }
+      \draw_path_curveto:nnn { 397.410pt , 60.160pt }
+        { 399.402pt , 56.773pt } { 399.402pt , 50.059pt }
+      \draw_path_lineto:n { 399.402pt , 28.656pt }
+      \draw_path_curveto:nnn { 399.402pt , 24.395pt }
+        { 397.223pt , 22.207pt } { 394.039pt , 20.207pt }
+      \draw_path_lineto:n { 394.039pt , 19.496pt }
+      \draw_path_lineto:n { 417.633pt , 19.496pt }
+      \draw_path_lineto:n { 417.633pt , 20.207pt }
+      \draw_path_curveto:nnn { 414.449pt , 22.207pt }
+        { 412.270pt , 24.438pt } { 412.270pt , 28.648pt }
+      \draw_path_moveto:n { 345.766pt , 83.824pt }
+      \draw_path_curveto:nnn { 351.836pt , 81.742pt }
+        { 354.723pt , 79.227pt } { 354.723pt , 74.066pt }
+      \draw_path_lineto:n { 354.723pt , 46.152pt }
+      \draw_path_curveto:nnn { 354.723pt , 33.379pt }
+        { 349.258pt , 24.480pt } { 338.379pt , 24.480pt }
+      \draw_path_curveto:nnn { 326.781pt , 24.480pt }
+        { 322.445pt , 33.074pt } { 322.445pt , 46.176pt }
+      \draw_path_lineto:n { 322.445pt , 74.066pt }
+      \draw_path_curveto:nnn { 322.445pt , 79.230pt }
+        { 325.328pt , 81.742pt } { 331.402pt , 83.824pt }
+      \draw_path_lineto:n { 331.402pt , 84.531pt }
+      \draw_path_lineto:n { 302.133pt , 84.531pt }
+      \draw_path_lineto:n { 302.133pt , 83.824pt }
+      \draw_path_curveto:nnn { 306.156pt , 81.188pt }
+        { 308.328pt , 79.285pt } { 308.328pt , 74.066pt }
+      \draw_path_lineto:n { 308.328pt , 45.273pt }
+      \draw_path_curveto:nnn { 308.328pt , 30.016pt }
+        { 315.363pt , 18.551pt } { 333.230pt , 18.551pt }
+      \draw_path_curveto:nnn { 352.148pt , 18.551pt }
+        { 358.426pt , 30.191pt } { 358.426pt , 45.707pt }
+      \draw_path_lineto:n { 358.426pt , 74.066pt }
+      \draw_path_curveto:nnn { 358.426pt , 79.285pt }
+        { 360.613pt , 81.625pt } { 364.543pt , 83.824pt }
+      \draw_path_lineto:n { 364.543pt , 84.531pt }
+      \draw_path_lineto:n { 345.766pt , 84.531pt }
+      \draw_path_close:
+      \draw_path_moveto:n { 703.734pt , 65.949pt }
+      \draw_path_lineto:n { 703.734pt , 65.246pt }
+      \draw_path_curveto:nnn { 707.785pt , 63.121pt }
+        { 708.449pt , 59.570pt } { 705.617pt , 52.312pt }
+      \draw_path_lineto:n { 699.590pt , 36.777pt }
+      \draw_path_lineto:n { 693.555pt , 52.312pt }
+      \draw_path_curveto:nnn { 690.719pt , 59.609pt }
+        { 691.523pt , 62.855pt } { 694.723pt , 65.246pt }
+      \draw_path_lineto:n { 694.723pt , 65.949pt }
+      \draw_path_lineto:n { 660.273pt , 65.949pt }
+      \draw_path_lineto:n { 660.273pt , 79.637pt }
+      \draw_path_lineto:n { 659.566pt , 79.637pt }
+      \draw_path_lineto:n { 642.145pt , 63.461pt }
+      \draw_path_lineto:n { 642.145pt , 62.758pt }
+      \draw_path_lineto:n { 647.406pt , 62.758pt }
+      \draw_path_lineto:n { 647.406pt , 33.160pt }
+      \draw_path_curveto:nnn { 647.406pt , 24.055pt }
+        { 652.570pt , 18.578pt } { 661.109pt , 18.578pt }
+      \draw_path_curveto:nnn { 669.086pt , 18.578pt }
+        { 674.180pt , 23.723pt } { 676.059pt , 31.340pt }
+      \draw_path_lineto:n { 675.355pt , 31.340pt }
+      \draw_path_curveto:nnn { 673.324pt , 28.191pt }
+        { 669.797pt , 26.488pt } { 666.668pt , 26.512pt }
+      \draw_path_curveto:nnn { 662.688pt , 26.535pt }
+        { 660.273pt , 29.465pt } { 660.273pt , 35.023pt }
+      \draw_path_lineto:n { 660.273pt , 62.758pt }
+      \draw_path_lineto:n { 669.457pt , 62.758pt }
+      \draw_path_curveto:nnn { 674.309pt , 62.758pt }
+        { 676.516pt , 61.371pt } { 678.309pt , 56.828pt }
+      \draw_path_lineto:n { 692.750pt , 20.242pt }
+      \draw_path_curveto:nnn { 689.918pt , 13.066pt }
+        { 685.980pt , 7.188pt } { 675.613pt , 12.438pt }
+      \draw_path_lineto:n { 674.906pt , 12.438pt }
+      \draw_path_lineto:n { 674.906pt , 0.730pt }
+      \draw_path_curveto:nnn { 676.477pt , 0.336pt }
+        { 678.121pt , 0.000pt } { 680.137pt , 0.000pt }
+      \draw_path_curveto:nnn { 687.543pt , 0.000pt }
+        { 690.570pt , 5.734pt } { 696.000pt , 19.496pt }
+      \draw_path_lineto:n { 708.945pt , 52.285pt }
+      \draw_path_curveto:nnn { 712.352pt , 60.906pt }
+        { 713.203pt , 62.953pt } { 718.000pt , 65.246pt }
+      \draw_path_lineto:n { 718.000pt , 65.949pt }
+      \draw_path_close:
+      \draw_path_moveto:n { 514.949pt , 66.879pt }
+      \draw_path_curveto:nnn { 500.828pt , 66.879pt }
+        { 491.219pt , 55.879pt } { 491.219pt , 43.238pt }
+      \draw_path_curveto:nnn { 491.219pt , 30.301pt }
+        { 499.500pt , 18.547pt } { 513.766pt , 18.547pt }
+      \draw_path_curveto:nnn { 528.035pt , 18.547pt }
+        { 533.117pt , 29.574pt } { 533.770pt , 35.035pt }
+      \draw_path_lineto:n { 533.062pt , 35.035pt }
+      \draw_path_curveto:nnn { 530.547pt , 29.930pt }
+        { 525.004pt , 27.492pt } { 519.754pt , 27.492pt }
+      \draw_path_curveto:nnn { 508.309pt , 27.492pt }
+        { 504.250pt , 35.070pt } { 503.648pt , 44.984pt }
+      \draw_path_lineto:n { 533.727pt , 44.984pt }
+      \draw_path_curveto:nnn { 534.688pt , 59.059pt }
+        { 526.410pt , 66.879pt } { 514.949pt , 66.879pt }
+      \draw_path_moveto:n { 521.355pt , 48.004pt }
+      \draw_path_lineto:n { 503.578pt , 48.004pt }
+      \draw_path_curveto:nnn { 503.691pt , 56.887pt }
+        { 507.711pt , 63.879pt } { 513.457pt , 63.879pt }
+      \draw_path_curveto:nnn { 518.680pt , 63.879pt }
+        { 521.754pt , 58.180pt } { 521.355pt , 48.004pt }
+      \draw_path_moveto:n { 587.898pt , 57.547pt }
+      \draw_path_curveto:nnn { 587.898pt , 61.152pt }
+        { 590.289pt , 63.688pt } { 594.785pt , 63.688pt }
+      \draw_path_curveto:nnn { 600.098pt , 63.688pt }
+        { 604.363pt , 59.359pt } { 608.074pt , 52.656pt }
+      \draw_path_lineto:n { 609.270pt , 52.656pt }
+      \draw_path_lineto:n { 609.270pt , 64.434pt }
+      \draw_path_curveto:nnn { 604.684pt , 65.871pt }
+        { 600.180pt , 66.879pt } { 595.422pt , 66.879pt }
+      \draw_path_curveto:nnn { 586.270pt , 66.879pt }
+        { 578.383pt , 61.082pt } { 578.383pt , 52.656pt }
+      \draw_path_curveto:nnn { 578.383pt , 36.797pt }
+        { 601.668pt , 38.480pt } { 601.668pt , 28.785pt }
+      \draw_path_curveto:nnn { 601.668pt , 23.711pt }
+        { 598.320pt , 21.738pt } { 593.969pt , 21.738pt }
+      \draw_path_curveto:nnn { 587.477pt , 21.738pt }
+        { 582.168pt , 27.859pt } { 578.477pt , 35.129pt }
+      \draw_path_lineto:n { 577.285pt , 35.129pt }
+      \draw_path_lineto:n { 578.094pt , 21.445pt }
+      \draw_path_curveto:nnn { 582.199pt , 19.633pt }
+        { 587.625pt , 18.551pt } { 593.605pt , 18.551pt }
+      \draw_path_curveto:nnn { 604.363pt , 18.551pt }
+        { 611.910pt , 24.645pt } { 611.910pt , 33.410pt }
+      \draw_path_curveto:nnn { 611.910pt , 49.535pt }
+        { 587.898pt , 48.125pt } { 587.898pt , 57.547pt }
+      \draw_path_moveto:n { 492.391pt , 65.949pt }
+      \draw_path_lineto:n { 478.125pt , 65.949pt }
+      \draw_path_lineto:n { 478.125pt , 65.246pt }
+      \draw_path_curveto:nnn { 482.176pt , 63.121pt }
+        { 482.836pt , 59.570pt } { 480.008pt , 52.312pt }
+      \draw_path_lineto:n { 473.980pt , 36.777pt }
+      \draw_path_lineto:n { 467.941pt , 52.312pt }
+      \draw_path_curveto:nnn { 465.109pt , 59.609pt }
+        { 465.914pt , 62.855pt } { 469.113pt , 65.246pt }
+      \draw_path_lineto:n { 469.113pt , 65.949pt }
+      \draw_path_lineto:n { 446.039pt , 65.949pt }
+      \draw_path_lineto:n { 446.039pt , 65.246pt }
+      \draw_path_curveto:nnn { 449.863pt , 63.254pt }
+        { 451.316pt , 60.340pt } { 454.492pt , 52.285pt }
+      \draw_path_lineto:n { 467.438pt , 19.496pt }
+      \draw_path_lineto:n { 470.391pt , 19.496pt }
+      \draw_path_lineto:n { 483.336pt , 52.285pt }
+      \draw_path_curveto:nnn { 486.742pt , 60.906pt }
+        { 487.594pt , 62.953pt } { 492.391pt , 65.246pt }
+      \draw_path_close:
+      \draw_path_moveto:n { 267.023pt , 84.531pt }
+      \draw_path_lineto:n { 266.316pt , 84.531pt }
+      \draw_path_curveto:nnn { 258.043pt , 58.633pt }
+        { 239.586pt , 42.098pt } { 217.320pt , 42.098pt }
+      \draw_path_curveto:nnn { 189.973pt , 42.098pt }
+        { 176.035pt , 56.270pt } { 176.035pt , 85.785pt }
+      \draw_path_lineto:n { 176.035pt , 168.555pt }
+      \draw_path_lineto:n { 120.945pt , 168.555pt }
+      \draw_path_lineto:n { 0.000pt , 20.203pt }
+      \draw_path_lineto:n { 0.000pt , 19.496pt }
+      \draw_path_lineto:n { 73.875pt , 19.496pt }
+      \draw_path_lineto:n { 73.875pt , 20.203pt }
+      \draw_path_curveto:nnn { 61.836pt , 33.121pt }
+        { 60.184pt , 60.066pt } { 83.582pt , 88.770pt }
+      \draw_path_lineto:n { 134.324pt , 151.012pt }
+      \draw_path_lineto:n { 134.324pt , 84.531pt }
+      \draw_path_curveto:nnn { 134.324pt , 36.277pt }
+        { 160.238pt , 17.336pt } { 203.516pt , 17.336pt }
+      \draw_path_curveto:nnn { 245.164pt , 17.336pt }
+        { 268.633pt , 46.371pt } { 267.023pt , 84.531pt }
+      \draw_path_moveto:n { 266.316pt , 126.000pt }
+      \draw_path_lineto:n { 267.023pt , 126.000pt }
+      \draw_path_lineto:n { 267.023pt , 168.555pt }
+      \draw_path_lineto:n { 225.312pt , 168.555pt }
+      \draw_path_lineto:n { 225.312pt , 147.266pt }
+      \draw_path_curveto:nnn { 240.395pt , 145.109pt }
+        { 255.176pt , 138.344pt } { 266.316pt , 126.000pt }
+      \draw_path_use_clear:n { fill }
+    \draw_end:
+  }
+\cs_new_protected:Nn \@@_logo_super:
+  {
+    \draw_begin:
+      \draw_path_moveto:n { 267.023pt , 84.531pt }
+      \draw_path_lineto:n { 266.316pt , 84.531pt }
+      \draw_path_curveto:nnn { 258.043pt , 58.633pt }
+        { 239.586pt , 42.098pt } { 217.320pt , 42.098pt }
+      \draw_path_curveto:nnn { 189.973pt , 42.098pt }
+        { 176.035pt , 56.270pt } { 176.035pt , 85.785pt }
+      \draw_path_lineto:n { 176.035pt , 168.555pt }
+      \draw_path_lineto:n { 120.945pt , 168.555pt }
+      \draw_path_lineto:n { 0.000pt , 20.203pt }
+      \draw_path_lineto:n { 0.000pt , 19.496pt }
+      \draw_path_lineto:n { 73.875pt , 19.496pt }
+      \draw_path_lineto:n { 73.875pt , 20.203pt }
+      \draw_path_curveto:nnn { 61.836pt , 33.121pt }
+        { 60.184pt , 60.066pt } { 83.582pt , 88.770pt }
+      \draw_path_lineto:n { 134.324pt , 151.012pt }
+      \draw_path_lineto:n { 134.324pt , 84.531pt }
+      \draw_path_curveto:nnn { 134.324pt , 36.277pt }
+        { 160.238pt , 17.336pt } { 203.516pt , 17.336pt }
+      \draw_path_curveto:nnn { 245.164pt , 17.336pt }
+        { 268.633pt , 46.371pt } { 267.023pt , 84.531pt }
+      \draw_path_moveto:n { 266.316pt , 126.000pt }
+      \draw_path_lineto:n { 267.023pt , 126.000pt }
+      \draw_path_lineto:n { 267.023pt , 168.555pt }
+      \draw_path_lineto:n { 225.312pt , 168.555pt }
+      \draw_path_lineto:n { 225.312pt , 147.266pt }
+      \draw_path_curveto:nnn { 240.395pt , 145.109pt }
+        { 255.176pt , 138.344pt } { 266.316pt , 126.000pt }
+      \draw_path_use_clear:n { fill }
+    \draw_end:
+  }
+%</logo>
+% \fi

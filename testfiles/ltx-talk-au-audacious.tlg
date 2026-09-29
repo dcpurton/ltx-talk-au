@@ -1,0 +1,861 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: luatex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(21.83795pt, 462.12233pt, 21.86649pt)
+* v-part:(T,H,B)=(63.79352pt, 181.83972pt, 38.89432pt)
+* \paperwidth=505.82677pt
+* \paperheight=284.52756pt
+* \textwidth=462.12233pt
+* \textheight=181.83972pt
+* \oddsidemargin=-50.43204pt
+* \evensidemargin=-50.43204pt
+* \topmargin=-86.2651pt
+* \headheight=49.8133pt
+* \headsep=27.97534pt
+* \topskip=10.0pt
+* \footskip=27.97534pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=0.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: luatex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(216.58542pt, 267.37486pt, 21.86649pt)
+* v-part:(T,H,B)=(21.8305pt, 111.90137pt, 150.79568pt)
+* \paperwidth=505.82677pt
+* \paperheight=284.52756pt
+* \textwidth=267.37486pt
+* \textheight=111.90137pt
+* \oddsidemargin=144.31543pt
+* \evensidemargin=144.31543pt
+* \topmargin=-72.27744pt
+* \headheight=35.82562pt
+* \headsep=-13.98767pt
+* \topskip=10.0pt
+* \footskip=139.87671pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=0.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+<example-image-a.jpg, id=39, 401.5pt x 301.125pt>
+File: example-image-a.jpg Graphic file (type jpg)
+<use example-image-a.jpg>
+Package luatex.def Info: example-image-a.jpg  used on input line ....
+(luatex.def)             Requested size: 401.49901pt x 301.12425pt.
+<example-image-b.jpg, id=45, 401.5pt x 301.125pt>
+File: example-image-b.jpg Graphic file (type jpg)
+<use example-image-b.jpg>
+Package luatex.def Info: example-image-b.jpg  used on input line ....
+(luatex.def)             Requested size: 401.49901pt x 301.12425pt.
+Completed box being shipped out [1]
+\vbox(201.3386+0.0)x411.69029, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfliteral page <lua data reference ...>
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.3}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfcolorstack 0 push {0.07843 0.28235 1.0 rg 0.07843 0.28235 1.0 RG}
+.......\pdfliteral origin{0 0 503.93701 -283.46457 re}
+.......\pdfliteral origin{f}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+147.71954)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+147.71954)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.4}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfliteral origin{21.75638 -147.16768 116.41194 97.5479 re}
+.......\pdfliteral origin{W}
+.......\pdfliteral origin{n}
+.......\hbox(97.9137+0.0)x0.0, glue set - 145.538fil, shifted 147.71954, direction TLT
+........\kern21.83795
+........\hbox(97.9137+0.0)x123.70004, direction TLT
+.........\hbox(0.0+0.0)x0.0, direction TLT
+.........\kern0.0
+.........\kern-6.85155
+.........\hbox(97.9137+0.0)x130.55159, direction TLT
+..........\pdfcolorstack 0 push {1.0 g 1.0 G}
+..........\hbox(97.9137+0.0)x130.55159, direction TLT
+...........\hbox(97.9137+0.0)x130.55159, direction TLT
+............\kern0.0
+............\hbox(97.9137+0.0)x130.55159, direction TLT
+.............\pdfsave
+.............\pdfsetmatrix{0.32516 0 0 0.32516}
+.............\hbox(301.12425+0.0)x0.0, glue set - 401.49902fil, direction TLT
+..............\hbox(301.12425+0.0)x401.49901, direction TLT
+...............\pdfliteral page <lua data reference ...>
+...............\pdfliteral page <lua data reference ...>
+...............\savepos
+...............\write1{\new@label@record{__tag_graphic.1}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+...............\savepos
+...............\hbox(301.12425+0.0)x401.49901, direction TLT
+................\hbox(301.125+0.0)x401.5, direction TLT
+.................\hbox(301.125+0.0)x401.5, direction TLT
+..................\hbox(301.125+0.0)x0.0, direction TLT
+...................\hbox(301.125+0.0)x0.0, glue set - 401.5fil, direction TLT
+....................\hbox(301.125+0.0)x401.5, direction TLT
+.....................\image(301.125+0.0)x401.5
+....................\glue 0.0 plus 1.0fil minus 1.0fil
+..................\kern401.5
+..................\glue 0.0 plus 1.0fil minus 1.0fil
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\pdfliteral page <lua data reference ...>
+.............\pdfliteral page <lua data reference ...>
+.............\pdfrestore
+............\glue 0.0 plus 1.0fil minus 1.0fil
+..........\pdfcolorstack 0 pop
+........\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+326.15408)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+326.15408)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.5}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfliteral origin{138.1683 -244.71556 343.98392 97.5479 re}
+.......\pdfliteral origin{W}
+.......\pdfliteral origin{n}
+.......\hbox(178.43454+80.52084)x0.0, glue set - 483.9603fil, shifted 245.63324, direction TLT
+........\kern138.68643
+........\hbox(178.43454+80.52084)x345.27386, direction TLT
+.........\hbox(0.0+0.0)x0.0, direction TLT
+.........\kern0.0
+.........\kern0.00002
+.........\hbox(258.95538+0.0)x345.27385, shifted 80.52084, direction TLT
+..........\pdfcolorstack 0 push {1.0 g 1.0 G}
+..........\hbox(258.95538+0.0)x345.27385, direction TLT
+...........\hbox(258.95538+0.0)x345.27385, direction TLT
+............\kern0.0
+............\hbox(258.95538+0.0)x345.27385, direction TLT
+.............\pdfsave
+.............\pdfsetmatrix{0.85996 0 0 0.85996}
+.............\hbox(301.12425+0.0)x0.0, glue set - 401.49902fil, direction TLT
+..............\hbox(301.12425+0.0)x401.49901, direction TLT
+...............\pdfliteral page <lua data reference ...>
+...............\pdfliteral page <lua data reference ...>
+...............\savepos
+...............\write1{\new@label@record{__tag_graphic.2}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+...............\savepos
+...............\hbox(301.12425+0.0)x401.49901, direction TLT
+................\hbox(301.125+0.0)x401.5, direction TLT
+.................\hbox(301.125+0.0)x401.5, direction TLT
+..................\hbox(301.125+0.0)x0.0, direction TLT
+...................\hbox(301.125+0.0)x0.0, glue set - 401.5fil, direction TLT
+....................\hbox(301.125+0.0)x401.5, direction TLT
+.....................\image(301.125+0.0)x401.5
+....................\glue 0.0 plus 1.0fil minus 1.0fil
+..................\kern401.5
+..................\glue 0.0 plus 1.0fil minus 1.0fil
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\pdfliteral page <lua data reference ...>
+.............\pdfliteral page <lua data reference ...>
+.............\pdfrestore
+............\glue 0.0 plus 1.0fil minus 1.0fil
+..........\pdfcolorstack 0 pop
+........\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x0.0, glue set 73.28117fil, direction TLT
+..\kern0.0
+..\kern-72.27744
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set - 143.31169fil, direction TLT
+...\kern0.0
+...\kern144.31543
+...\kern-1.00374
+...\pdfdest name{page.1} xyz
+...\pdfdest name{page.1} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(201.3386+0.0)x411.69029, direction TLT
+..\glue -72.27744
+..\vbox(273.61603+0.0)x267.37486, shifted 144.31543, direction TLT
+...\vbox(35.82562+0.0)x267.37486, glue set 21.04225fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\pdflinkstate 1
+....\hbox(14.78337+15.58067)x267.37486, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\pdfcolorstack 0 push {1.0 g 1.0 G}
+.....\hbox(14.78337+15.58067)x267.37486, direction TLT
+......\glue -216.58542
+......\glue 21.83795
+......\vbox(14.78337+15.58067)x462.15086, direction TLT
+.......\pdfcolorstack 0 push {1.0 g 1.0 G}
+.......\glue(\parskip) 0.0
+.......\glue(\parskip) 0.0
+.......\hbox(14.78337+15.58067)x462.15086, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\vbox(14.78337+15.58067)x462.15086, direction TLT
+.........\glue 0.0
+.........\glue 0.0
+.........\hbox(14.78337+3.58067)x462.15086, glue set 330.23126fil, direction TLT
+..........\localpar
+...........\localinterlinepenalty=0
+...........\localbrokenpenalty=0
+...........\localleftbox=null
+...........\localrightbox=null
+..........\hbox(0.0+0.0)x0.0, direction TLT
+..........\pdfliteral page <lua data reference ...>
+..........\pdfliteral page <lua data reference ...>
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 D
+..........\kern0.02094 (font)
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 e
+..........\discretionary (penalty 50)
+...........< \kern0.16751 (font)
+...........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 -
+...........= \kern0.04189 (font)
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 s
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 i
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 g
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 n
+..........\FONT73 :
+..........\FONT73  
+..........\glue(\spaceskip) 0.5863 plus 3.58069 minus 0.59677
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 A
+..........\kern-0.12564 (font)
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 u
+..........\discretionary (penalty 50)
+...........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 -
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 d
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 a
+..........\discretionary (penalty 50)
+...........< \kern-0.08376 (font)
+...........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 -
+...........= \kern-0.06282 (font)
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 c
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 i
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 o
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 u
+..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 s
+..........\penalty 10000
+..........\glue(\parfillskip) 0.0 plus 1.0fil
+..........\glue(\rightskip) 0.0
+.........\glue 12.0 plus 4.0 minus 4.0
+.........\glue 0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\pdfcolorstack 0 pop
+......\glue -0.02853
+......\glue 0.0 plus 1.0fil
+.....\pdfcolorstack 0 pop
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdflinkstate 0
+...\glue -13.98767
+...\glue(\lineskip) 0.0
+...\vbox(111.90137+0.0)x267.37486, direction TLT
+....\pdfcolorstack 0 push {0 g 0 G}
+....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+....\pdfdest name{Doc-Start} xyz
+....\pdfdest name{Doc-Start} xyz
+....\write-{}
+....\write-{}
+....\pdfcolorstack 0 push {1.0 g 1.0 G}
+....\glue(\topskip) 0.0
+....\vbox(111.90137+0.0)x267.37486, glue set 35.72136fil, direction TLT
+.....\glue 0.0
+.....\hbox(73.74+2.44)x267.37486, direction TLT
+......\vbox(73.74+2.44)x267.37486, direction TLT
+.......\hbox(7.74+2.23)x267.37486, glue set 54.7549fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\pdfliteral page <lua data reference ...>
+........\pdfliteral page <lua data reference ...>
+........\TU/RobotoSerif(0)/m/n/10 L
+........\kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 o
+........\TU/RobotoSerif(0)/m/n/10 r
+........\kern-0.12 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 p
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 s
+........\kern-0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 d
+........\TU/RobotoSerif(0)/m/n/10 o
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 o
+........\TU/RobotoSerif(0)/m/n/10 r
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 s
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 t
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 a
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern0.18 (font)
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.625 minus 0.69333
+........\TU/RobotoSerif(0)/m/n/10 c
+........\TU/RobotoSerif(0)/m/n/10 o
+........\TU/RobotoSerif(0)/m/n/10 n
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 s
+........\kern-0.02 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern0.03 (font)
+........\TU/RobotoSerif(0)/m/n/10 c
+........\kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 t
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 r
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\rightskip) -2.6 plus 1.0fil
+.......\penalty 150
+.......\glue(\baselineskip) 2.03
+.......\hbox(7.74+2.44)x267.37486, glue set - 0.00035, direction TLT
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 d
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 p
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 i
+........\kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 s
+........\kern-0.02 (font)
+........\TU/RobotoSerif(0)/m/n/10 c
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 n
+........\TU/RobotoSerif(0)/m/n/10 g
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern0.18 (font)
+........\TU/RobotoSerif(0)/m/n/10 .
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.86667 plus 3.90001 minus 0.28888
+........\TU/RobotoSerif(0)/m/n/10 U
+........\kern-0.12 (font)
+........\TU/RobotoSerif(0)/m/n/10 t
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 p
+........\TU/RobotoSerif(0)/m/n/10 u
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 r
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 s
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern0.18 (font)
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.625 minus 0.69333
+........\TU/RobotoSerif(0)/m/n/10 v
+........\kern-0.17 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 s
+........\TU/RobotoSerif(0)/m/n/10 t
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 b
+........\TU/RobotoSerif(0)/m/n/10 u
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern0.18 (font)
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.625 minus 0.69333
+........\TU/RobotoSerif(0)/m/n/10 p
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 c
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 r
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.15 (font)
+........\TU/RobotoSerif(0)/m/n/10 t
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\rightskip) -2.6 plus 1.0fil
+.......\penalty 150
+.......\glue(\baselineskip) 1.81999
+.......\hbox(7.74+2.44)x267.37486, glue set 69.45244fil, direction TLT
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 c
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.625 minus 0.69333
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 d
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 p
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 i
+........\kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 s
+........\kern-0.02 (font)
+........\TU/RobotoSerif(0)/m/n/10 c
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 n
+........\TU/RobotoSerif(0)/m/n/10 g
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 v
+........\TU/RobotoSerif(0)/m/n/10 i
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern-0.17 (font)
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.625 minus 0.69333
+........\TU/RobotoSerif(0)/m/n/10 f
+........\TU/RobotoSerif(0)/m/n/10 e
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+.........= \kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 i
+........\kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 s
+........\TU/RobotoSerif(0)/m/n/10 .
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0 plus 1.0fil
+.......\glue(\parskip) 6.0 plus 2.0
+.......\glue(\parskip) 0.0
+.......\glue(\baselineskip) 1.81999
+.......\hbox(7.74+2.44)x267.37486, glue set 9.51817fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\pdfliteral page <lua data reference ...>
+........\pdfliteral page <lua data reference ...>
+........\TU/RobotoSerif(0)/m/n/10 C
+........\kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 r
+........\discretionary (penalty 50)
+.........< \kern0.1 (font)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+.........= \kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 a
+........\TU/RobotoSerif(0)/m/n/10 b
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 t
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 r
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 d
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 c
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+.........= \kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 t
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 g
+........\TU/RobotoSerif(0)/m/n/10 r
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.25 (font)
+........\TU/RobotoSerif(0)/m/n/10 v
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 d
+........\TU/RobotoSerif(0)/m/n/10 a
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 u
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 r
+........\TU/RobotoSerif(0)/m/n/10 i
+........\kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 s
+........\TU/RobotoSerif(0)/m/n/10 .
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.86667 plus 3.90001 minus 0.28888
+........\TU/RobotoSerif(0)/m/n/10 N
+........\kern-0.12 (font)
+........\TU/RobotoSerif(0)/m/n/10 a
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 a
+........\TU/RobotoSerif(0)/m/n/10 r
+........\kern-0.12 (font)
+........\TU/RobotoSerif(0)/m/n/10 c
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 b
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 r
+........\kern-0.12 (font)
+........\TU/RobotoSerif(0)/m/n/10 o
+........\kern-0.45 (font)
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\rightskip) -2.6 plus 1.0fil
+.......\penalty 150
+.......\glue(\baselineskip) 1.81999
+.......\hbox(7.74+2.44)x267.37486, glue set - 0.1528, direction TLT
+........\TU/RobotoSerif(0)/m/n/10 n
+........\TU/RobotoSerif(0)/m/n/10 o
+........\TU/RobotoSerif(0)/m/n/10 n
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10 m
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 y
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 g
+........\kern-0.25 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern0.18 (font)
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.625 minus 0.69333
+........\TU/RobotoSerif(0)/m/n/10 c
+........\TU/RobotoSerif(0)/m/n/10 o
+........\TU/RobotoSerif(0)/m/n/10 n
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 s
+........\kern-0.02 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern0.03 (font)
+........\TU/RobotoSerif(0)/m/n/10 c
+........\kern0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 t
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 r
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 d
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.625 minus 0.69333
+........\TU/RobotoSerif(0)/m/n/10 v
+........\kern0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 p
+........\TU/RobotoSerif(0)/m/n/10 u
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.15 (font)
+........\TU/RobotoSerif(0)/m/n/10 t
+........\kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 a
+........\TU/RobotoSerif(0)/m/n/10 ,
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.625 minus 0.69333
+........\TU/RobotoSerif(0)/m/n/10 m
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 g
+........\TU/RobotoSerif(0)/m/n/10 n
+........\TU/RobotoSerif(0)/m/n/10 a
+........\TU/RobotoSerif(0)/m/n/10 .
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\rightskip) -2.6 plus 1.0fil
+.......\penalty 150
+.......\glue(\baselineskip) 1.81999
+.......\hbox(7.74+2.44)x267.37486, glue set 51.69243fil, direction TLT
+........\TU/RobotoSerif(0)/m/n/10 D
+........\kern0.03 (font)
+........\TU/RobotoSerif(0)/m/n/10 o
+........\TU/RobotoSerif(0)/m/n/10 n
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern0.03 (font)
+........\TU/RobotoSerif(0)/m/n/10 c
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 v
+........\kern-0.17 (font)
+........\TU/RobotoSerif(0)/m/n/10 e
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+.........= \kern-0.1 (font)
+........\TU/RobotoSerif(0)/m/n/10 h
+........\TU/RobotoSerif(0)/m/n/10 i
+........\TU/RobotoSerif(0)/m/n/10 c
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 l
+........\TU/RobotoSerif(0)/m/n/10 a
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 a
+........\kern-0.05 (font)
+........\TU/RobotoSerif(0)/m/n/10 u
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/10 -
+........\TU/RobotoSerif(0)/m/n/10 g
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 e
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10  
+........\glue(\spaceskip) 0.0 plus 1.3 minus 0.86667
+........\TU/RobotoSerif(0)/m/n/10 n
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern0.03 (font)
+........\TU/RobotoSerif(0)/m/n/10 q
+........\TU/RobotoSerif(0)/m/n/10 u
+........\TU/RobotoSerif(0)/m/n/10 e
+........\kern-0.17 (font)
+........\TU/RobotoSerif(0)/m/n/10 .
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0 plus 1.0fil
+.....\glue 0.0 plus 1.0fil
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\write1{\new@label@record{frame.1}{{slides}{1}}}
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\pdflinkstate 1
+...\glue(\baselineskip) 134.7727
+...\hbox(5.104+0.0)x267.37486, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdfcolorstack 0 push {1.0 g 1.0 G}
+....\hbox(5.104+0.0)x267.37486, direction TLT
+.....\glue -216.58542
+.....\glue 21.83795
+.....\vbox(5.104+0.0)x462.15086, direction TLT
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\glue(\parskip) 0.0
+......\glue(\parskip) 0.0
+......\hbox(5.104+0.0)x462.15086, glue set 457.67087fil, direction TLT
+.......\glue(\leftskip) 0.0 plus 1.0fil
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue 0.0
+.......\hbox(5.104+0.0)x4.48, direction TLT
+........\TU/RobotoSerif(0)/m/n/8 1
+.......\glue 0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0
+.......\glue(\rightskip) 0.0
+......\pdfcolorstack 0 pop
+.....\glue -0.02853
+....\pdfcolorstack 0 pop
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate 0
+.\kern-201.3386
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(13.98767+1.8036)x0.0, glue set - 88.26132fil, shifted 273.60858, direction TLT
+.....\kern21.83795
+.....\pdfcolorstack 0 push {1.0 g 1.0 G}
+.....\hbox(13.98767+1.8036)x66.42337, direction TLT
+......\hbox(13.98767+1.8036)x66.42337, direction TLT
+.......\kern0.0
+.......\hbox(13.98767+1.8036)x66.42337, direction TLT
+........\pdfsave
+........\pdfsetmatrix{0.09251 0 0 0.09251}
+........\hbox(151.199+19.496)x0.0, glue set - 718.0fil, direction TLT
+.........\hbox(151.199+19.496)x718.0, direction TLT
+..........\box(151.199+19.496)x718.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\pdfrestore
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfcolorstack 0 pop
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\kern201.3386
+.\kern0.0
+.\kern0.0
+.\kern-201.3386
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\kern201.3386
+.\pdfliteral page <lua data reference ...>
+<../example-image-a.jpg><../example-image-b.jpg><<latex-list-css.html>><<latex-align-css.html>> (ltx-talk-au-audacious.aux)
+MathML statistic
+================
+==> 0 MathML fragments read
+==> 0 different MathML fragments
+==> 0 math fragments found
+==> 0 fitting MathML AF found
+==> 0 MathML AF attached
+Package tagpdf Info: Finalizing the tagging structure:
+(tagpdf)             Writing out ~19 structure objects
+(tagpdf)             with ~8 'MC' leaf nodes.
+(tagpdf)             Be patient if there are lots of objects!
+Package tagpdf Info: writing ParentTree
+Package tagpdf Info: writing IDTree
+Package tagpdf Info: writing RoleMap
+Package tagpdf Info: writing ClassMap
+Package tagpdf Info: writing NameSpaces
+Package tagpdf Info: writing StructElems
+Package tagpdf Info: writing Root

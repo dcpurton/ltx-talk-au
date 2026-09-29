@@ -1,0 +1,34 @@
+\DocumentMetadata{
+  , lang        = en
+  , pdfstandard = ua-2
+  , tagging     = on
+}
+\input{regression-test}
+\documentclass[testnational2]{ltx-talk-au}
+\AddToDocumentProperties[hyperref]
+  {pdftitle}
+  {ltx-talk-au proven a test file}
+\begin{document}
+\START
+\showoutput
+\begin{frame}[design=proven a, theme=limestone]
+  \frametitle{Design: Proven a}
+  \TalkAUFrameImage[alt=Example Image]{example-image.jpg}
+
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+  \begin{itemize}
+    \item Bullet level 1
+      \begin{itemize}
+        \item Bullet level 2
+          \begin{itemize}
+            \item Bullet level 3
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+
+  \TalkAUFrameHeading{Heading level}
+
+  \TalkAUFrameSubheading{Subheading level}
+\end{frame}
+\end{document}

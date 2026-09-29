@@ -1,0 +1,546 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX template Info: Declaring instance 'cover-angle' of type frame-design on line ....
+LaTeX template Info: Declaring instance 'subtitle' of type titlepage-element on line ....
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: luatex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(21.83795pt, 462.12233pt, 21.86649pt)
+* v-part:(T,H,B)=(63.79352pt, 181.83972pt, 38.89432pt)
+* \paperwidth=505.82677pt
+* \paperheight=284.52756pt
+* \textwidth=462.12233pt
+* \textheight=181.83972pt
+* \oddsidemargin=-50.43204pt
+* \evensidemargin=-50.43204pt
+* \topmargin=-86.2651pt
+* \headheight=49.8133pt
+* \headsep=27.97534pt
+* \topskip=10.0pt
+* \footskip=27.97534pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=0.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: luatex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(21.83795pt, 306.32436pt, 177.66446pt)
+* v-part:(T,H,B)=(61.99228pt, 180.6276pt, 41.90768pt)
+* \paperwidth=505.82677pt
+* \paperheight=284.52756pt
+* \textwidth=306.32436pt
+* \textheight=180.6276pt
+* \oddsidemargin=-50.43204pt
+* \evensidemargin=-50.43204pt
+* \topmargin=-72.25513pt
+* \headheight=41.90768pt
+* \headsep=20.06973pt
+* \topskip=10.0pt
+* \footskip=20.06973pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=0.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+<example-image-a.jpg, id=36, 401.5pt x 301.125pt>
+File: example-image-a.jpg Graphic file (type jpg)
+<use example-image-a.jpg>
+Package luatex.def Info: example-image-a.jpg  used on input line ....
+(luatex.def)             Requested size: 401.49901pt x 301.12425pt.
+<example-image-b.jpg, id=37, 401.5pt x 301.125pt>
+File: example-image-b.jpg Graphic file (type jpg)
+<use example-image-b.jpg>
+Package luatex.def Info: example-image-b.jpg  used on input line ....
+(luatex.def)             Requested size: 401.49901pt x 301.12425pt.
+Completed box being shipped out [1]
+\vbox(190.41962+0.0)x255.89232, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfliteral page <lua data reference ...>
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.3}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+.......\pdfliteral origin{0 0 503.93701 -283.46457 re}
+.......\pdfliteral origin{f}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+319.8083)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+319.8083)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.4}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfliteral origin{193.74832 -283.46457 216.04785 91.738 re}
+.......\pdfliteral origin{W}
+.......\pdfliteral origin{n}
+.......\hbox(127.36276+35.28075)x0.0, glue set - 411.33289fil, shifted 284.52756, direction TLT
+........\kern194.47487
+........\hbox(127.36276+35.28075)x216.85803, direction TLT
+.........\hbox(0.0+0.0)x0.0, direction TLT
+.........\kern0.0
+.........\kern0.00002
+.........\hbox(162.64351+0.0)x216.85802, shifted 35.28075, direction TLT
+..........\pdfcolorstack 0 push {1.0 g 1.0 G}
+..........\hbox(162.64351+0.0)x216.85802, direction TLT
+...........\hbox(162.64351+0.0)x216.85802, direction TLT
+............\kern0.0
+............\hbox(162.64351+0.0)x216.85802, direction TLT
+.............\pdfsave
+.............\pdfsetmatrix{0.54012 0 0 0.54012}
+.............\hbox(301.12425+0.0)x0.0, glue set - 401.49902fil, direction TLT
+..............\hbox(301.12425+0.0)x401.49901, direction TLT
+...............\hbox(301.12425+0.0)x401.49901, direction TLT
+................\hbox(301.125+0.0)x401.5, direction TLT
+.................\hbox(301.125+0.0)x401.5, direction TLT
+..................\hbox(301.125+0.0)x0.0, direction TLT
+...................\hbox(301.125+0.0)x0.0, glue set - 401.5fil, direction TLT
+....................\hbox(301.125+0.0)x401.5, direction TLT
+.....................\pdfliteral page <lua data reference ...>
+.....................\pdfliteral page <lua data reference ...>
+.....................\image(301.125+0.0)x401.5
+....................\glue 0.0 plus 1.0fil minus 1.0fil
+..................\kern401.5
+..................\glue 0.0 plus 1.0fil minus 1.0fil
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\pdfliteral page <lua data reference ...>
+.............\pdfliteral page <lua data reference ...>
+.............\pdfrestore
+............\glue 0.0 plus 1.0fil minus 1.0fil
+..........\pdfcolorstack 0 pop
+........\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+92.09688)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+92.09688)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.5}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfliteral origin{387.76822 -91.7528 94.38402 91.7528 re}
+.......\pdfliteral origin{W}
+.......\pdfliteral origin{n}
+.......\hbox(92.09688+0.0)x0.0, glue set - 497.98923fil, shifted 92.09688, direction TLT
+........\kern389.22234
+........\hbox(92.09688+0.0)x108.76689, direction TLT
+.........\hbox(0.0+0.0)x0.0, direction TLT
+.........\kern0.0
+.........\kern-14.02895
+.........\hbox(92.09688+0.0)x122.79584, direction TLT
+..........\pdfcolorstack 0 push {1.0 g 1.0 G}
+..........\hbox(92.09688+0.0)x122.79584, direction TLT
+...........\hbox(92.09688+0.0)x122.79584, direction TLT
+............\kern0.0
+............\hbox(92.09688+0.0)x122.79584, direction TLT
+.............\pdfsave
+.............\pdfsetmatrix{0.30584 0 0 0.30584}
+.............\hbox(301.12425+0.0)x0.0, glue set - 401.49902fil, direction TLT
+..............\hbox(301.12425+0.0)x401.49901, direction TLT
+...............\hbox(301.12425+0.0)x401.49901, direction TLT
+................\hbox(301.125+0.0)x401.5, direction TLT
+.................\hbox(301.125+0.0)x401.5, direction TLT
+..................\hbox(301.125+0.0)x0.0, direction TLT
+...................\hbox(301.125+0.0)x0.0, glue set - 401.5fil, direction TLT
+....................\hbox(301.125+0.0)x401.5, direction TLT
+.....................\pdfliteral page <lua data reference ...>
+.....................\pdfliteral page <lua data reference ...>
+.....................\image(301.125+0.0)x401.5
+....................\glue 0.0 plus 1.0fil minus 1.0fil
+..................\kern401.5
+..................\glue 0.0 plus 1.0fil minus 1.0fil
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\pdfliteral page <lua data reference ...>
+.............\pdfliteral page <lua data reference ...>
+.............\pdfrestore
+............\glue 0.0 plus 1.0fil minus 1.0fil
+..........\pdfcolorstack 0 pop
+........\glue 0.0 plus 1.0fil minus 1.0fil
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.6}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfcolorstack 0 push {1.0 g 1.0 G}
+.......\pdfliteral origin{365.74028 -181.7292 79.97902 79.97902 re}
+.......\pdfliteral origin{W}
+.......\pdfliteral origin{n}
+.......\pdfliteral origin{365.74028 -181.7292 m}
+.......\pdfliteral origin{370.99222 -181.7292 l}
+.......\pdfliteral origin{439.05255 -98.24771 l}
+.......\pdfliteral origin{433.80061 -98.24771 l}
+.......\pdfliteral origin{h}
+.......\pdfliteral origin{f}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x0.0, glue set 73.25887fil, direction TLT
+..\kern0.0
+..\kern-72.25513
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set 51.43578fil, direction TLT
+...\kern0.0
+...\kern-50.43204
+...\kern-1.00374
+...\pdfdest name{page.1} xyz
+...\pdfdest name{page.1} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(190.41962+0.0)x255.89232, direction TLT
+..\glue -72.25513
+..\vbox(262.67474+0.0)x306.32436, shifted -50.43204, direction TLT
+...\vbox(41.90768+0.0)x306.32436, glue set 41.90768fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\pdflinkstate 1
+....\hbox(0.0+0.0)x306.32436, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\pdfcolorstack 0 push {1.0 g 1.0 G}
+.....\hbox(0.0+0.0)x306.32436, glue set 306.32434fil, direction TLT
+......\glue 0.0 plus 1.0fil
+.....\pdfcolorstack 0 pop
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdflinkstate 0
+...\glue 20.06973
+...\glue(\lineskip) 0.0
+...\vbox(180.6276+0.0)x306.32436, direction TLT
+....\pdfcolorstack 0 push {0 g 0 G}
+....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+....\pdfdest name{Doc-Start} xyz
+....\pdfdest name{Doc-Start} xyz
+....\write-{}
+....\write-{}
+....\pdfcolorstack 0 push {1.0 g 1.0 G}
+....\glue(\topskip) 0.0
+....\vbox(180.6276+0.0)x306.32436, glue set 36.8666fil, direction TLT
+.....\glue 0.0 plus 0.5fil
+.....\hbox(143.761+0.0)x306.32436, direction TLT
+......\vbox(143.761+0.0)x306.32436, direction TLT
+.......\penalty 0
+.......\glue 6.0 plus 2.0
+.......\glue -6.0 plus -2.0
+.......\glue 0.0
+.......\glue 0.0
+.......\glue 0.0
+.......\pdfcolorstack 0 push {1.0 g 1.0 G}
+.......\glue(\parskip) 6.0 plus 2.0
+.......\glue(\parskip) 0.0
+.......\hbox(31.81714+0.36053)x306.32436, glue set 55.5728fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\pdfliteral page <lua data reference ...>
+........\pdfliteral page <lua data reference ...>
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 l
+........\kern-0.4056 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 t
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 x
+........\discretionary (penalty 50)
+.........< \kern-1.8928 (font)
+.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 -
+.........= \kern-1.8928 (font)
+.........= \TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 -
+.........= \kern-0.1352 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 t
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 a
+........\kern-0.09013 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 l
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 k
+........\discretionary (penalty 50)
+.........< \kern-1.7576 (font)
+.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 -
+.........= \kern-1.7576 (font)
+.........= \TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 -
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 a
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 u
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677  
+........\glue(\spaceskip) 0.0 plus 3.85321 minus 2.5688
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 c
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 o
+........\kern-0.72107 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 v
+........\kern-0.72107 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 e
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 r
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677  
+........\glue(\rightskip) -7.70642 plus 1.0fil
+.......\penalty 300
+.......\glue(\baselineskip) 12.52856
+.......\hbox(32.17767+7.70642)x306.32436, glue set 49.01286fil, direction TLT
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 a
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 n
+........\discretionary (penalty 50)
+.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 -
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 g
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 l
+........\kern-0.09013 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 e
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677  
+........\glue(\spaceskip) 0.0 plus 3.85321 minus 2.5688
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 t
+........\kern-0.18027 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 e
+........\kern0.09013 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 s
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 t
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677  
+........\glue(\spaceskip) 0.0 plus 3.85321 minus 2.5688
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 f
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 i
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 l
+........\kern-0.09013 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/b/n/45.06677 e
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0 plus 1.0fil
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\pdfcolorstack 0 pop
+.......\glue 0.0
+.......\glue 0.0
+.......\glue 6.02098
+.......\glue 0.0
+.......\pdfcolorstack 0 push {1.0 g 1.0 G}
+.......\glue(\parskip) 6.0 plus 2.0
+.......\glue(\parskip) 0.0
+.......\glue(\lineskip) 0.0
+.......\hbox(12.72697+3.0826)x306.32436, glue set 100.48761fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\pdfliteral page <lua data reference ...>
+........\pdfliteral page <lua data reference ...>
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 S
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 u
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 b
+........\discretionary (penalty 50)
+.........< \kern0.16225 (font)
+.........< \TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 -
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 t
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 i
+........\discretionary (penalty 50)
+.........< \TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 -
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 t
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 l
+........\kern-0.01802 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 e
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689  
+........\glue(\spaceskip) 0.0 plus 1.55031 minus 1.03354
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 g
+........\kern-0.09013 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 o
+........\kern0.09013 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 e
+........\kern0.05408 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 s
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689  
+........\glue(\spaceskip) 0.0 plus 1.55031 minus 1.03354
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 h
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 e
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 r
+........\kern-0.03606 (font)
+........\TU/TestNational2Condensed-Medium.otf(0)/m/n/18.02689 e
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0 plus 1.0fil
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\pdfcolorstack 0 pop
+.......\glue 0.0
+.......\glue 0.0
+.......\glue 6.02098
+.......\glue 0.0
+.......\pdfcolorstack 0 push {1.0 g 1.0 G}
+.......\glue(\parskip) 6.0 plus 2.0
+.......\glue(\parskip) 0.0
+.......\glue(\lineskip) 0.0
+.......\hbox(6.42804+1.8911)x306.32436, glue set 113.10144fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\pdfliteral page <lua data reference ...>
+........\pdfliteral page <lua data reference ...>
+........\TU/RobotoSerif(0)/m/n/8.48026 2
+........\TU/RobotoSerif(0)/m/n/8.48026 8
+........\TU/RobotoSerif(0)/m/n/8.48026  
+........\glue(\spaceskip) 0.0 plus 1.10243 minus 0.73495
+........\TU/RobotoSerif(0)/m/n/8.48026 S
+........\kern0.11024 (font)
+........\TU/RobotoSerif(0)/m/n/8.48026 e
+........\TU/RobotoSerif(0)/m/n/8.48026 p
+........\TU/RobotoSerif(0)/m/n/8.48026 t
+........\kern-0.08481 (font)
+........\TU/RobotoSerif(0)/m/n/8.48026 e
+........\TU/RobotoSerif(0)/m/n/8.48026 m
+........\discretionary (penalty 50)
+.........< \TU/RobotoSerif(0)/m/n/8.48026 -
+.........= \kern-0.10176 (font)
+........\TU/RobotoSerif(0)/m/n/8.48026 b
+........\TU/RobotoSerif(0)/m/n/8.48026 e
+........\TU/RobotoSerif(0)/m/n/8.48026 r
+........\TU/RobotoSerif(0)/m/n/8.48026  
+........\glue(\spaceskip) 0.0 plus 1.10243 minus 0.73495
+........\TU/RobotoSerif(0)/m/n/8.48026 2
+........\TU/RobotoSerif(0)/m/n/8.48026 0
+........\TU/RobotoSerif(0)/m/n/8.48026 2
+........\TU/RobotoSerif(0)/m/n/8.48026 6
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0 plus 1.0fil
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\pdfcolorstack 0 pop
+.......\glue 5.0
+.......\glue 0.0
+.......\penalty 0
+.......\glue 0.0
+.....\glue 0.0 plus 0.5fil
+....\write1{\new@label@record{frame.1}{{slides}{1}}}
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\pdflinkstate 1
+...\glue(\baselineskip) 20.06973
+...\hbox(0.0+0.0)x306.32436, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdfcolorstack 0 push {1.0 g 1.0 G}
+....\hbox(0.0+0.0)x306.32436, direction TLT
+....\pdfcolorstack 0 pop
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate 0
+.\kern-190.41962
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(20.06973+2.58784)x0.0, glue set - 117.14326fil, shifted 41.90768, direction TLT
+.....\kern21.83795
+.....\pdfcolorstack 0 push {1.0 g 1.0 G}
+.....\hbox(20.06973+2.58784)x95.30531, direction TLT
+......\hbox(20.06973+2.58784)x95.30531, direction TLT
+.......\kern0.0
+.......\hbox(20.06973+2.58784)x95.30531, direction TLT
+........\pdfsave
+........\pdfsetmatrix{0.13274 0 0 0.13274}
+........\hbox(151.199+19.496)x0.0, glue set - 718.0fil, direction TLT
+.........\hbox(151.199+19.496)x718.0, direction TLT
+..........\box(151.199+19.496)x718.0
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+........\pdfrestore
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfcolorstack 0 pop
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\kern190.41962
+.\kern0.0
+.\kern0.0
+.\kern-190.41962
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\kern190.41962
+.\pdfliteral page <lua data reference ...>
+<../example-image-a.jpg><../example-image-b.jpg><<latex-list-css.html>><<latex-align-css.html>> (ltx-talk-au-cover-angle.aux)
+MathML statistic
+================
+==> 0 MathML fragments read
+==> 0 different MathML fragments
+==> 0 math fragments found
+==> 0 fitting MathML AF found
+==> 0 MathML AF attached
+Package tagpdf Info: Finalizing the tagging structure:
+(tagpdf)             Writing out ~11 structure objects
+(tagpdf)             with ~7 'MC' leaf nodes.
+(tagpdf)             Be patient if there are lots of objects!
+Package tagpdf Info: writing ParentTree
+Package tagpdf Info: writing IDTree
+Package tagpdf Info: writing RoleMap
+Package tagpdf Info: writing ClassMap
+Package tagpdf Info: writing NameSpaces
+Package tagpdf Info: writing StructElems
+Package tagpdf Info: writing Root

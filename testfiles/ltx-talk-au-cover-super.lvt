@@ -1,0 +1,17 @@
+\DocumentMetadata{
+  , lang        = en
+  , pdfstandard = ua-2
+  , tagging     = on
+}
+\input{regression-test}
+\documentclass[testnational2]{ltx-talk-au}
+\begin{document}
+\START
+\showoutput
+\begin{frame}[design=cover-super]
+  \title{ltx-talk-au cover super test file}
+  \subtitle{Subtitle goes here}
+  \date{28 September 2026}
+  \maketitle
+\end{frame}
+\end{document}

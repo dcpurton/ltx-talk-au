@@ -1,0 +1,5 @@
+build
+*.swp
+*.zip
+ltx-talk-au.pdf
+ltx-talk-au-example.pdf

@@ -1,0 +1,584 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: luatex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(21.83795pt, 462.12233pt, 21.86649pt)
+* v-part:(T,H,B)=(63.79352pt, 181.83972pt, 38.89432pt)
+* \paperwidth=505.82677pt
+* \paperheight=284.52756pt
+* \textwidth=462.12233pt
+* \textheight=181.83972pt
+* \oddsidemargin=-50.43204pt
+* \evensidemargin=-50.43204pt
+* \topmargin=-86.2651pt
+* \headheight=49.8133pt
+* \headsep=27.97534pt
+* \topskip=10.0pt
+* \footskip=27.97534pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=0.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: luatex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(21.83795pt, 462.12233pt, 21.86649pt)
+* v-part:(T,H,B)=(61.99228pt, 180.6276pt, 41.90768pt)
+* \paperwidth=505.82677pt
+* \paperheight=284.52756pt
+* \textwidth=462.12233pt
+* \textheight=180.6276pt
+* \oddsidemargin=-50.43204pt
+* \evensidemargin=-50.43204pt
+* \topmargin=-72.25513pt
+* \headheight=41.90768pt
+* \headsep=20.06973pt
+* \topskip=10.0pt
+* \footskip=20.06973pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=0.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+Completed box being shipped out [1]
+\vbox(190.41962+0.0)x411.69029, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfliteral page <lua data reference ...>
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.5}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfcolorstack 0 push {1.0 g 1.0 G}
+.......\pdfliteral origin{0 0 503.93701 -283.46457 re}
+.......\pdfliteral origin{f}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x0.0, glue set 73.25887fil, direction TLT
+..\kern0.0
+..\kern-72.25513
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set 51.43578fil, direction TLT
+...\kern0.0
+...\kern-50.43204
+...\kern-1.00374
+...\pdfdest name{page.1} xyz
+...\pdfdest name{page.1} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(190.41962+0.0)x411.69029, direction TLT
+..\glue -72.25513
+..\vbox(262.67474+0.0)x462.12233, shifted -50.43204, direction TLT
+...\vbox(41.90768+0.0)x462.12233, glue set 41.90768fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\pdflinkstate 1
+....\hbox(0.0+0.0)x462.12233, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+.....\hbox(0.0+0.0)x462.12233, glue set 462.12231fil, direction TLT
+......\glue 0.0 plus 1.0fil
+.....\pdfcolorstack 0 pop
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdflinkstate 0
+...\glue 20.06973
+...\glue(\lineskip) 0.0
+...\vbox(180.6276+0.0)x0.0, direction TLT
+....\pdfcolorstack 0 push {0 g 0 G}
+....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+....\pdfdest name{Doc-Start} xyz
+....\pdfdest name{Doc-Start} xyz
+....\write-{}
+....\write-{}
+....\glue(\topskip) 0.0
+....\vbox(180.6276+0.0)x0.0, glue set 180.6276fil, direction TLT
+.....\glue 0.0 plus 0.5fil
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\vbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 0.5fil
+....\write1{\new@label@record{frame.1}{{slides}{1}}}
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\pdflinkstate 1
+...\glue(\baselineskip) 20.06973
+...\hbox(0.0+0.0)x462.12233, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+....\hbox(0.0+0.0)x462.12233, direction TLT
+....\pdfcolorstack 0 pop
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate 0
+.\kern-190.41962
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.3}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfliteral origin{0.39851 w}
+.......\pdfcolorstack 0 push {0.8 g 0.8 G}
+.......\pdfliteral origin{21.75638 -261.7082 m}
+.......\pdfliteral origin{21.75638 -21.75638 l}
+.......\pdfliteral origin{60.56035 -261.7082 m}
+.......\pdfliteral origin{60.56035 -21.75638 l}
+.......\pdfliteral origin{99.36433 -261.7082 m}
+.......\pdfliteral origin{99.36433 -21.75638 l}
+.......\pdfliteral origin{138.1683 -261.7082 m}
+.......\pdfliteral origin{138.1683 -21.75638 l}
+.......\pdfliteral origin{176.97229 -261.7082 m}
+.......\pdfliteral origin{176.97229 -21.75638 l}
+.......\pdfliteral origin{215.77626 -261.7082 m}
+.......\pdfliteral origin{215.77626 -21.75638 l}
+.......\pdfliteral origin{254.58025 -261.7082 m}
+.......\pdfliteral origin{254.58025 -21.75638 l}
+.......\pdfliteral origin{293.38422 -261.7082 m}
+.......\pdfliteral origin{293.38422 -21.75638 l}
+.......\pdfliteral origin{332.1882 -261.7082 m}
+.......\pdfliteral origin{332.1882 -21.75638 l}
+.......\pdfliteral origin{370.99217 -261.7082 m}
+.......\pdfliteral origin{370.99217 -21.75638 l}
+.......\pdfliteral origin{409.79616 -261.7082 m}
+.......\pdfliteral origin{409.79616 -21.75638 l}
+.......\pdfliteral origin{448.60014 -261.7082 m}
+.......\pdfliteral origin{448.60014 -21.75638 l}
+.......\pdfliteral origin{21.75638 -261.7082 m}
+.......\pdfliteral origin{448.62857 -261.7082 l}
+.......\pdfliteral origin{21.75638 -21.75638 m}
+.......\pdfliteral origin{448.62857 -21.75638 l}
+.......\pdfliteral origin{55.30846 -261.7082 m}
+.......\pdfliteral origin{55.30846 -21.75638 l}
+.......\pdfliteral origin{94.11243 -261.7082 m}
+.......\pdfliteral origin{94.11243 -21.75638 l}
+.......\pdfliteral origin{132.91641 -261.7082 m}
+.......\pdfliteral origin{132.91641 -21.75638 l}
+.......\pdfliteral origin{171.72038 -261.7082 m}
+.......\pdfliteral origin{171.72038 -21.75638 l}
+.......\pdfliteral origin{210.52437 -261.7082 m}
+.......\pdfliteral origin{210.52437 -21.75638 l}
+.......\pdfliteral origin{249.32835 -261.7082 m}
+.......\pdfliteral origin{249.32835 -21.75638 l}
+.......\pdfliteral origin{288.13232 -261.7082 m}
+.......\pdfliteral origin{288.13232 -21.75638 l}
+.......\pdfliteral origin{326.93631 -261.7082 m}
+.......\pdfliteral origin{326.93631 -21.75638 l}
+.......\pdfliteral origin{365.74028 -261.7082 m}
+.......\pdfliteral origin{365.74028 -21.75638 l}
+.......\pdfliteral origin{404.54427 -261.7082 m}
+.......\pdfliteral origin{404.54427 -21.75638 l}
+.......\pdfliteral origin{443.34824 -261.7082 m}
+.......\pdfliteral origin{443.34824 -21.75638 l}
+.......\pdfliteral origin{482.15222 -261.7082 m}
+.......\pdfliteral origin{482.15222 -21.75638 l}
+.......\pdfliteral origin{55.30846 -261.7082 m}
+.......\pdfliteral origin{482.18065 -261.7082 l}
+.......\pdfliteral origin{S}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.4}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfliteral origin{0.39851 w}
+.......\pdfcolorstack 0 push {0.8 g 0.8 G}
+.......\pdfliteral origin{21.75638 -261.7082 m}
+.......\pdfliteral origin{21.75638 -21.75638 l}
+.......\pdfliteral origin{482.18065 -261.7082 m}
+.......\pdfliteral origin{482.18065 -21.75638 l}
+.......\pdfliteral origin{21.75638 -261.7082 m}
+.......\pdfliteral origin{482.18065 -261.7082 l}
+.......\pdfliteral origin{21.75638 -241.71346 m}
+.......\pdfliteral origin{482.18065 -241.71346 l}
+.......\pdfliteral origin{21.75638 -221.7187 m}
+.......\pdfliteral origin{482.18065 -221.7187 l}
+.......\pdfliteral origin{21.75638 -201.72395 m}
+.......\pdfliteral origin{482.18065 -201.72395 l}
+.......\pdfliteral origin{21.75638 -181.7292 m}
+.......\pdfliteral origin{482.18065 -181.7292 l}
+.......\pdfliteral origin{21.75638 -161.73445 m}
+.......\pdfliteral origin{482.18065 -161.73445 l}
+.......\pdfliteral origin{21.75638 -141.7397 m}
+.......\pdfliteral origin{482.18065 -141.7397 l}
+.......\pdfliteral origin{21.75638 -121.74493 m}
+.......\pdfliteral origin{482.18065 -121.74493 l}
+.......\pdfliteral origin{21.75638 -101.75018 m}
+.......\pdfliteral origin{482.18065 -101.75018 l}
+.......\pdfliteral origin{21.75638 -81.75543 m}
+.......\pdfliteral origin{482.18065 -81.75543 l}
+.......\pdfliteral origin{21.75638 -61.76068 m}
+.......\pdfliteral origin{482.18065 -61.76068 l}
+.......\pdfliteral origin{21.75638 -41.76593 m}
+.......\pdfliteral origin{482.18065 -41.76593 l}
+.......\pdfliteral origin{21.75638 -21.77118 m}
+.......\pdfliteral origin{482.18065 -21.77118 l}
+.......\pdfliteral origin{S}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\kern190.41962
+.\kern0.0
+.\kern0.0
+.\pdfliteral page <lua data reference ...>
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: luatex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(21.83795pt, 462.12233pt, 21.86649pt)
+* v-part:(T,H,B)=(63.79352pt, 181.83972pt, 38.89432pt)
+* \paperwidth=505.82677pt
+* \paperheight=284.52756pt
+* \textwidth=462.12233pt
+* \textheight=181.83972pt
+* \oddsidemargin=-50.43204pt
+* \evensidemargin=-50.43204pt
+* \topmargin=-86.2651pt
+* \headheight=49.8133pt
+* \headsep=27.97534pt
+* \topskip=10.0pt
+* \footskip=27.97534pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=0.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+Completed box being shipped out [2]
+\vbox(201.3386+0.0)x411.69029, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfliteral page <lua data reference ...>
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.8}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfcolorstack 0 push {1.0 g 1.0 G}
+.......\pdfliteral origin{0 0 503.93701 -283.46457 re}
+.......\pdfliteral origin{f}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\latelua0{ltx.__pdf.backend_ThisPage_gpush(tex.count["g_shipout_readonly_int"])}
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x0.0, glue set 87.26884fil, direction TLT
+..\kern0.0
+..\kern-86.2651
+..\kern-1.00374
+..\hbox(0.0+0.0)x0.0, glue set 51.43578fil, direction TLT
+...\kern0.0
+...\kern-50.43204
+...\kern-1.00374
+...\pdfdest name{page.2} xyz
+...\pdfdest name{page.2} xyz
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(201.3386+0.0)x411.69029, direction TLT
+..\glue -86.2651
+..\vbox(287.6037+0.0)x462.12233, shifted -50.43204, direction TLT
+...\vbox(49.8133+0.0)x462.12233, glue set 49.8133fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\pdflinkstate 1
+....\hbox(0.0+0.0)x462.12233, direction TLT
+.....\pdfliteral page <lua data reference ...>
+.....\pdfliteral page <lua data reference ...>
+.....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+.....\hbox(0.0+0.0)x462.12233, glue set 462.12231fil, direction TLT
+......\glue 0.0 plus 1.0fil
+.....\pdfcolorstack 0 pop
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdflinkstate 0
+...\glue 27.97534
+...\glue(\lineskip) 0.0
+...\vbox(181.83972+0.0)x0.0, direction TLT
+....\write-{}
+....\write-{}
+....\glue(\topskip) 0.0
+....\vbox(181.83972+0.0)x0.0, glue set 181.83972fil, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\vbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+....\write1{\new@label@record{frame.2}{{slides}{1}}}
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+...\pdflinkstate 1
+...\glue(\baselineskip) 27.97534
+...\hbox(0.0+0.0)x462.12233, direction TLT
+....\pdfliteral page <lua data reference ...>
+....\pdfliteral page <lua data reference ...>
+....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+....\hbox(0.0+0.0)x462.12233, direction TLT
+....\pdfcolorstack 0 pop
+...\pdfliteral page <lua data reference ...>
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate 0
+.\kern-201.3386
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.6}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfliteral origin{0.39851 w}
+.......\pdfcolorstack 0 push {0.8 g 0.8 G}
+.......\pdfliteral origin{21.75638 -272.5864 m}
+.......\pdfliteral origin{21.75638 -21.75638 l}
+.......\pdfliteral origin{60.56035 -272.5864 m}
+.......\pdfliteral origin{60.56035 -21.75638 l}
+.......\pdfliteral origin{99.36433 -272.5864 m}
+.......\pdfliteral origin{99.36433 -21.75638 l}
+.......\pdfliteral origin{138.1683 -272.5864 m}
+.......\pdfliteral origin{138.1683 -21.75638 l}
+.......\pdfliteral origin{176.97229 -272.5864 m}
+.......\pdfliteral origin{176.97229 -21.75638 l}
+.......\pdfliteral origin{215.77626 -272.5864 m}
+.......\pdfliteral origin{215.77626 -21.75638 l}
+.......\pdfliteral origin{254.58025 -272.5864 m}
+.......\pdfliteral origin{254.58025 -21.75638 l}
+.......\pdfliteral origin{293.38422 -272.5864 m}
+.......\pdfliteral origin{293.38422 -21.75638 l}
+.......\pdfliteral origin{332.1882 -272.5864 m}
+.......\pdfliteral origin{332.1882 -21.75638 l}
+.......\pdfliteral origin{370.99217 -272.5864 m}
+.......\pdfliteral origin{370.99217 -21.75638 l}
+.......\pdfliteral origin{409.79616 -272.5864 m}
+.......\pdfliteral origin{409.79616 -21.75638 l}
+.......\pdfliteral origin{448.60014 -272.5864 m}
+.......\pdfliteral origin{448.60014 -21.75638 l}
+.......\pdfliteral origin{21.75638 -272.5864 m}
+.......\pdfliteral origin{448.62857 -272.5864 l}
+.......\pdfliteral origin{21.75638 -21.75638 m}
+.......\pdfliteral origin{448.62857 -21.75638 l}
+.......\pdfliteral origin{55.30846 -272.5864 m}
+.......\pdfliteral origin{55.30846 -21.75638 l}
+.......\pdfliteral origin{94.11243 -272.5864 m}
+.......\pdfliteral origin{94.11243 -21.75638 l}
+.......\pdfliteral origin{132.91641 -272.5864 m}
+.......\pdfliteral origin{132.91641 -21.75638 l}
+.......\pdfliteral origin{171.72038 -272.5864 m}
+.......\pdfliteral origin{171.72038 -21.75638 l}
+.......\pdfliteral origin{210.52437 -272.5864 m}
+.......\pdfliteral origin{210.52437 -21.75638 l}
+.......\pdfliteral origin{249.32835 -272.5864 m}
+.......\pdfliteral origin{249.32835 -21.75638 l}
+.......\pdfliteral origin{288.13232 -272.5864 m}
+.......\pdfliteral origin{288.13232 -21.75638 l}
+.......\pdfliteral origin{326.93631 -272.5864 m}
+.......\pdfliteral origin{326.93631 -21.75638 l}
+.......\pdfliteral origin{365.74028 -272.5864 m}
+.......\pdfliteral origin{365.74028 -21.75638 l}
+.......\pdfliteral origin{404.54427 -272.5864 m}
+.......\pdfliteral origin{404.54427 -21.75638 l}
+.......\pdfliteral origin{443.34824 -272.5864 m}
+.......\pdfliteral origin{443.34824 -21.75638 l}
+.......\pdfliteral origin{482.15222 -272.5864 m}
+.......\pdfliteral origin{482.15222 -21.75638 l}
+.......\pdfliteral origin{55.30846 -272.5864 m}
+.......\pdfliteral origin{482.18065 -272.5864 l}
+.......\pdfliteral origin{55.30846 -21.75638 m}
+.......\pdfliteral origin{482.18065 -21.75638 l}
+.......\pdfliteral origin{S}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+......\pdfsave
+......\pdfliteral origin{0.39851 w}
+......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
+......\pdfliteral origin{0 J}
+......\pdfliteral origin{0 j}
+......\pdfliteral origin{10 M}
+......\pdfliteral origin{[] 0 d}
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+........\savepos
+........\write1{\new@label@record{draw.7}{{xpos}{\__property_code_xpos: }{ypos}{\__property_code_ypos: }{abspage}{\__property_code_abspage: }}}
+........\savepos
+.......\pdfliteral origin{0.39851 w}
+.......\pdfcolorstack 0 push {0.8 g 0.8 G}
+.......\pdfliteral origin{21.75638 -272.5864 m}
+.......\pdfliteral origin{21.75638 -21.75638 l}
+.......\pdfliteral origin{482.18065 -272.5864 m}
+.......\pdfliteral origin{482.18065 -21.75638 l}
+.......\pdfliteral origin{21.75638 -272.5864 m}
+.......\pdfliteral origin{482.18065 -272.5864 l}
+.......\pdfliteral origin{21.75638 -258.65097 m}
+.......\pdfliteral origin{482.18065 -258.65097 l}
+.......\pdfliteral origin{21.75638 -244.71556 m}
+.......\pdfliteral origin{482.18065 -244.71556 l}
+.......\pdfliteral origin{21.75638 -230.78015 m}
+.......\pdfliteral origin{482.18065 -230.78015 l}
+.......\pdfliteral origin{21.75638 -216.84474 m}
+.......\pdfliteral origin{482.18065 -216.84474 l}
+.......\pdfliteral origin{21.75638 -202.90933 m}
+.......\pdfliteral origin{482.18065 -202.90933 l}
+.......\pdfliteral origin{21.75638 -188.9739 m}
+.......\pdfliteral origin{482.18065 -188.9739 l}
+.......\pdfliteral origin{21.75638 -175.0385 m}
+.......\pdfliteral origin{482.18065 -175.0385 l}
+.......\pdfliteral origin{21.75638 -161.10309 m}
+.......\pdfliteral origin{482.18065 -161.10309 l}
+.......\pdfliteral origin{21.75638 -147.16768 m}
+.......\pdfliteral origin{482.18065 -147.16768 l}
+.......\pdfliteral origin{21.75638 -133.23225 m}
+.......\pdfliteral origin{482.18065 -133.23225 l}
+.......\pdfliteral origin{21.75638 -119.29684 m}
+.......\pdfliteral origin{482.18065 -119.29684 l}
+.......\pdfliteral origin{21.75638 -105.36143 m}
+.......\pdfliteral origin{482.18065 -105.36143 l}
+.......\pdfliteral origin{21.75638 -91.42603 m}
+.......\pdfliteral origin{482.18065 -91.42603 l}
+.......\pdfliteral origin{21.75638 -77.4906 m}
+.......\pdfliteral origin{482.18065 -77.4906 l}
+.......\pdfliteral origin{21.75638 -63.55519 m}
+.......\pdfliteral origin{482.18065 -63.55519 l}
+.......\pdfliteral origin{21.75638 -49.61978 m}
+.......\pdfliteral origin{482.18065 -49.61978 l}
+.......\pdfliteral origin{21.75638 -35.68437 m}
+.......\pdfliteral origin{482.18065 -35.68437 l}
+.......\pdfliteral origin{S}
+.......\pdfcolorstack 0 pop
+......\pdfrestore
+......\pdfcolorstack 0 pop
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\kern201.3386
+.\kern0.0
+.\kern-201.3386
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\kern201.3386
+.\pdfliteral page <lua data reference ...>
+<<latex-list-css.html>><<latex-align-css.html>> (ltx-talk-au-grid.aux)
+MathML statistic
+================
+==> 0 MathML fragments read
+==> 0 different MathML fragments
+==> 0 math fragments found
+==> 0 fitting MathML AF found
+==> 0 MathML AF attached
+Package tagpdf Info: Finalizing the tagging structure:
+(tagpdf)             Writing out ~7 structure objects
+(tagpdf)             with ~4 'MC' leaf nodes.
+(tagpdf)             Be patient if there are lots of objects!
+Package tagpdf Info: writing ParentTree
+Package tagpdf Info: writing IDTree
+Package tagpdf Info: writing RoleMap
+Package tagpdf Info: writing ClassMap
+Package tagpdf Info: writing NameSpaces
+Package tagpdf Info: writing StructElems
+Package tagpdf Info: writing Root

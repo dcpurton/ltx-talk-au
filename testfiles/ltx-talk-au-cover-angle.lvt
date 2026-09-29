@@ -1,0 +1,21 @@
+\DocumentMetadata{
+  , lang        = en
+  , pdfstandard = ua-2
+  , tagging     = on
+}
+\input{regression-test}
+\documentclass[testnational2]{ltx-talk-au}
+\begin{document}
+\START
+\showoutput
+\EditInstance{frame-design}{cover-angle}{angle-color=structure}
+\EditInstance{titlepage-element}{subtitle}{color=structure}
+\begin{frame}[design=cover-angle, theme=darkblue]
+  \TalkAUFrameImage[a, artifact]{example-image-a.jpg}
+  \TalkAUFrameImage[b, artifact]{example-image-b.jpg}
+  \title{ltx-talk-au cover angle test file}
+  \subtitle{Subtitle goes here}
+  \date{28 September 2026}
+  \maketitle
+\end{frame}
+\end{document}
