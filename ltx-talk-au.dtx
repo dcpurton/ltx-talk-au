@@ -15,22 +15,7 @@
 \documentclass[a4paper]{l3doc}
 
 \usepackage{microtype}
-\usepackage[australian, provide*=*]{babel}
-\babelfont{rm}{Roboto Serif}
-\babelfont{sf}[Scale=MatchLowercase]{Roboto}
-\babelfont{tt}
-  [
-    , Scale    = MatchLowercase
-    , FontFace = {lc}{n}{Font=IBM Plex Mono}
-  ]
-  {IBM Plex Mono}
-
-\RenewDocumentCommand \MacroFont { }
-  { \footnotesize\ttfamily }
-
-\usepackage{unicode-math}
-\setmathfont{STIX Two Math}[Scale=MatchLowercase]
-\setmathrm{Roboto Serif}[Scale=MatchLowercase]
+\usepackage{pmboxdraw}
 
 \AddToHook{env/macrocode/before}{%
   \addvspace{\medskipamount}}
@@ -59,6 +44,8 @@
 %
 % \section{Implementation}
 %
+% \setlength{\parindent}{0pt}
+%
 %    \begin{macrocode}
 %<*class>
 %<@@=talkau>
@@ -69,6 +56,8 @@
 \ProvidesExplClass{ltx-talk-au}{2026-09-02}{1.0}
   {Adelaide University ltx-talk theme (DCP)}
 %    \end{macrocode}
+%
+% \subsection{Fonts}
 %
 %    \begin{macrocode}
 \clist_new:N \l_@@_options_clist
@@ -88,17 +77,13 @@
 \LoadClass { ltx-talk }
 %    \end{macrocode}
 %
-% Always use Roboto Serif for body font since this font is in TeXLive. Use
-% Stix 2 for maths.
-%
-% Heading font is more complicated. Use real National 2 Condensed if
-% available, otherwise fall back to Barlow Condensed (you'll need to download
-% and install this font).
-%
-% For testing, a test version of National 2 Condensed with limited character
-% support and no OpenType features exists.  \pkg{ltx-talk-au} can be
-% instructed to use this font, falling back to Barlow Condensed for missing
-% characters.
+% Always use Roboto Serif for body font since this font is in \TeX Live. Use
+% Stix 2 for maths.  Heading font is more complicated. Use National 2
+% Condensed if available, otherwise fall back to Barlow Condensed (you'll need
+% to download and install this font).  For testing, a test version of National
+% 2 Condensed with limited character support and no OpenType features exists.
+% \pkg{ltx-talk-au} can be instructed to use this font, falling back to Barlow
+% Condensed for missing characters.
 %
 %    \begin{macrocode}
 \RequirePackage { fontspec }
@@ -147,6 +132,12 @@
 \setmathrm { Roboto ~ Serif }
 %    \end{macrocode}
 %
+% \begin{macro}{\@@_font_capheight_to_size:n}
+%   Return the point size required to select a font with specified capital X
+%   height.
+%   \begin{arguments}
+%     \item Desired height of capital X in current font family.
+%   \end{arguments}
 %    \begin{macrocode}
 \cs_new:Nn \@@_font_capheight_to_size:n
   {
@@ -158,6 +149,16 @@
       }
     pt
   }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_fontsize_from_capheight:nn}
+%   Select a font size with leading ratio from specified capital X height.
+%   \begin{arguments}
+%     \item Desired height of capital X in current font family.
+%     \item Desired leading ratio.
+%   \end{arguments}
+%    \begin{macrocode}
 \cs_new:Nn \@@_fontsize_from_capheight:nn
   {
     \exp_args:Nee
@@ -169,17 +170,9 @@
     \selectfont
   }
 %    \end{macrocode}
+% \end{macro}
 %
-% \subsection{Frame Text Set Up}
-%
-%    \begin{macrocode}
-\RequirePackage { parskip }
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-\cs_set:Npn \labelitemiii { \labelitemfont \textgreater }
-\cs_set:Npn \labelitemiv  { \labelitemfont \textasteriskcentered }
-%    \end{macrocode}
+% \subsection{Language}
 %
 % Change default date style to Australian.
 %
@@ -204,70 +197,6 @@
     \fi
     \space
     \number \year
-  }
-%    \end{macrocode}
-%
-% \subsection{Frame headings}
-%
-%    \begin{macrocode}
-\tagpdfsetup
-  {
-    , role / new-tag = frame-heading / H5
-    , role / new-tag = frame-subheading / H6
-  }
-\AssignStructureRole { sec / 5 / title } { frame-heading }
-\NewStructureName    { sec / 6 }
-\AssignStructureRole { sec / 6 } { Sect }
-\NewStructureName    { sec / 6 / title }
-\AssignStructureRole { sec / 6 / title } { frame-subheading }
-\NewStructureName    { sec / 6 / number }
-% Rename section-number to heading-number at next LaTeX release
-\AssignStructureRole { sec / 6 / number } { section-number }
-\NewStructureName    { sec / 6 / fragment }
-\AssignStructureRole { sec / 6 / fragment } { Span }
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-\DeclareInstance { heading } { frame-heading } { display }
-  {
-    , name                = frame-heading
-    , level               = 5
-    , before-vspace       = \medskipamount
-    , after-vspace        = \smallskipamount
-    , heading-decls       = \sffamily \Large \bfseries
-    , headformat-instance = frame-heading
-  }
-\DeclareInstance { heading } { frame-subheading } { display }
-  {
-    , name                = frame-subheading
-    , level               = 6
-    , before-vspace       = \medskipamount
-    , after-vspace        = \smallskipamount
-    , heading-decls       = \sffamily \large
-    , headformat-instance = frame-subheading
-  }
-\DeclareInstanceCopy { headformat } { frame-heading } { std }
-\DeclareInstanceCopy { headformat } { frame-subheading } { std }
-\NewDocumentCommand \TalkAUFrameHeading { D <> { all } m }
-  {
-    \__talk_if_overlay:nT {#1}
-      {
-        \ParseLaTeXeHeading { frame-heading } { \BooleanTrue } { } {#2}
-      }
-  }
-\NewDocumentCommand \TalkAUFrameSubheading { D <> { all } m }
-  {
-    \__talk_if_overlay:nT {#1}
-      {
-        \ParseLaTeXeHeading { frame-subheading } { \BooleanTrue } { } {#2}
-      }
-  }
-%    \end{macrocode}
-%
-%    \begin{macrocode}
-\keys_set:nn { talk }
-  {
-    , frame / vertical-alignment = top
   }
 %    \end{macrocode}
 %
@@ -304,7 +233,17 @@
     , example    .value_required:n = true
     , example    .initial:n        = purple
   }
-\cs_new_protected:Nn \@@_theme_save:nn
+%    \end{macrocode}
+%
+% \begin{macro}{\@@_theme_define:nn}
+%   Save a set of colours under specified theme name.
+%   \begin{arguments}
+%     \item Theme name.
+%     \item List of key-value items specifying |background|, |structure|,
+%       |alert| and |example| colours.
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_theme_define:nn
   {
     \keys_set:nn { talkau / colours } {#2}
     \prop_gput:NnV \g_@@_theme_background_prop
@@ -316,6 +255,15 @@
     \prop_gput:NnV \g_@@_theme_example_prop
       {#1} \l_@@_colour_example_tl
   }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_theme_select:n}
+%   Select a previous defined colour theme.
+%   \begin{arguments}
+%     \item Name of previously defined colour theme.
+%   \end{arguments}
+%    \begin{macrocode}
 \cs_new_protected:Nn \@@_theme_select:n
   {
     \exp_args:Nne \DeclareColor
@@ -332,35 +280,41 @@
       { \prop_item:Nn \g_@@_theme_example_prop {#1} }
     \color { structure }
   }
-\@@_theme_save:nn { std }
+%    \end{macrocode}
+% \end{macro}
+%
+% Define some standard colour themes.
+%
+%    \begin{macrocode}
+\@@_theme_define:nn { std }
   {
     , background = white
     , structure  = darkblue
     , alert      = brightblue
     , example    = purple
   }
-\@@_theme_save:nn { darkblue }
+\@@_theme_define:nn { darkblue }
   {
     , background = darkblue
     , structure  = white
     , alert      = purple
     , example    = limestone
   }
-\@@_theme_save:nn { limestone }
+\@@_theme_define:nn { limestone }
   {
     , background = limestone
     , structure  = darkblue
     , alert      = brightblue
     , example    = purple
   }
-\@@_theme_save:nn { brightblue }
+\@@_theme_define:nn { brightblue }
   {
     , background = brightblue
     , structure  = white
     , alert      = limestone
     , example    = purple
   }
-\@@_theme_save:nn { purple }
+\@@_theme_define:nn { purple }
   {
     , background = purple!20
     , structure  = darkblue
@@ -368,19 +322,27 @@
     , example    = brightblue
   }
 \@@_theme_select:n { std }
-\cs_new_protected:Nn \@@_frame_background_draw:
-  {
-    \draw_begin:
-      \color_select:n { background }
-      \bool_set_false:N \l_draw_bb_update_bool
-      \draw_path_rectangle:nn
-        { 0pt , 0pt } { \paperwidth , - \paperheight }
-      \draw_path_use_clear:n { fill }
-    \draw_end:
-  }
 %    \end{macrocode}
 %
+% \begin{macro}{\TalkAUThemeDefine, \TalkAUThemeSelect}
+%   \LaTeX{} interfaces for \cs{@@_theme_define:nn} and \cs{@@_theme_select:n}.
+%    \begin{macrocode}
+\NewDocumentCommand \TalkAUThemeDefine { m m }
+  {
+    \@@_theme_define:nn {#1} {#2}
+  }
+\NewDocumentCommand \TalkAUThemeSelect { m }
+  {
+    \@@_theme_select:n {#1}
+  }
+%    \end{macrocode}
+% \end{macro}
+%
 % \subsection{Grid}
+%
+% Adelaide University slides use a grid system for laying out slide elements.
+% The grid is built around the page size and logo dimensions. Calculate the
+% various grid dimensions.
 %
 %    \begin{macrocode}
 \dim_const:Nn \c_@@_grid_column_sep_dim    { 0.010417 \paperwidth }
@@ -408,29 +370,6 @@
 %    \end{macrocode}
 %
 %    \begin{macrocode}
-\EditInstance { header } { std }
-  {
-    , height       = \c_@@_margin_cover_dim +
-                     3 \c_@@_grid_row_std_dim
-    , left-hspace  = \c_@@_margin_cover_dim
-    , right-hspace = \c_@@_margin_cover_dim
-  }
-\EditInstance { frametitle } { header }
-  {
-    , font = \sffamily
-             \@@_fontsize_from_capheight:nn
-               { \c_@@_grid_row_std_dim } { 1 }
-             \bfseries
-  }
-\EditInstance { footer } { std }
-  {
-    , color        = structure
-    , left-hspace  = \c_@@_margin_cover_dim
-    , right-hspace = \c_@@_margin_cover_dim
-  }
-%    \end{macrocode}
-%
-%    \begin{macrocode}
 \geometry
   {
     , tmargin    = \c_@@_margin_cover_dim +
@@ -446,14 +385,27 @@
   }
 %    \end{macrocode}
 %
+% Code for drawing the grid over a slide.
+%
 %    \begin{macrocode}
 \RequirePackage { l3draw }
+%    \end{macrocode}
+%
+% \begin{macro}{\@@_grid_draw_set_up:}
+%   Common grid drawing set up code.
+%    \begin{macrocode}
 \cs_new_protected:Nn \@@_grid_draw_set_up:
   {
       \bool_set_false:N \l_draw_bb_update_bool
       \draw_set_linewidth:n { 0.4pt }
       \color_select:n { black!20 }
   }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_draw_vertical_cover:}
+%   Draw vertical grid lines for cover layout slides.
+%    \begin{macrocode}
 \cs_new_protected:Nn \@@_grid_draw_vertical_cover:
   {
     \draw_begin:
@@ -486,6 +438,12 @@
       \draw_path_use_clear:n { stroke }
     \draw_end:
   }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_draw_vertical_std:}
+%   Draw vertical grid lines for standard slide layouts.
+%    \begin{macrocode}
 \cs_new_protected:Nn \@@_grid_draw_vertical_std:
   {
     \draw_begin:
@@ -512,6 +470,12 @@
       \draw_path_use_clear:n { stroke }
     \draw_end:
   }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_draw_horizontal_cover:}
+%   Draw horizontal grid lines for cover slide layouts.
+%    \begin{macrocode}
 \cs_new_protected:Nn \@@_grid_draw_horizontal_cover:
   {
     \draw_begin:
@@ -529,6 +493,12 @@
       \draw_path_use_clear:n { stroke }
     \draw_end:
   }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_draw_horizontal_std:}
+%   Draw horizontal grid lines for standard slide layouts.
+%    \begin{macrocode}
 \cs_new_protected:Nn \@@_grid_draw_horizontal_std:
   {
     \draw_begin:
@@ -546,6 +516,13 @@
       \draw_path_use_clear:n { stroke }
     \draw_end:
   }
+%    \end{macrocode}
+% \end{macro}
+%
+% Set up sockets, plugs and code to the |shipout/foreground| hook to draw the
+% grid if required.
+%
+%    \begin{macrocode}
 \socket_new:nn { talkau / grid } { 0 }
 \socket_new_plug:nnn { talkau / grid } { cover }
   {
@@ -566,6 +543,226 @@
       }
   }
 %    \end{macrocode}
+%
+% \subsubsection{Grid placement}
+%
+% The following functions calculate coordinates in \TeX{} points separated by
+% commas from grid positions. These functions are expandable.
+%
+% \begin{macro}{\@@_grid_x:nn}
+%   Convert a grid cell $x$ position to a value suitable for a |picture|
+%   environment \cs{put} command.
+%   \begin{arguments}
+%     \item $x$ grid cell position (|l| \textbar{} |c| \textbar{} |r|
+%       \textbar{} |fraction|)
+%     \item $x$ grid cell number (1–12)
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_x:nn
+  {
+    \dim_eval:n
+      {
+        \c_@@_margin_cover_dim + 
+        \int_eval:n { #2 - 1 } \c_@@_grid_column_width_dim +
+        \int_eval:n { #2 - 1 } \c_@@_grid_column_sep_dim +
+        \str_case:nnF {#1}
+          {
+            { l } { 0 }
+            { c } { 0.5 }
+            { r } { }
+          }
+          {#1}
+        \c_@@_grid_column_width_dim
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_y:nn}
+%   Convert a grid cell $y$ position to a value suitable for a |picture|
+%   environment \cs{put} command.
+%   \begin{arguments}
+%     \item $y$ grid cell position (|b| \textbar{} |c| \textbar{} |t|
+%       \textbar{} |fraction|)
+%     \item $y$ grid cell number (1–18 for std layout and 1–12 for cover
+%       layout)
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_y:nn
+  {
+    \bool_if:NTF \g_@@_frame_design_grid_cover_bool
+      {
+        \dim_eval:n
+          {
+            - \paperheight +
+             \c_@@_margin_cover_dim +
+            \int_eval:n { #2 - 1 } \c_@@_grid_row_cover_dim +
+            \str_case:nnF {#1}
+              {
+                { b } { 0 }
+                { c } { 0.5 }
+                { t } { }
+              }
+              {#1}
+            \c_@@_grid_row_cover_dim
+          }
+      }
+      {
+        \dim_eval:n
+          {
+            - \paperheight +
+            \c_@@_margin_footer_dim +
+            \int_eval:n { #2 - 1 } \c_@@_grid_row_std_dim +
+            \str_case:nnF {#1}
+              {
+                { b } { 0 }
+                { c } { 0.5 }
+                { t } { }
+              }
+              {#1}
+            \c_@@_grid_row_std_dim
+          }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_xy:nnnn}
+%   Convert a grid cell position to to values suitable for a |picture|
+%   environment \cs{put} command.
+%   \begin{arguments}
+%     \item $x$ grid cell position (|l| \textbar{} |c| \textbar{} |r|
+%       \textbar{} |fraction|)
+%     \item $x$ grid cell number (1–12)
+%     \item $y$ grid cell position (|b| \textbar{} |m| \textbar{} |t|
+%       \textbar{} |fraction|)
+%     \item $y$ grid cell number (1–18 for std layout and 1–12 for cover
+%       layout)
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_xy:nnnn
+  {
+    \@@_grid_x:nn {#1} {#2} , \@@_grid_y:nn {#3} {#4}
+  }
+%    \end{macrocode}
+% \end{macro}
+%   
+% \begin{macro}{\@@_grid_rect:nnnnnnnn}
+%   Convert a grid cell rectangle to values suitable for a |picture|
+%   environment \cs{put} command.
+%   \begin{arguments}
+%     \item Bottom left $x$ grid cell position (|l| \textbar{} |c| \textbar{}
+%       |r| \textbar{} |fraction|)
+%     \item Bottom left $x$ grid cell number (1–12)
+%     \item Bottom left $y$ grid cell position (|b| \textbar{} |c| \textbar{}
+%       |t| \textbar{} |fraction|)
+%     \item Bottom left $y$ grid cell number (1–18 for std layout and 1–12 for
+%       cover layout)
+%     \item Top right $x$ grid cell position (|l| \textbar{} |c| \textbar{}
+%       |r| \textbar{} |fraction|)
+%     \item Top right $x$ grid cell number (1–12)
+%     \item Top right $y$ grid cell position (|b| \textbar{} |c| \textbar{}
+%       |t| \textbar{} |fraction|)
+%     \item Top right $y$ grid cell number (1–18 for std layout and 1–12 for
+%       cover layout)
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_rect:nnnnnnnn
+  {
+    \@@_grid_x:nn {#1} {#2} , \@@_grid_y:nn {#3} {#4} ,
+    \@@_grid_x:nn {#5} {#6} , \@@_grid_y:nn {#7} {#8} ,
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_dx:nnn}
+%   Calculate the distance between the left-hand side of |#2| and the
+%   right-hand side of |#3| in points. If |#1| is |true| then calculate the
+%   distance between the centre of the cells.
+%   \begin{arguments}
+%     \item Set to |true| to calculate the distance from the centre of the
+%       cells
+%     \item Left-hand $x$ grid cell number (1–12)
+%     \item Right-hand $x$ grid cell number (1–12)
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_dx:nnn
+  {
+    \dim_abs:n
+      {
+        \bool_if:nTF {#1}
+          {
+            \@@_grid_x:nn { c } {#3} - \@@_grid_x:nn { c } {#2}
+          }
+          {
+            \@@_grid_x:nn { r } {#3} - \@@_grid_x:nn { l } {#2}
+          }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\@@_grid_dy:nnn}
+%   Calculate the distance between the bottom side of |#2| and the top side of
+%   |#3| into points. If |#1| is |true| then calculate the distance between
+%   the centre of the cells.
+%   \begin{arguments}
+%     \item Set to |true| to calculate the distance from the centre of the
+%       cells
+%     \item Bottom $y$ grid cell number (1–18 for std layout and 1–12 for
+%       cover layout)
+%     \item Top $y$ grid cell number (1–18 for std layout and 1–12 for cover
+%     layout)
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new:Nn \@@_grid_dy:nnn
+  {
+    \dim_abs:n
+      {
+        \bool_if:nTF {#1}
+          {
+            \@@_grid_y:nn { c } {#3} - \@@_grid_y:nn { c } {#2}
+          }
+          {
+            \@@_grid_y:nn { t } {#3} - \@@_grid_y:nn { b } {#2}
+          }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\TalkAUx, \TalkAUy, \TalkAUxy, \TalkAUrect, \Talkdx, \Talkdy}
+%   \LaTeX{} interfaces for \cs{@@_grid_x:nn}, \cs{@@_grid_y:nn},
+%   \cs{@@_grid_xy:nnnn}, \cs{@@_grid_rect:nnnnnnnn} ,\cs{@@_grid_dx:nnn} and
+%   \cs{@@_grid_dy:nnn}.
+%    \begin{macrocode}
+\NewExpandableDocumentCommand \TalkAUx { O { c } m }
+  {
+    \@@_grid_x:nn {#1} {#2}
+  }
+\NewExpandableDocumentCommand \TalkAUy { O { c } m }
+  {
+    \@@_grid_y:nn {#1} {#2}
+  }
+\NewExpandableDocumentCommand \TalkAUxy { O { c } m O { c } m }
+  {
+    \@@_grid_xy:nnnn {#1} {#2} {#3} {#4}
+  }
+\NewExpandableDocumentCommand \TalkAUrect
+  { O { c } m O { c } m O { c } m O { c } m }
+  {
+    \@@_grid_rect:nnnnnnnn {#1} {#2} {#3} {#4} {#5} {#6} {#7} {#8}
+  }
+\NewExpandableDocumentCommand \TalkAUdx { s m m }
+  {
+    \@@_grid_dx:nnn {#1} {#2} {#3}
+  }
+\NewExpandableDocumentCommand \TalkAUdy { s m m }
+  {
+    \@@_grid_dy:nnn {#1} {#2} {#3}
+  }
+%    \end{macrocode}
+% \end{macro}
 %
 % \subsection{Logo}
 %
@@ -647,302 +844,48 @@
 \box_resize_to_ht:Nn \l_@@_logo_super_box { \paperheight }
 %    \end{macrocode}
 %
+% \subsection{Background elements}
+%
+% Add |shipout/background| hook to each page for drawing background elements.
+%
 %    \begin{macrocode}
-\EditInstance { footer } { std }
+\hook_gput_code:nnn { shipout / background } { . }
   {
-    , element-order = { framenumber }
-    , font = \raggedleft \fontsize { 8pt } { 10pt } \selectfont
+    \@@_frame_background_draw:
+    \@@_frame_super_draw:
+    \@@_frame_image_bg_draw:
+    \@@_frame_image_a_draw:
+    \@@_frame_image_b_draw:
+    \@@_frame_angle_draw:
   }
 %    \end{macrocode}
 %
+% \subsubsection{Background colour}
+%
 %    \begin{macrocode}
-\hook_gput_code:nnn { begindocument } { . }
+\cs_new_protected:Nn \@@_frame_background_draw:
   {
-    \DeclareInstanceCopy { header } { cover } { std }
-    \EditInstance { header } { cover }
-      {
-        , height = \c_@@_margin_cover_dim +
-                   2 \c_@@_grid_row_cover_dim
-        , print-frame-title = false
-      }
-    \DeclareInstanceCopy { footer } { cover } { std }
-    \EditInstance { footer } { cover }
-      {
-        , element-order =
-      }
+    \draw_begin:
+      \color_select:n { background }
+      \bool_set_false:N \l_draw_bb_update_bool
+      \draw_path_rectangle:nn
+        { 0pt , 0pt } { \paperwidth , - \paperheight }
+      \draw_path_use_clear:n { fill }
+    \draw_end:
   }
 %    \end{macrocode}
 %
-%    \begin{macrocode}
-\keys_define:nn { talk / frame }
-  {
-    , design     .code:n           = \UseInstance { frame-design } {#1}
-    , font       .code:n           = #1
-    , font       .value_required:n = true
-    , grid       .bool_set:N       = \l_@@_grid_bool
-    , grid       .default:n        = true
-    , framestyle .code:n           = \pagestyle {#1}
-    , framestyle .value_required:n = true
-    , logo       .bool_set:N       = \l_@@_logo_bool
-    , logo       .default:n        = true
-    , logo       .initial:n        = true
-    , theme      .code:n           = \@@_theme_select:n {#1}
-    , theme      .value_required:n = true
-    , theme      .initial:n        = std
-  }
-%    \end{macrocode}
-%
-% \subsection{Background Graphics}
-%
-% \subsubsection{Grid Placement}
-%
-% \begin{macro}{\@@_grid_x:nn}
-%   \begin{arguments}
-%     \item $x$ grid cell position (|l| \textbar{} |c| \textbar{} |r|
-%       \textbar{} fraction)
-%     \item $x$ grid cell number (1–12)
-%   \end{arguments}
-%
-%   Convert a grid cell $x$ position to a value suitable for a |picture|
-%   environment \cs{put} command.
-%
-%    \begin{macrocode}
-\cs_new:Nn \@@_grid_x:nn
-  {
-    \dim_eval:n
-      {
-        \c_@@_margin_cover_dim + 
-        \int_eval:n { #2 - 1 } \c_@@_grid_column_width_dim +
-        \int_eval:n { #2 - 1 } \c_@@_grid_column_sep_dim +
-        \str_case:nnF {#1}
-          {
-            { l } { 0 }
-            { c } { 0.5 }
-            { r } { }
-          }
-          {#1}
-        \c_@@_grid_column_width_dim
-      }
-  }
-%    \end{macrocode}
-%
-% \end{macro}
-%
-% \begin{macro}{\@@_grid_y:nn}
-%   \begin{arguments}
-%     \item $y$ grid cell position (|b| \textbar{} |c| \textbar{} |t|
-%       \textbar{} fraction)
-%     \item $y$ grid cell number (1–18 for std layout and 1–12 for cover
-%       layout)
-%   \end{arguments}
-%
-%   Convert a grid cell $y$ position to a value suitable for a |picture|
-%   environment \cs{put} command.
-%
-%    \begin{macrocode}
-\cs_new:Nn \@@_grid_y:nn
-  {
-    \bool_if:NTF \g_@@_frame_design_grid_cover_bool
-      {
-        \dim_eval:n
-          {
-            - \paperheight +
-             \c_@@_margin_cover_dim +
-            \int_eval:n { #2 - 1 } \c_@@_grid_row_cover_dim +
-            \str_case:nnF {#1}
-              {
-                { b } { 0 }
-                { c } { 0.5 }
-                { t } { }
-              }
-              {#1}
-            \c_@@_grid_row_cover_dim
-          }
-      }
-      {
-        \dim_eval:n
-          {
-            - \paperheight +
-            \c_@@_margin_footer_dim +
-            \int_eval:n { #2 - 1 } \c_@@_grid_row_std_dim +
-            \str_case:nnF {#1}
-              {
-                { b } { 0 }
-                { c } { 0.5 }
-                { t } { }
-              }
-              {#1}
-            \c_@@_grid_row_std_dim
-          }
-      }
-  }
-%    \end{macrocode}
-%
-% \end{macro}
-%
-% \begin{macro}{\@@_grid_xy:nnnn}
-%   \begin{arguments}
-%     \item $x$ grid cell position (|l| \textbar{} |c| \textbar{} |r|
-%       \textbar{} fraction)
-%     \item $x$ grid cell number (1–12)
-%     \item $y$ grid cell position (|b| \textbar{} |m| \textbar{} |t|
-%       \textbar{} fraction)
-%     \item $y$ grid cell number (1–18 for std layout and 1–12 for cover
-%       layout)
-%   \end{arguments}
-%
-%   Convert a grid cell position to to values suitable for a |picture|
-%   environment \cs{put} command.
-%
-%    \begin{macrocode}
-\cs_new:Nn \@@_grid_xy:nnnn
-  {
-    \@@_grid_x:nn {#1} {#2} , \@@_grid_y:nn {#3} {#4}
-  }
-%    \end{macrocode}
-%   
-% \end{macro}
-%   
-% \begin{macro}{\@@_grid_rect:nnnnnnnn}
-%   \begin{arguments}
-%     \item bottom left $x$ grid cell position (|l| \textbar{} |c| \textbar{}
-%       |r| \textbar{} fraction)
-%     \item bottom left $x$ grid cell number (1–12)
-%     \item bottom left $y$ grid cell position (|b| \textbar{} |c| \textbar{}
-%       |t| \textbar{} fraction)
-%     \item bottom left $y$ grid cell number (1–18 for std layout and 1–12 for
-%       cover layout)
-%     \item top right $x$ grid cell position (|l| \textbar{} |c| \textbar{}
-%       |r| \textbar{} fraction)
-%     \item top right $x$ grid cell number (1–12)
-%     \item top right $y$ grid cell position (|b| \textbar{} |c| \textbar{}
-%       |t| \textbar{} fraction)
-%     \item top right $y$ grid cell number (1–18 for std layout and 1–12 for
-%       cover layout)
-%   \end{arguments}
-%
-%   Convert a grid cell rectangle to values suitable for a |picture|
-%   environment \cs{put} command.
-%
-%    \begin{macrocode}
-\cs_new:Nn \@@_grid_rect:nnnnnnnn
-  {
-    \@@_grid_x:nn {#1} {#2} , \@@_grid_y:nn {#3} {#4} ,
-    \@@_grid_x:nn {#5} {#6} , \@@_grid_y:nn {#7} {#8} ,
-  }
-%    \end{macrocode}
-%   
-% \end{macro}
-%
-% \begin{macro}{\@@_grid_dx:nnn}
-%   \begin{arguments}
-%     \item set to |true| to calculate the distance from the centre of the
-%       cells
-%     \item left-hand $x$ grid cell number (1–12)
-%     \item right-hand $x$ grid cell number (1–12)
-%   \end{arguments}
-%
-%   Calculate the distance between the left-hand side of |#2| and the
-%   right-hand side of |#3| in points. If |#1| is |true| then calculate the
-%   distance between the centre of the cells.
-%
-%    \begin{macrocode}
-\cs_new:Nn \@@_grid_dx:nnn
-  {
-    \dim_abs:n
-      {
-        \bool_if:nTF {#1}
-          {
-            \@@_grid_x:nn { c } {#3} - \@@_grid_x:nn { c } {#2}
-          }
-          {
-            \@@_grid_x:nn { r } {#3} - \@@_grid_x:nn { l } {#2}
-          }
-      }
-  }
-%    \end{macrocode}
-%
-% \end{macro}
-%
-% \begin{macro}{\@@_grid_dy:nnn}
-%   \begin{arguments}
-%     \item set to |true| to calculate the distance from the centre of the
-%       cells
-%     \item bottom $y$ grid cell number (1–18 for std layout and 1–12 for
-%       cover layout)
-%     \item top $y$ grid cell number (1–18 for std layout and 1–12 for cover
-%     layout)
-%   \end{arguments}
-%
-%   Calculate the distance between the bottom side of |#2| and the top side of
-%   |#3| into points. If |#1| is |true| then calculate the distance between
-%   the centre of the cells.
-%
-%    \begin{macrocode}
-\cs_new:Nn \@@_grid_dy:nnn
-  {
-    \dim_abs:n
-      {
-        \bool_if:nTF {#1}
-          {
-            \@@_grid_y:nn { c } {#3} - \@@_grid_y:nn { c } {#2}
-          }
-          {
-            \@@_grid_y:nn { t } {#3} - \@@_grid_y:nn { b } {#2}
-          }
-      }
-  }
-%    \end{macrocode}
-%
-% \end{macro}
-%
-% \begin{macro}{\TalkAUx, \TalkAUy, \TalkAUxy, \Talkdx, \Talkdy}
-%
-%   \LaTeX{} interfaces for \cs{@@_grid_x:nn}, \cs{@@_grid_y:nn},
-%   \cs{@@_grid_xy:nnnn}, \cs{@@_grid_rect:nnnnnnnn} ,\cs{@@_grid_dx:nnn} and
-%   \cs{@@_grid_dy:nnn}.
-%
-%    \begin{macrocode}
-\NewExpandableDocumentCommand \TalkAUx { O { c } m }
-  {
-    \@@_grid_x:nn {#1} {#2}
-  }
-\NewExpandableDocumentCommand \TalkAUy { O { c } m }
-  {
-    \@@_grid_y:nn {#1} {#2}
-  }
-\NewExpandableDocumentCommand \TalkAUxy { O { c } m O { c } m }
-  {
-    \@@_grid_xy:nnnn {#1} {#2} {#3} {#4}
-  }
-\NewExpandableDocumentCommand \TalkAUrect
-  { O { c } m O { c } m O { c } m O { c } m }
-  {
-    \@@_grid_rect:nnnnnnnn {#1} {#2} {#3} {#4} {#5} {#6} {#7} {#8}
-  }
-\NewExpandableDocumentCommand \TalkAUdx { s m m }
-  {
-    \@@_grid_dx:nnn {#1} {#2} {#3}
-  }
-\NewExpandableDocumentCommand \TalkAUdy { s m m }
-  {
-    \@@_grid_dy:nnn {#1} {#2} {#3}
-  }
-%    \end{macrocode}
-% \end{macro}
-%
-% \subsubsection{Background Images}
+% \subsubsection{Background images}
 %
 % Background images need to be tagged as figures and inserted into the
 % previous frame structure. Set up tagging sockets to surround images with the
 % following structure:
-%
-% \begin{verbatim}
-%   text-unit
-%   └─Div
-%     └─float
-% \end{verbatim}
-%
+% \begin{quote}
+%   \ttfamily
+%   text-unit \\
+%   \pmboxdrawuni{2514}\pmboxdrawuni{2500}Div \\
+%   |  |\pmboxdrawuni{2514}\pmboxdrawuni{2500}float
+% \end{quote}
 % The |parent| of the |text-unit| is set to \cs{g__talk_frame_struct_int} in
 % order to insert the figure into the current frame structure.
 %
@@ -970,23 +913,21 @@
 %    \end{macrocode}
 %
 % \begin{macro}{\@@_image_fill_area:nnnnnnnn}
+%   Scale an image to fill a rectangular area, clipping overlapping parts. The
+%   image is centred in the area then offset by the supplied additional
+%   horizontal and vertical offsets.
 %   \begin{arguments}
 %     \item $x$-coordinate of lower left of image area
 %     \item $y$-coordinate of lower left of image area
 %     \item $x$-coordinate of upper right of image area
 %     \item $y$-coordinate of upper right of image area
-%     \item width of image area
-%     \item height of image area
-%     \item additional horizontal offset of placed image
-%     \item additional vertical offset of placed image
-%     \item alt text for image
-%     \item image file name
+%     \item Width of image area
+%     \item Height of image area
+%     \item Additional horizontal offset of placed image
+%     \item Additional vertical offset of placed image
+%     \item Alt text for image
+%     \item Image file name
 %   \end{arguments}
-%
-%   Scale an image to fill a rectangular area, clipping overlapping parts. The
-%   image is centred in the area then offset by the supplied additional
-%   horizontal and vertical offsets.
-%
 %    \begin{macrocode}
 \box_new:N    \l_@@_image_box
 \coffin_new:N \l_@@_image_coffin
@@ -1050,14 +991,13 @@
 % \end{macro}
 %
 % \begin{macro}{\TalkAUFrameImage}
-%   \begin{arguments}
-%     \item options
-%     \item image file name
-%   \end{arguments}
-%
 %   Set the file name and properties for a standard image in the current frame
 %   design.
-%
+%   \begin{arguments}
+%     \item Overlay specification
+%     \item Options
+%     \item Image file name
+%   \end{arguments}
 %    \begin{macrocode}
 \cs_new_protected:Nn \@@_frame_image_bg_draw: { }
 \cs_new_protected:Nn \@@_frame_image_a_draw:  { }
@@ -1111,93 +1051,7 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% Code to draw an Adelaide University angle element at the specified position
-% in specified colour.
-%
-% \begin{macro}{\@@_frame_angle_draw:nnn}
-%   \begin{arguments}
-%     \item colour of angle
-%     \item $x$-coordinate of lower left of angle
-%     \item $y$-coordinate of lower left of angle
-%   \end{arguments}
-%    \begin{macrocode}
-\cs_new_protected:Nn \@@_frame_angle_draw:nnn
-  {
-    \draw_begin:
-      \color_select:n {#1}
-      \bool_set_false:N \l_draw_bb_update_bool
-      \draw_transform_shift:n { #2 , #3 }
-      \bool_if:NTF \g_@@_frame_design_grid_cover_bool
-        {
-          \draw_path_rectangle:nn
-            { 0pt , 0pt }
-            {
-              4 \c_@@_grid_row_cover_dim ,
-              4 \c_@@_grid_row_cover_dim
-            }
-        }
-        {
-          \draw_path_rectangle:nn
-            { 0pt , 0pt }
-            {
-              6 \c_@@_grid_row_std_dim ,
-              6 \c_@@_grid_row_std_dim
-            }
-        }
-      \draw_path_use_clear:n { clip }
-      \draw_path_moveto:n { 0pt, 0pt }
-      \draw_path_lineto:n { 5.27164pt, 0pt }
-      \draw_path_lineto:n { 73.58719pt, 83.79454pt }
-      \draw_path_lineto:n { 68.31555pt, 83.79454pt }
-      \draw_path_close:
-      \draw_path_use_clear:n { fill }
-    \draw_end:
-  }
-%    \end{macrocode}
-% \end{macro}
-%
-% Code to draw an Adelaide University super graphic in the specified colour
-% on the specified background colour.
-%
-% \begin{macro}{\@@_frame_super_draw:nn}
-%   \begin{arguments}
-%     \item colour of background
-%     \item colour of super graphic
-%   \end{arguments}
-%    \begin{macrocode}
-\cs_new_protected:Nn \@@_frame_super_draw:nn
-  {
-    \draw_begin:
-      \color_select:n {#1}
-      \bool_set_false:N \l_draw_bb_update_bool
-      \draw_path_rectangle:nn
-        { 0pt , 0pt } { \paperwidth , - \paperheight }
-      \draw_path_use_clear:n { fill }
-    \draw_end:
-    \put ( 0pt , - \paperheight )
-      {
-        \color_select:n {#2}
-        \box_use:N \l_@@_logo_super_box
-      }
-  }
-%    \end{macrocode}
-% \end{macro}
-%
-% Add |shipout/background| hook to each page for drawing background images.
-%
-%    \begin{macrocode}
-\hook_gput_code:nnn { shipout / background } { . }
-  {
-    \@@_frame_background_draw:
-    \@@_frame_super_draw:
-    \@@_frame_image_bg_draw:
-    \@@_frame_image_a_draw:
-    \@@_frame_image_b_draw:
-    \@@_frame_angle_draw:
-  }
-%    \end{macrocode}
-%
-% \subsection{Slide Designs}
+% Set up a |frame-image| template for formatting background images.
 %
 %    \begin{macrocode}
 \tl_new:N \l_@@_frame_image_slot_tl
@@ -1265,6 +1119,250 @@
   }
 %    \end{macrocode}
 %
+% \subsubsection{Angle graphic}
+%
+% \begin{macro}{\@@_frame_angle_draw:nnn}
+%   Draw an Adelaide University angle element at the specified position in
+%   specified colour.
+%   \begin{arguments}
+%     \item Colour of angle
+%     \item $x$-coordinate of lower left of angle
+%     \item $y$-coordinate of lower left of angle
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_frame_angle_draw:nnn
+  {
+    \draw_begin:
+      \color_select:n {#1}
+      \bool_set_false:N \l_draw_bb_update_bool
+      \draw_transform_shift:n { #2 , #3 }
+      \bool_if:NTF \g_@@_frame_design_grid_cover_bool
+        {
+          \draw_path_rectangle:nn
+            { 0pt , 0pt }
+            {
+              4 \c_@@_grid_row_cover_dim ,
+              4 \c_@@_grid_row_cover_dim
+            }
+        }
+        {
+          \draw_path_rectangle:nn
+            { 0pt , 0pt }
+            {
+              6 \c_@@_grid_row_std_dim ,
+              6 \c_@@_grid_row_std_dim
+            }
+        }
+      \draw_path_use_clear:n { clip }
+      \draw_path_moveto:n { 0pt, 0pt }
+      \draw_path_lineto:n { 5.27164pt, 0pt }
+      \draw_path_lineto:n { 73.58719pt, 83.79454pt }
+      \draw_path_lineto:n { 68.31555pt, 83.79454pt }
+      \draw_path_close:
+      \draw_path_use_clear:n { fill }
+    \draw_end:
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{Super graphic}
+%
+% \begin{macro}{\@@_frame_super_draw:nn}
+%   Draw an Adelaide University super graphic in the specified colour on the
+%   specified background colour.
+%   \begin{arguments}
+%     \item Colour of background
+%     \item Colour of super graphic
+%   \end{arguments}
+%    \begin{macrocode}
+\cs_new_protected:Nn \@@_frame_super_draw:nn
+  {
+    \draw_begin:
+      \color_select:n {#1}
+      \bool_set_false:N \l_draw_bb_update_bool
+      \draw_path_rectangle:nn
+        { 0pt , 0pt } { \paperwidth , - \paperheight }
+      \draw_path_use_clear:n { fill }
+    \draw_end:
+    \put ( 0pt , - \paperheight )
+      {
+        \color_select:n {#2}
+        \box_use:N \l_@@_logo_super_box
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsection{Frames}
+%
+% \subsubsection{Frame text}
+%
+%    \begin{macrocode}
+\RequirePackage { parskip }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\keys_set:nn { talk }
+  {
+    , frame / vertical-alignment = top
+  }
+%    \end{macrocode}
+
+%    \begin{macrocode}
+\cs_set:Npn \labelitemiii { \labelitemfont \textgreater }
+\cs_set:Npn \labelitemiv  { \labelitemfont \textasteriskcentered }
+%    \end{macrocode}
+%
+% \subsubsection{Frame headers and footers}
+%
+% Set header and footer dimensions.
+%
+%    \begin{macrocode}
+\EditInstance { header } { std }
+  {
+    , height       = \c_@@_margin_cover_dim +
+                     3 \c_@@_grid_row_std_dim
+    , left-hspace  = \c_@@_margin_cover_dim
+    , right-hspace = \c_@@_margin_cover_dim
+  }
+\EditInstance { frametitle } { header }
+  {
+    , font = \sffamily
+             \@@_fontsize_from_capheight:nn
+               { \c_@@_grid_row_std_dim } { 1 }
+             \bfseries
+  }
+\EditInstance { footer } { std }
+  {
+    , color         = structure
+    , left-hspace   = \c_@@_margin_cover_dim
+    , right-hspace  = \c_@@_margin_cover_dim
+    , element-order = { framenumber }
+    , font          = \raggedleft \fontsize { 8pt } { 10pt } \selectfont
+  }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\hook_gput_code:nnn { begindocument } { . }
+  {
+    \DeclareInstanceCopy { header } { cover } { std }
+    \EditInstance { header } { cover }
+      {
+        , height = \c_@@_margin_cover_dim +
+                   2 \c_@@_grid_row_cover_dim
+        , print-frame-title = false
+      }
+    \DeclareInstanceCopy { footer } { cover } { std }
+    \EditInstance { footer } { cover }
+      {
+        , element-order =
+      }
+  }
+%    \end{macrocode}
+%
+% \subsubsection{Frame headings}
+%
+%    \begin{macrocode}
+\tagpdfsetup
+  {
+    , role / new-tag = frame-heading / H5
+    , role / new-tag = frame-subheading / H6
+  }
+\AssignStructureRole { sec / 5 / title } { frame-heading }
+\NewStructureName    { sec / 6 }
+\AssignStructureRole { sec / 6 } { Sect }
+\NewStructureName    { sec / 6 / title }
+\AssignStructureRole { sec / 6 / title } { frame-subheading }
+\NewStructureName    { sec / 6 / number }
+% TODO: Rename section-number to heading-number at next LaTeX release
+\AssignStructureRole { sec / 6 / number } { section-number }
+\NewStructureName    { sec / 6 / fragment }
+\AssignStructureRole { sec / 6 / fragment } { Span }
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\DeclareInstance { heading } { frame-heading } { display }
+  {
+    , name                = frame-heading
+    , level               = 5
+    , before-vspace       = \medskipamount
+    , after-vspace        = \smallskipamount
+    , heading-decls       = \sffamily \Large \bfseries
+    , headformat-instance = frame-heading
+  }
+\DeclareInstance { heading } { frame-subheading } { display }
+  {
+    , name                = frame-subheading
+    , level               = 6
+    , before-vspace       = \medskipamount
+    , after-vspace        = \smallskipamount
+    , heading-decls       = \sffamily \large
+    , headformat-instance = frame-subheading
+  }
+\DeclareInstanceCopy { headformat } { frame-heading } { std }
+\DeclareInstanceCopy { headformat } { frame-subheading } { std }
+%    \end{macrocode}
+%
+% \begin{macro}{\TalkAUFrameHeading, \TalkAUFrameSubheading}
+%   Output headings and subheadings \emph{within} a frame. These are one level
+%   lower than the frame title.
+%   \begin{arguments}
+%     \item Overlay specification
+%     \item Heading text
+%   \end{arguments}
+%    \begin{macrocode}
+\NewDocumentCommand \TalkAUFrameHeading { D <> { all } m }
+  {
+    \__talk_if_overlay:nT {#1}
+      {
+        \ParseLaTeXeHeading { frame-heading } { \BooleanTrue } { } {#2}
+      }
+  }
+\NewDocumentCommand \TalkAUFrameSubheading { D <> { all } m }
+  {
+    \__talk_if_overlay:nT {#1}
+      {
+        \ParseLaTeXeHeading { frame-subheading } { \BooleanTrue } { } {#2}
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% \subsubsection{Frame designs}
+%
+% Add some extra keys for the |frame| environment.
+%
+%    \begin{macrocode}
+\keys_define:nn { talk / frame }
+  {
+    , design     .code:n           = \UseInstance { frame-design } {#1}
+    , font       .code:n           = #1
+    , font       .value_required:n = true
+    , grid       .bool_set:N       = \l_@@_grid_bool
+    , grid       .default:n        = true
+    , framestyle .code:n           = \pagestyle {#1}
+    , framestyle .value_required:n = true
+    , logo       .bool_set:N       = \l_@@_logo_bool
+    , logo       .default:n        = true
+    , logo       .initial:n        = true
+    , theme      .code:n           = \@@_theme_select:n {#1}
+    , theme      .value_required:n = true
+    , theme      .initial:n        = std
+  }
+%    \end{macrocode}
+%
+% Initialisation code run at the beginning of every |frame| environment.
+%
+%    \begin{macrocode}
+\hook_gput_code:nnn { env / frame / begin } { . }
+  {
+    \@@_frame_image_clear_all:
+    \keys_set:nn { talk / frame } { design = std }
+    \AssignTaggingSocketPlug { sec / begin } { noop }
+    \AssignTaggingSocketPlug { sec / end } { noop }
+  }
+%    \end{macrocode}
+%
 %    \begin{macrocode}
 \bool_new:N \g_@@_frame_design_grid_cover_bool
 \dim_new:N  \l_@@_xa_dim
@@ -1285,7 +1383,10 @@
     , logo           : boolean   = true
     , image-a-area   : tokenlist
     , image-b-area   : tokenlist
-    , image-bg-area  : tokenlist = { 0pt , - \paperheight , \paperwidth , 0pt }
+    , image-bg-area  : tokenlist = {
+                                     0pt , - \paperheight ,
+                                     \paperwidth , 0pt
+                                   }
     , angle-color    : tokenlist = alert
     , angle-position : tokenlist
     , super-bg-color : tokenlist
@@ -1375,7 +1476,104 @@
       }
     \keys_set:nV { talk / frame } \l_@@_frame_design_frame_keys_tl
   }
+%    \end{macrocode}
+%
+% Declare |frame-design| instances for the various Adelaide University
+% standard slide designs.
+%
+%    \begin{macrocode}
 \DeclareInstance { frame-design } { std } { talkau } { }
+\DeclareInstance { frame-design } { proven ~ a } { talkau }
+  {
+    , name         = proven ~ a
+    , text-area    = \TalkAUrect
+                       [ l ] { 1 } [ b ] {  3 }
+                       [ r ] { 6 } [ t ] { 15 }
+    , image-a-area = \TalkAUrect
+                       [ l ] {  7 } [ b ] {  3 }
+                       [ r ] { 12 } [ t ] { 18 }
+  }
+\DeclareInstance { frame-design } { proven ~ b } { talkau }
+  {
+    , name         = proven ~ b
+    , text-area    = \TalkAUrect
+                       [ l ] {  7 } [ b ] { 14 }
+                       [ r ] { 12 } [ t ] { 18 }
+    , image-a-area = \TalkAUrect
+                       [ l ] {  1 } [ b ] {  3 }
+                       [ r ] { 12 } [ t ] { 12 }
+  }
+\DeclareInstance { frame-design } { audacious } { talkau }
+  {
+    , name         = audacious
+    , text-area    = \TalkAUrect
+                       [ l ] {  6 } [ b ] { 11 }
+                       [ r ] { 12 } [ t ] { 18 }
+    , image-a-area = \TalkAUrect
+                       [ l ] { 1 } [ b ] { 10 }
+                       [ l ] { 4 } [ t ] { 16 }
+    , image-b-area = \TalkAUrect
+                       [ l ] {  4 } [ b ] { 3 }
+                       [ r ] { 12 } [ t ] { 9 }
+  }
+\DeclareInstance { frame-design } { statement-image } { talkau }
+  {
+    , name           = statement-image
+    , text-area      = \TalkAUrect
+                         [ c ] {  4 } [ b ] { 3 }
+                         [ r ] { 12 } [ t ] { 8 }
+    , image-a-area   = \TalkAUrect
+                         [ l ] { 1 } [ b ] {  3 }
+                         [ r ] { 3 } [ t ] { 12 }
+    , image-b-area   = \TalkAUrect
+                         [ c ] {  4 } [ b ] { 10 }
+                         [ r ] { 12 } [ t ] { 18 }
+    , angle-position = \TalkAUxy [ 0.2 ] { 3 } [ b ] { 11 }
+    , frame-keys     = {
+                         , font = \sffamily \bfseries
+                                    \@@_fontsize_from_capheight:nn
+                                      { \c_@@_grid_row_std_dim } { 1 }
+                       }
+  }
+\DeclareInstance { frame-design } { statement } { talkau }
+  {
+    , name        = statement
+    , text-area   = \TalkAUrect
+                      [ l ] {  1 } [ b ] {  3 }
+                      [ r ] { 12 } [ t ] { 18 }
+    , frame-keys  = {
+                      , font = \sffamily \bfseries
+                               \@@_fontsize_from_capheight:nn
+                                 { 1.6 \c_@@_grid_row_std_dim } { 1 }
+                    }
+  }
+%    \end{macrocode}
+%
+% \subsubsection{Title frames}
+%
+% \begin{macro}{\maketitle}
+%   Redefine \cs{maketitle} to use a plain |cover| design by default.
+%   \begin{arguments}
+%     \item Options to pass to the |titlepage| template
+%   \end{arguments}
+%    \begin{macrocode}
+\ExpandArgs { Nne } \RenewDocumentCommand \maketitle { O { } }
+  {
+    \exp_not:N \bool_if:NTF \exp_not:N \l__talk_frame_bool
+      { \exp_not:N \UseTemplate { titlepage } { talk } {#1} }
+      {
+        \exp_not:N \begin { frame } [ design = cover ]
+          \bool_if:NT \l__talk_frame_title_bool { { } }
+          \exp_not:N \UseTemplate { titlepage } { talk } {#1}
+        \exp_not:N \end { frame }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
+% Set up title page frame design instances.
+%
+%    \begin{macrocode}
 \EditInstance { titlepage-element } { title }
   {
     , before-skip = 0pt
@@ -1451,6 +1649,13 @@
                          , vertical-alignment = center
                        }
   }
+%    \end{macrocode}
+%
+% \subsubsection{Section frames}
+%
+% Set up |frame-design| for section frames.
+%
+%    \begin{macrocode}
 \DeclareInstance { frame-design } { section } { talkau }
   {
     , name           = section
@@ -1465,99 +1670,9 @@
                                     { 1.8 \c_@@_grid_row_std_dim } { 1 }
                        }
   }
-\DeclareInstance { frame-design } { proven ~ a } { talkau }
-  {
-    , name         = proven ~ a
-    , text-area    = \TalkAUrect
-                       [ l ] { 1 } [ b ] {  3 }
-                       [ r ] { 6 } [ t ] { 15 }
-    , image-a-area = \TalkAUrect
-                       [ l ] {  7 } [ b ] {  3 }
-                       [ r ] { 12 } [ t ] { 18 }
-  }
-\DeclareInstance { frame-design } { proven ~ b } { talkau }
-  {
-    , name         = proven ~ b
-    , text-area    = \TalkAUrect
-                       [ l ] {  7 } [ b ] { 14 }
-                       [ r ] { 12 } [ t ] { 18 }
-    , image-a-area = \TalkAUrect
-                       [ l ] {  1 } [ b ] {  3 }
-                       [ r ] { 12 } [ t ] { 12 }
-  }
-\DeclareInstance { frame-design } { audacious } { talkau }
-  {
-    , name         = audacious
-    , text-area    = \TalkAUrect
-                       [ l ] {  6 } [ b ] { 11 }
-                       [ r ] { 12 } [ t ] { 18 }
-    , image-a-area = \TalkAUrect
-                       [ l ] { 1 } [ b ] { 10 }
-                       [ l ] { 4 } [ t ] { 16 }
-    , image-b-area = \TalkAUrect
-                       [ l ] {  4 } [ b ] { 3 }
-                       [ r ] { 12 } [ t ] { 9 }
-  }
-\DeclareInstance { frame-design } { statement-image } { talkau }
-  {
-    , name           = statement-image
-    , text-area      = \TalkAUrect
-                         [ c ] {  4 } [ b ] { 3 }
-                         [ r ] { 12 } [ t ] { 8 }
-    , image-a-area   = \TalkAUrect
-                         [ l ] { 1 } [ b ] {  3 }
-                         [ r ] { 3 } [ t ] { 12 }
-    , image-b-area   = \TalkAUrect
-                         [ c ] {  4 } [ b ] { 10 }
-                         [ r ] { 12 } [ t ] { 18 }
-    , angle-position = \TalkAUxy [ 0.2 ] { 3 } [ b ] { 11 }
-    , frame-keys     = {
-                         , font = \sffamily \bfseries
-                                    \@@_fontsize_from_capheight:nn
-                                      { \c_@@_grid_row_std_dim } { 1 }
-                       }
-  }
-\DeclareInstance { frame-design } { statement } { talkau }
-  {
-    , name        = statement
-    , text-area   = \TalkAUrect
-                      [ l ] {  1 } [ b ] {  3 }
-                      [ r ] { 12 } [ t ] { 18 }
-    , frame-keys  = {
-                      , font = \sffamily \bfseries
-                               \@@_fontsize_from_capheight:nn
-                                 { 1.6 \c_@@_grid_row_std_dim } { 1 }
-                    }
-  }
 %    \end{macrocode}
 %
-%    \begin{macrocode}
-\hook_gput_code:nnn { env / frame / begin } { . }
-  {
-    \@@_frame_image_clear_all:
-    \keys_set:nn { talk / frame } { design = std }
-    \AssignTaggingSocketPlug { sec / begin } { noop }
-    \AssignTaggingSocketPlug { sec / end } { noop }
-  }
-%    \end{macrocode}
-%
-% Redefine \cs{maketitle} to use a plain |cover| design by default.
-%
-%    \begin{macrocode}
-\ExpandArgs { Nne } \RenewDocumentCommand \maketitle { O {} }
-  {
-    \exp_not:N \bool_if:NTF \exp_not:N \l__talk_frame_bool
-      { \exp_not:N \UseTemplate { titlepage } { talk } {#1} }
-      {
-        \exp_not:N \begin { frame } [ design = cover ]
-          \bool_if:NT \l__talk_frame_title_bool { { } }
-          \exp_not:N \UseTemplate { titlepage } { talk } {#1}
-        \exp_not:N \end { frame }
-      }
-  }
-%    \end{macrocode}
-%
-% Section slides
+% Set up template to format \cs{section} headings.
 %
 %    \begin{macrocode}
 \NewTemplateType { section-frame } { 1 }
@@ -1572,8 +1687,7 @@
     , theme    = \l_@@_section_frame_theme_tl
   }
   {
-    %\exp_args:Nnne
-      \SetKnownTemplateKeys { section-frame } { talkau } {#1}
+    \SetKnownTemplateKeys { section-frame } { talkau } {#1}
     \use:e
       {
         \exp_not:N \begin { frame }
@@ -1594,6 +1708,18 @@
       \l__talk_section_tl
     \end { frame }
   }
+%    \end{macrocode}
+%
+% \begin{macro}{\section}
+%   Redefine \cs{section} to insert a |section| frame.
+%   \begin{arguments}
+%     \item Starred variant to exclude the section from the TOC
+%     \item Overlay specification
+%     \item Optional arguments (these are also passed to the |section-frame|
+%       template)
+%     \item Section heading text
+%   \end{arguments}
+%    \begin{macrocode}
 \keys_define:nn { talk / heading }
   {
     , unknown .code:n =
@@ -1611,6 +1737,7 @@
       }
   }
 %    \end{macrocode}
+% \end{macro}
 %
 %    \begin{macrocode}
 %</class>
