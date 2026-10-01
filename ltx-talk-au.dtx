@@ -172,6 +172,16 @@
 %    \end{macrocode}
 % \end{macro}
 %
+% \begin{macro}{\TalkAUFontSizeFromCapHeight}
+%   \LaTeX{} interface for \cs{@@_fontsize_from_capheight:nn}.
+%    \begin{macrocode}
+\NewDocumentCommand \TalkAUFontSizeFromCapHeight { m m }
+  {
+    \@@_fontsize_from_capheight:nn {#1} {#2}
+  }
+%    \end{macrocode}
+% \end{macro}
+%
 % \subsection{Language}
 %
 % Change default date style to Australian.
@@ -1649,6 +1659,54 @@
   }
 %    \end{macrocode}
 %
+% \subsubsection{Acknowledgement of country frame}
+%
+% \begin{macro}{\TalkAUAcknowledgementCountry}
+%   Insert acknowledgement of country slide.
+%   \begin{arguments}
+%     \item Mode specification
+%   \end{arguments}
+%    \begin{macrocode}
+\NewDocumentCommand \TalkAUAcknowledgementCountry { D <> { all } }
+  {
+    \bool_if:NF \l__talk_frame_bool
+      {
+        \__talk_if_overlay:nT {#1}
+          {
+            \group_begin:
+              \EditInstance { frame-design } { cover-super }
+                {
+                  , super-bg-color = purple
+                  , super-fg-color = purple!90
+                }
+              \begin { frame }
+                [
+                  , design = cover-super
+                  , font   = \fontsize { 16 } { 24 }
+                             \bfseries
+                             \color { white }
+                ]
+                \hbox_set:Nn \l_tmpa_box
+                  { We ~ respectfully ~ acknowledge ~ the ~ Kaurna, }
+                \centering
+                \parbox { \box_wd:N \l_tmpa_box }
+                  {
+                    \raggedright
+                    We ~ respectfully ~ acknowledge ~ the ~ Kaurna, ~
+                    Boandik, ~ and ~ Barngarla ~ First ~ Nations ~
+                    People ~ and ~ their ~ Elders ~ past ~ and ~ Present, ~
+                    who ~ are ~ the ~ Traditional ~ Owners ~ of ~ the ~
+                    lands ~ that ~ are ~ home ~ to ~ our ~ campuses ~
+                    across ~ Adelaide ~ and ~ South ~ Australia.
+                  }
+              \end { frame }
+            \group_end:
+          }
+      }
+  }
+%    \end{macrocode}
+% \end{macro}
+%
 % \subsubsection{Section frames}
 %
 % Set up |frame-design| for section frames.
@@ -1712,7 +1770,7 @@
 %   Redefine \cs{section} to insert a |section| frame.
 %   \begin{arguments}
 %     \item Starred variant to exclude the section from the TOC
-%     \item Overlay specification
+%     \item Mode specification
 %     \item Optional arguments (these are also passed to the |section-frame|
 %       template)
 %     \item Section heading text
