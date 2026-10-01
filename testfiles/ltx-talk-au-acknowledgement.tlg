@@ -63,23 +63,6 @@ LaTeX template Info: Declaring instance 'cover-super' of type frame-design on li
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
-LaTeX Font Info:    Calculating math sizes for size <16> on input line ....
-LaTeX Font Info:    Trying to load font information for TU+lmr-base on input line ....
-(../tulmr-base.fd
-File: tulmr-base.fd ....-..-.. v... LaTeX font definitions for Latin Modern in base mode
-)
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
-(Font)              size <17.28> substituted on input line ....
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line ....
-LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line ....
-LaTeX Font Info:    Font shape `TU/STIXTwoMath(0)/m/n' will be
-(Font)              scaled to size 17.18384pt on input line ....
-LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
-(Font)              scaled to size 12.02863pt on input line ....
-LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
-(Font)              scaled to size 8.59192pt on input line ....
 Completed box being shipped out [1]
 \vbox(190.41962+0.0)x411.69029, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -193,11 +176,12 @@ Completed box being shipped out [1]
 ....\write-{}
 ....\pdfcolorstack 0 push {1.0 g 1.0 G}
 ....\glue(\topskip) 0.0
-....\vbox(180.6276+0.0)x462.12233, glue set 48.0676fil, direction TLT
+....\vbox(180.6276+0.0)x462.12233, direction TLT
 .....\glue 0.0 plus 0.5fil
-.....\hbox(70.71342+61.84657)x462.12233, direction TLT
-......\vbox(70.71342+61.84657)x462.12233, direction TLT
-.......\hbox(70.71342+61.84657)x462.12233, glue set 50.70114fil, direction TLT
+.....\hbox(180.6276+0.0)x462.12233, direction TLT
+......\vbox(180.6276+0.0)x462.12233, glue set 48.0676fil, direction TLT
+.......\glue 0.0 plus 0.5fil
+.......\hbox(12.288+120.272)x462.12233, glue set 50.70114fil, direction TLT
 ........\glue(\leftskip) 0.0 plus 1.0fil
 ........\localpar
 .........\localinterlinepenalty=0
@@ -205,7 +189,7 @@ Completed box being shipped out [1]
 .........\localleftbox=null
 .........\localrightbox=null
 ........\hbox(0.0+0.0)x0.0, direction TLT
-........\vbox(70.71342+61.84657)x360.72005, direction TLT
+........\vbox(12.288+120.272)x360.72005, direction TLT
 .........\hbox(12.288+3.92)x360.72005, direction TLT
 ..........\localpar
 ...........\localinterlinepenalty=0
@@ -596,6 +580,7 @@ Completed box being shipped out [1]
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0
 ........\glue(\rightskip) 0.0 plus 1.0fil
+.......\glue 0.0 plus 0.5fil
 .....\glue 0.0 plus 0.5fil
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
@@ -646,8 +631,6 @@ Completed box being shipped out [1]
 .\kern190.41962
 .\pdfliteral page <lua data reference ...>
 <<latex-list-css.html>><<latex-align-css.html>> (ltx-talk-au-acknowledgement.aux)
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.28pt have occurred.
 MathML statistic
 ================
 ==> 0 MathML fragments read
