@@ -7,10 +7,66 @@
 
 \begin{document}
 
-\begin{frame}[design=cover-super]
-  \title{ltx-talk-au Example Slides}
+\begin{frame}[design=cover]
+  \title{ltx-talk-au example slides}
   \subtitle{Subtitle goes here}
   \maketitle
+\end{frame}
+
+\begin{frame}[design=cover, tag-slides=0]
+  \TalkAUFrameImage[bg, alt=Example Image]{example-image.jpg}
+  \title{Enabling success\\ for South Australia}
+  \subtitle{Subtitle goes here}
+  \maketitle
+\end{frame}
+
+\begingroup
+\EditInstance{titlepage-element}{subtitle}{color=white}
+\begin{frame}[design=cover, tag-slides=0, theme=darkblue]
+  \TalkAUFrameImage[bg, alt=Example Image]{example-image.jpg}
+  \title{Enabling success\\ for South Australia}
+  \subtitle{Subtitle goes here}
+  \maketitle
+\end{frame}
+
+\EditInstance{frame-design}{cover-angle}{angle-color=white}
+\begin{frame}[design=cover-angle, tag-slides=0, theme=darkblue]
+  \TalkAUFrameImage[a, alt=Example Image A]{example-image-a.jpg}
+  \TalkAUFrameImage[b, alt=Example Image B]{example-image-b.jpg}
+  \title{Enabling success\\ for South Australia}
+  \subtitle{Subtitle goes here}
+  \maketitle
+\end{frame}
+\endgroup
+
+\begin{frame}[design=cover-angle, tag-slides=0]
+  \TalkAUFrameImage[a, alt=Example Image A]{example-image-a.jpg}
+  \TalkAUFrameImage[b, alt=Example Image B]{example-image-b.jpg}
+  \title{Enabling success\\ for South Australia}
+  \subtitle{Subtitle goes here}
+  \maketitle
+\end{frame}
+
+\begin{frame}[design=cover-super, tag-slides=0]
+  \title{Enabling success\\ for South Australia}
+  \subtitle{Subtitle goes here}
+  \maketitle
+\end{frame}
+
+\begingroup
+\EditInstance{frame-design}{cover-super}
+  {super-bg-color=purple, super-fg-color=purple!90}
+\EditInstance{titlepage-element}{subtitle}{color=darkblue}
+\EditInstance{titlepage-element}{date}{color=darkblue}
+\begin{frame}[design=cover-super, tag-slides=0, theme=darkblue]
+  \title{Enabling success\\ for South Australia}
+  \subtitle{Subtitle goes here}
+  \maketitle
+\end{frame}
+\endgroup
+
+\begin{frame}[framestyle=plain, logo=false]
+  \TalkAUFrameImage[bg, alt=Example Image]{example-image.jpg}
 \end{frame}
 
 \TalkAUAcknowledgementCountry
@@ -40,6 +96,12 @@
   Large statement—as appropriate in key statements and quotes, a key word or
   short phrase may be in another colour for \alert{emphasis}.
 \end{frame}
+
+\section{Divider headline goes here}
+
+\section[theme=darkblue]{Divider headline goes here}
+
+\section[theme=limestone]{Divider headline goes here}
 
 \section[theme=purple]{Divider headline goes here}
 
