@@ -1243,10 +1243,13 @@
 \EditInstance { footer } { std }
   {
     , color         = structure
-    , left-hspace   = \c_@@_margin_cover_dim
+    , left-hspace   = \c_@@_margin_cover_dim +
+                      2 \c_@@_grid_column_width_dim +
+                      2 \c_@@_grid_column_sep_dim
     , right-hspace  = \c_@@_margin_cover_dim
     , element-order = { framenumber }
     , font          = \raggedleft \fontsize { 8pt } { 10pt } \selectfont
+    , separator     = \hfill
   }
 %    \end{macrocode}
 %

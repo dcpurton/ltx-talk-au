@@ -544,12 +544,12 @@ Completed box being shipped out [1]
 ....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
 ....\hbox(5.104+0.0)x328.4349, direction TLT
 .....\glue -155.52538
-.....\glue 21.83795
-.....\vbox(5.104+0.0)x462.15086, direction TLT
+.....\glue 99.73694
+.....\vbox(5.104+0.0)x384.25188, direction TLT
 ......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
 ......\glue(\parskip) 0.0
 ......\glue(\parskip) 0.0
-......\hbox(5.104+0.0)x462.15086, glue set 457.67087fil, direction TLT
+......\hbox(5.104+0.0)x384.25188, glue set 379.77188fil, direction TLT
 .......\glue(\leftskip) 0.0 plus 1.0fil
 .......\localpar
 ........\localinterlinepenalty=0

@@ -390,12 +390,12 @@ Completed box being shipped out [1]
 ....\pdfcolorstack 0 push {1.0 g 1.0 G}
 ....\hbox(5.104+0.0)x462.12233, direction TLT
 .....\glue -21.83795
-.....\glue 21.83795
-.....\vbox(5.104+0.0)x462.15086, direction TLT
+.....\glue 99.73694
+.....\vbox(5.104+0.0)x384.25188, direction TLT
 ......\pdfcolorstack 0 push {1.0 g 1.0 G}
 ......\glue(\parskip) 0.0
 ......\glue(\parskip) 0.0
-......\hbox(5.104+0.0)x462.15086, glue set 457.67087fil, direction TLT
+......\hbox(5.104+0.0)x384.25188, glue set 379.77188fil, direction TLT
 .......\glue(\leftskip) 0.0 plus 1.0fil
 .......\localpar
 ........\localinterlinepenalty=0
