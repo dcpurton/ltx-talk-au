@@ -1716,6 +1716,12 @@
 % Set up |frame-design| for section frames.
 %
 %    \begin{macrocode}
+\int_set:Nn \c@secnumdepth { 1 }
+\cs_set:Npn \thesection
+  {
+    \int_compare:nNnT { \c@section } < { 10 } { 0 }
+    \@arabic \c@section
+  }
 \DeclareInstance { frame-design } { section } { talkau }
   {
     , name           = section
@@ -1757,7 +1763,6 @@
               , theme      = \l_@@_section_frame_theme_tl
             ]
       }
-      \int_compare:nNnT { \c@section } < { 10 } { 0 }
       \thesection
       \par
       \skip_vertical:n { 0.25 \c_@@_grid_row_std_dim }
