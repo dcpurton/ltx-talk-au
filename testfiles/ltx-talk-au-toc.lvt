@@ -1,0 +1,20 @@
+\DocumentMetadata{
+  , lang        = en
+  , pdfstandard = ua-2
+  , tagging     = on
+}
+\input{regression-test}
+\documentclass[testnational2]{ltx-talk-au}
+\begin{filecontents}[overwrite]{\jobname.toc}
+\contentsline{section}{\numberline{01}First section}{2}{section.1}%
+\contentsline{section}{\numberline{02}Second section}{3}{section.2}%
+\contentsline{section}{\numberline{03}Third section}{4}{section.3}%
+\end{filecontents}
+\AddToDocumentProperties[hyperref]
+  {pdftitle}
+  {ltx-talk-au section test file}
+\begin{document}
+\START
+\showoutput
+\tableofcontents
+\end{document}
