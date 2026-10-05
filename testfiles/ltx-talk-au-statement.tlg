@@ -159,10 +159,11 @@ Completed box being shipped out [1]
 ....\write-{}
 ....\pdfcolorstack 0 push {1.0 g 1.0 G}
 ....\glue(\topskip) 0.0
-....\vbox(223.80273+0.0)x462.12233, glue set 94.17754fil, direction TLT
+....\vbox(223.80273+0.0)x462.12233, direction TLT
 .....\glue 0.0
-.....\hbox(124.16412+5.46107)x462.12233, direction TLT
-......\vbox(124.16412+5.46107)x462.12233, direction TLT
+.....\hbox(223.80273+0.0)x462.12233, direction TLT
+......\vbox(223.80273+0.0)x462.12233, glue set 94.17754fil, direction TLT
+.......\glue 0.0
 .......\hbox(23.6535+5.72911)x462.12233, glue set 17.69783fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
@@ -376,6 +377,7 @@ Completed box being shipped out [1]
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
+.......\glue 0.0 plus 1.0fil
 .....\glue 0.0 plus 1.0fil
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>

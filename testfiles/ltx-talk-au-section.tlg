@@ -185,15 +185,16 @@ Completed box being shipped out [1]
 ....\pdfdest name{Doc-Start} xyz
 ....\pdfdest name{section.1} xyz
 ....\pdfdest name{section.1} xyz
-....\write1{\@writefile{toc}{\protect \contentsline {section}{Divider headline here}{\thepage }{section.1}\protected@file@percent }}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {01}Divider headline here}{\thepage }{section.1}\protected@file@percent }}
 ....\write-{}
 ....\write-{}
 ....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
 ....\glue(\topskip) 0.0
-....\vbox(160.85822+0.0)x462.12233, glue set 87.88902fil, direction TLT
+....\vbox(160.85822+0.0)x462.12233, direction TLT
 .....\glue 0.0
-.....\hbox(72.66766+0.30153)x462.12233, direction TLT
-......\vbox(72.66766+0.30153)x462.12233, direction TLT
+.....\hbox(160.85822+0.0)x462.12233, direction TLT
+......\vbox(160.85822+0.0)x462.12233, glue set 87.88902fil, direction TLT
+.......\glue 0.0
 .......\hbox(25.47937+0.30153)x462.12233, glue set 217.1342fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
@@ -253,6 +254,7 @@ Completed box being shipped out [1]
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
+.......\glue 0.0 plus 1.0fil
 .....\glue 0.0 plus 1.0fil
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>

@@ -136,10 +136,12 @@ Completed box being shipped out [1]
 ....\write-{}
 ....\write-{}
 ....\glue(\topskip) 0.0
-....\vbox(180.6276+0.0)x0.0, glue set 180.6276fil, direction TLT
+....\vbox(180.6276+0.0)x0.0, direction TLT
 .....\glue 0.0 plus 0.5fil
-.....\hbox(0.0+0.0)x0.0, direction TLT
-......\vbox(0.0+0.0)x0.0, direction TLT
+.....\hbox(180.6276+0.0)x0.0, direction TLT
+......\vbox(180.6276+0.0)x0.0, glue set 180.6276fil, direction TLT
+.......\glue 0.0 plus 0.5fil
+.......\glue 0.0 plus 0.5fil
 .....\glue 0.0 plus 0.5fil
 ....\write1{\new@label@record{frame.1}{{slides}{1}}}
 ....\glue 0.0 plus 1.0fil
@@ -392,10 +394,12 @@ Completed box being shipped out [2]
 ....\write-{}
 ....\write-{}
 ....\glue(\topskip) 0.0
-....\vbox(181.83972+0.0)x0.0, glue set 181.83972fil, direction TLT
+....\vbox(181.83972+0.0)x0.0, direction TLT
 .....\glue 0.0
-.....\hbox(0.0+0.0)x0.0, direction TLT
-......\vbox(0.0+0.0)x0.0, direction TLT
+.....\hbox(181.83972+0.0)x0.0, direction TLT
+......\vbox(181.83972+0.0)x0.0, glue set 181.83972fil, direction TLT
+.......\glue 0.0
+.......\glue 0.0 plus 1.0fil
 .....\glue 0.0 plus 1.0fil
 ....\write1{\new@label@record{frame.2}{{slides}{1}}}
 ....\glue 0.0 plus 1.0fil

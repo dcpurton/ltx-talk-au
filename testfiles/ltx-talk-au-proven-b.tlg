@@ -261,10 +261,11 @@ Completed box being shipped out [1]
 ....\write-{}
 ....\write-{}
 ....\glue(\topskip) 0.0
-....\vbox(69.93835+0.0)x228.42537, glue set 5.75835fil, direction TLT
+....\vbox(69.93835+0.0)x228.42537, direction TLT
 .....\glue 0.0
-.....\hbox(61.74+2.44)x228.42537, direction TLT
-......\vbox(61.74+2.44)x228.42537, direction TLT
+.....\hbox(69.93835+0.0)x228.42537, direction TLT
+......\vbox(69.93835+0.0)x228.42537, glue set 5.75835fil, direction TLT
+.......\glue 0.0
 .......\hbox(7.74+2.23)x228.42537, glue set 15.8054fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
@@ -547,6 +548,7 @@ Completed box being shipped out [1]
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
+.......\glue 0.0 plus 1.0fil
 .....\glue 0.0 plus 1.0fil
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>

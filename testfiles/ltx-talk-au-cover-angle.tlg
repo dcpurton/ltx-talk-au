@@ -287,10 +287,11 @@ Completed box being shipped out [1]
 ....\write-{}
 ....\pdfcolorstack 0 push {1.0 g 1.0 G}
 ....\glue(\topskip) 0.0
-....\vbox(180.6276+0.0)x306.32436, glue set 36.8666fil, direction TLT
+....\vbox(180.6276+0.0)x306.32436, direction TLT
 .....\glue 0.0 plus 0.5fil
-.....\hbox(143.761+0.0)x306.32436, direction TLT
-......\vbox(143.761+0.0)x306.32436, direction TLT
+.....\hbox(180.6276+0.0)x306.32436, direction TLT
+......\vbox(180.6276+0.0)x306.32436, glue set 36.8666fil, direction TLT
+.......\glue 0.0 plus 0.5fil
 .......\penalty 0
 .......\glue 6.0 plus 2.0
 .......\glue -6.0 plus -2.0
@@ -435,7 +436,7 @@ Completed box being shipped out [1]
 .......\glue(\parskip) 6.0 plus 2.0
 .......\glue(\parskip) 0.0
 .......\glue(\lineskip) 0.0
-.......\hbox(6.42804+1.8911)x306.32436, glue set 113.10144fil, direction TLT
+.......\hbox(6.42804+1.8911)x306.32436, glue set 111.69795fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
 .........\localbrokenpenalty=0
@@ -444,30 +445,31 @@ Completed box being shipped out [1]
 ........\hbox(0.0+0.0)x0.0, direction TLT
 ........\pdfliteral page <lua data reference ...>
 ........\pdfliteral page <lua data reference ...>
-........\TU/RobotoSerif(0)/m/n/8.48026 2
-........\TU/RobotoSerif(0)/m/n/8.48026 8
-........\TU/RobotoSerif(0)/m/n/8.48026  
+........\TU/RobotoSerif(0)/b/n/8.48026 2
+........\TU/RobotoSerif(0)/b/n/8.48026 8
+........\TU/RobotoSerif(0)/b/n/8.48026  
 ........\glue(\spaceskip) 0.0 plus 1.10243 minus 0.73495
-........\TU/RobotoSerif(0)/m/n/8.48026 S
-........\kern0.11024 (font)
-........\TU/RobotoSerif(0)/m/n/8.48026 e
-........\TU/RobotoSerif(0)/m/n/8.48026 p
-........\TU/RobotoSerif(0)/m/n/8.48026 t
-........\kern-0.08481 (font)
-........\TU/RobotoSerif(0)/m/n/8.48026 e
-........\TU/RobotoSerif(0)/m/n/8.48026 m
+........\TU/RobotoSerif(0)/b/n/8.48026 S
+........\kern0.15265 (font)
+........\TU/RobotoSerif(0)/b/n/8.48026 e
+........\TU/RobotoSerif(0)/b/n/8.48026 p
+........\TU/RobotoSerif(0)/b/n/8.48026 t
+........\kern-0.09328 (font)
+........\TU/RobotoSerif(0)/b/n/8.48026 e
+........\TU/RobotoSerif(0)/b/n/8.48026 m
 ........\discretionary (penalty 50)
-.........< \TU/RobotoSerif(0)/m/n/8.48026 -
-.........= \kern-0.10176 (font)
-........\TU/RobotoSerif(0)/m/n/8.48026 b
-........\TU/RobotoSerif(0)/m/n/8.48026 e
-........\TU/RobotoSerif(0)/m/n/8.48026 r
-........\TU/RobotoSerif(0)/m/n/8.48026  
+.........< \kern-0.02544 (font)
+.........< \TU/RobotoSerif(0)/b/n/8.48026 -
+.........= \kern-0.0424 (font)
+........\TU/RobotoSerif(0)/b/n/8.48026 b
+........\TU/RobotoSerif(0)/b/n/8.48026 e
+........\TU/RobotoSerif(0)/b/n/8.48026 r
+........\TU/RobotoSerif(0)/b/n/8.48026  
 ........\glue(\spaceskip) 0.0 plus 1.10243 minus 0.73495
-........\TU/RobotoSerif(0)/m/n/8.48026 2
-........\TU/RobotoSerif(0)/m/n/8.48026 0
-........\TU/RobotoSerif(0)/m/n/8.48026 2
-........\TU/RobotoSerif(0)/m/n/8.48026 6
+........\TU/RobotoSerif(0)/b/n/8.48026 2
+........\TU/RobotoSerif(0)/b/n/8.48026 0
+........\TU/RobotoSerif(0)/b/n/8.48026 2
+........\TU/RobotoSerif(0)/b/n/8.48026 6
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
@@ -478,6 +480,7 @@ Completed box being shipped out [1]
 .......\glue 0.0
 .......\penalty 0
 .......\glue 0.0
+.......\glue 0.0 plus 0.5fil
 .....\glue 0.0 plus 0.5fil
 ....\write1{\new@label@record{frame.1}{{slides}{1}}}
 ....\glue 0.0 plus 1.0fil
