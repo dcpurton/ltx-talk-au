@@ -184,6 +184,12 @@
 %
 % \subsection{Language}
 %
+% Set \cs{contentsname} string.
+%
+%    \begin{macrocode}
+\tl_set:Nn \contentsname { Contents }
+%    \end{macrocode}
+%
 % Change default date style to Australian.
 %
 %    \begin{macrocode}
@@ -1803,6 +1809,43 @@
   }
 %    \end{macrocode}
 % \end{macro}
+%
+% \subsubsection{Table of contents frames}
+%
+%    \begin{macrocode}
+\hook_gput_code:nnn { contentsline / page / after } { . }
+  {
+    \vspace { 2ex }
+  }
+\cs_set_protected:Npn \l@section #1#2
+  {
+    \__talk_toc_aux:nnnn { 1 } { \mdseries } {#1} {#2}
+  }
+\RenewDocumentCommand \numberline { m }
+  {
+    \sffamily \LARGE \color { structure }
+    \hbox_to_wd:nn { 1.5em } {#1 \hfill }
+  }
+\RenewDocumentCommand \tableofcontents { O { } }
+  {
+    \bool_if:NTF \l__talk_frame_bool
+      {
+        \group_begin:
+          \@starttoc { toc }
+          \vfill
+        \group_end:
+      }
+      {
+        \begin { frame }
+          \frametitle { \contentsname }
+          \group_begin:
+            \@starttoc { toc }
+            \vfill
+          \group_end:
+        \end { frame }
+      }
+  }
+%    \end{macrocode}
 %
 %    \begin{macrocode}
 %</class>
