@@ -691,66 +691,9 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\@@_grid_dx:nnn}
-%   Calculate the distance between the left-hand side of |#2| and the
-%   right-hand side of |#3| in points. If |#1| is |true| then calculate the
-%   distance between the centre of the cells.
-%   \begin{arguments}
-%     \item Set to |true| to calculate the distance from the centre of the
-%       cells
-%     \item Left-hand $x$ grid cell number (1–12)
-%     \item Right-hand $x$ grid cell number (1–12)
-%   \end{arguments}
-%    \begin{macrocode}
-\cs_new:Nn \@@_grid_dx:nnn
-  {
-    \dim_abs:n
-      {
-        \bool_if:nTF {#1}
-          {
-            \@@_grid_x:nn { c } {#3} - \@@_grid_x:nn { c } {#2}
-          }
-          {
-            \@@_grid_x:nn { r } {#3} - \@@_grid_x:nn { l } {#2}
-          }
-      }
-  }
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\@@_grid_dy:nnn}
-%   Calculate the distance between the bottom side of |#2| and the top side of
-%   |#3| into points. If |#1| is |true| then calculate the distance between
-%   the centre of the cells.
-%   \begin{arguments}
-%     \item Set to |true| to calculate the distance from the centre of the
-%       cells
-%     \item Bottom $y$ grid cell number (1–18 for std layout and 1–12 for
-%       cover layout)
-%     \item Top $y$ grid cell number (1–18 for std layout and 1–12 for cover
-%     layout)
-%   \end{arguments}
-%    \begin{macrocode}
-\cs_new:Nn \@@_grid_dy:nnn
-  {
-    \dim_abs:n
-      {
-        \bool_if:nTF {#1}
-          {
-            \@@_grid_y:nn { c } {#3} - \@@_grid_y:nn { c } {#2}
-          }
-          {
-            \@@_grid_y:nn { t } {#3} - \@@_grid_y:nn { b } {#2}
-          }
-      }
-  }
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\TalkAUx, \TalkAUy, \TalkAUxy, \TalkAUrect, \Talkdx, \Talkdy}
+% \begin{macro}{\TalkAUx, \TalkAUy, \TalkAUxy, \TalkAUrect}
 %   \LaTeX{} interfaces for \cs{@@_grid_x:nn}, \cs{@@_grid_y:nn},
-%   \cs{@@_grid_xy:nnnn}, \cs{@@_grid_rect:nnnnnnnn} ,\cs{@@_grid_dx:nnn} and
-%   \cs{@@_grid_dy:nnn}.
+%   \cs{@@_grid_xy:nnnn} and \cs{@@_grid_rect:nnnnnnnn}.
 %    \begin{macrocode}
 \NewExpandableDocumentCommand \TalkAUx { O { c } m }
   {
@@ -768,14 +711,6 @@
   { O { c } m O { c } m O { c } m O { c } m }
   {
     \@@_grid_rect:nnnnnnnn {#1} {#2} {#3} {#4} {#5} {#6} {#7} {#8}
-  }
-\NewExpandableDocumentCommand \TalkAUdx { s m m }
-  {
-    \@@_grid_dx:nnn {#1} {#2} {#3}
-  }
-\NewExpandableDocumentCommand \TalkAUdy { s m m }
-  {
-    \@@_grid_dy:nnn {#1} {#2} {#3}
   }
 %    \end{macrocode}
 % \end{macro}
