@@ -1287,19 +1287,19 @@
 %    \begin{macrocode}
 \keys_define:nn { talk / frame }
   {
-    , design     .code:n           = \UseInstance { frame-design } {#1}
-    , font       .code:n           = #1
-    , font       .value_required:n = true
-    , grid       .bool_set:N       = \l_@@_grid_bool
-    , grid       .default:n        = true
-    , framestyle .code:n           = \pagestyle {#1}
-    , framestyle .value_required:n = true
-    , logo       .bool_set:N       = \l_@@_logo_bool
-    , logo       .default:n        = true
-    , logo       .initial:n        = true
-    , theme      .code:n           = \@@_theme_select:n {#1}
-    , theme      .value_required:n = true
-    , theme      .initial:n        = std
+    , design      .code:n           = \UseInstance { frame-design } {#1}
+    , font        .code:n           = #1
+    , font        .value_required:n = true
+    , grid        .bool_set:N       = \l_@@_grid_bool
+    , grid        .default:n        = true
+    , frame-style .code:n           = \pagestyle {#1}
+    , frame-style .value_required:n = true
+    , logo        .bool_set:N       = \l_@@_logo_bool
+    , logo        .default:n        = true
+    , logo        .initial:n        = true
+    , theme       .code:n           = \@@_theme_select:n {#1}
+    , theme       .value_required:n = true
+    , theme       .initial:n        = std
   }
 %    \end{macrocode}
 %
@@ -1552,7 +1552,7 @@
 \EditTemplateDefaults { titlepage } { talk }
   {
     , element-order        = { title , subtitle , date }
-    , framestyle           = plain
+    , frame-style          = plain
     , horizontal-alignment = left
   }
 \DeclareInstance { frame-design } { cover } { talkau }
@@ -1563,7 +1563,7 @@
                       [ l ] {  1 } [ b ] {  2 }
                       [ r ] { 12 } [ t ] { 10 }
     , frame-keys  = {
-                      , framestyle         = plain
+                      , frame-style        = plain
                       , vertical-alignment = center
                     }
   }
@@ -1584,7 +1584,7 @@
                        }
     , angle-position = \TalkAUxy [ r ] { 9 } [ b ] { 5 }
     , frame-keys     = {
-                         , framestyle         = plain
+                         , frame-style        = plain
                          , vertical-alignment = center
                        }
   }
@@ -1598,7 +1598,7 @@
     , super-bg-color = black!10
     , super-fg-color = white
     , frame-keys     = {
-                         , framestyle         = plain
+                         , frame-style        = plain
                          , vertical-alignment = center
                        }
   }
