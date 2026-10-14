@@ -77,13 +77,14 @@
 \LoadClass { ltx-talk }
 %    \end{macrocode}
 %
-% Always use Roboto Serif for body font since this font is in \TeX Live. Use
-% Stix 2 for maths.  Heading font is more complicated. Use National 2
-% Condensed if available, otherwise fall back to Barlow Condensed (you'll need
-% to download and install this font).  For testing, a test version of National
-% 2 Condensed with limited character support and no OpenType features exists.
-% \pkg{ltx-talk-au} can be instructed to use this font, falling back to Barlow
-% Condensed for missing characters.
+% Always use \emph{Roboto Serif} for body font since this font is in \TeX
+% Live. Use \emph{TeX Gyre DejaVu Math} for maths. Heading font is more
+% complicated. Use \emph{National 2 Condensed} if available, otherwise fall
+% back to \emph{Barlow Condensed} (you'll need to download and install this
+% font). For testing, a test version of \emph{National 2 Condensed} with
+% limited character support and no OpenType features exists. \pkg{ltx-talk-au}
+% can be instructed to use this font, falling back to \emph{Barlow Condensed}
+% for missing characters.
 %
 %    \begin{macrocode}
 \RequirePackage { fontspec }
@@ -128,7 +129,7 @@
           ]
       }
   }
-\setmathfont { STIX ~ Two ~ Math } [ Scale = MatchLowercase ]
+\setmathfont { TeX ~ Gyre ~ DejaVu ~ Math } [ Scale = MatchLowercase ]
 \setmathrm { Roboto ~ Serif }
 %    \end{macrocode}
 %
