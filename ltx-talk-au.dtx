@@ -1292,15 +1292,8 @@
 \keys_define:nn { talk / frame }
   {
     , design      .code:n           = \UseInstance { frame-design } {#1}
-    , font        .code:n           = #1
-    , font        .value_required:n = true
     , grid        .bool_set:N       = \l_@@_grid_bool
     , grid        .default:n        = true
-    , frame-style .code:n           = \pagestyle {#1}
-    , frame-style .value_required:n = true
-    , logo        .bool_set:N       = \l_@@_logo_bool
-    , logo        .default:n        = true
-    , logo        .initial:n        = true
     , theme       .code:n           = \@@_theme_select:n {#1}
     , theme       .value_required:n = true
     , theme       .initial:n        = std
@@ -1328,15 +1321,16 @@
 \int_new:N  \l_@@_grid_rows_int
 \tl_new:N   \l_@@_frame_design_grid_layout_tl
 \tl_new:N   \l_@@_frame_design_frame_keys_tl
+\tl_new:N   \l_@@_frame_design_framestyle_tl
 \NewTemplateType { frame-design } { 0 }
 \DeclareTemplateInterface { frame-design } { talkau } { 0 }
   {
-    , name           : tokenlist = std
+    , font           : tokenlist
+    , frame-style    : tokenlist
     , grid-layout    : choice { std , cover } = std
     , text-area      : tokenlist = \TalkAUrect
                                      [ l ] {  1 } [ b ] {  3 }
                                      [ r ] { 12 } [ t ] { 15 }
-    , logo           : boolean   = true
     , image-a-area   : tokenlist
     , image-b-area   : tokenlist
     , image-bg-area  : tokenlist = {
@@ -1351,7 +1345,8 @@
   }
 \DeclareTemplateCode { frame-design } { talkau } { 0 }
   {
-    , name           = global \g_@@_frame_design_name_tl
+    , font           = \l_@@_frame_design_font_tl
+    , frame-style    = \l_@@_frame_design_framestyle_tl
     , grid-layout    =
         {
           , std      = \tl_set:Nn \l_@@_frame_design_grid_layout_tl
@@ -1360,7 +1355,6 @@
                          { cover }
         }
     , text-area      = \l_@@_frame_design_text_area_tl
-    , logo           = \l_@@_frame_design_logo_bool
     , image-a-area   = global \g_@@_frame_design_image_a_area_tl
     , image-b-area   = global \g_@@_frame_design_image_b_area_tl
     , image-bg-area  = global \g_@@_frame_design_image_bg_area_tl
@@ -1430,6 +1424,11 @@
               { \l_@@_frame_design_super_fg_colour_tl }
           }
       }
+    \tl_if_empty:NF \l_@@_frame_design_framestyle_tl
+      {
+        \exp_args:NV \thispagestyle \l_@@_frame_design_framestyle_tl
+      }
+    \l_@@_frame_design_font_tl
     \keys_set:nV { talk / frame } \l_@@_frame_design_frame_keys_tl
   }
 %    \end{macrocode}
@@ -1441,7 +1440,6 @@
 \DeclareInstance { frame-design } { std } { talkau } { }
 \DeclareInstance { frame-design } { proven ~ a } { talkau }
   {
-    , name         = proven ~ a
     , text-area    = \TalkAUrect
                        [ l ] { 1 } [ b ] {  3 }
                        [ r ] { 6 } [ t ] { 15 }
@@ -1451,7 +1449,6 @@
   }
 \DeclareInstance { frame-design } { proven ~ b } { talkau }
   {
-    , name         = proven ~ b
     , text-area    = \TalkAUrect
                        [ l ] {  7 } [ b ] { 14 }
                        [ r ] { 12 } [ t ] { 18 }
@@ -1461,7 +1458,6 @@
   }
 \DeclareInstance { frame-design } { audacious } { talkau }
   {
-    , name         = audacious
     , text-area    = \TalkAUrect
                        [ l ] {  6 } [ b ] { 11 }
                        [ r ] { 12 } [ t ] { 18 }
@@ -1474,7 +1470,6 @@
   }
 \DeclareInstance { frame-design } { statement-image } { talkau }
   {
-    , name           = statement-image
     , text-area      = \TalkAUrect
                          [ c ] {  4 } [ b ] { 3 }
                          [ r ] { 12 } [ t ] { 8 }
@@ -1485,23 +1480,22 @@
                          [ c ] {  4 } [ b ] { 10 }
                          [ r ] { 12 } [ t ] { 18 }
     , angle-position = \TalkAUxy [ 0.2 ] { 3 } [ b ] { 11 }
-    , frame-keys     = {
-                         , font = \sffamily \bfseries
-                                    \@@_fontsize_from_capheight:nn
-                                      { \c_@@_grid_row_std_dim } { 1 }
-                       }
+    , font = \sffamily \bfseries
+             \@@_fontsize_from_capheight:nn
+               { \c_@@_grid_row_std_dim } { 1 }
   }
 \DeclareInstance { frame-design } { statement } { talkau }
   {
-    , name        = statement
     , text-area   = \TalkAUrect
                       [ l ] {  1 } [ b ] {  3 }
                       [ r ] { 12 } [ t ] { 18 }
-    , frame-keys  = {
-                      , font = \sffamily \bfseries
-                               \@@_fontsize_from_capheight:nn
-                                 { 1.6 \c_@@_grid_row_std_dim } { 1 }
-                    }
+    , font = \sffamily \bfseries
+             \@@_fontsize_from_capheight:nn
+               { 1.6 \c_@@_grid_row_std_dim } { 1 }
+  }
+\DeclareInstance { frame-design } { splash } { talkau }
+  {
+    , frame-style = plain
   }
 %    \end{macrocode}
 %
@@ -1556,24 +1550,19 @@
 \EditTemplateDefaults { titlepage } { talk }
   {
     , element-order        = { title , subtitle , date }
-    , frame-style          = plain
+    , frame-style          = cover
     , horizontal-alignment = left
   }
 \DeclareInstance { frame-design } { cover } { talkau }
   {
-    , name        = cover
     , grid-layout = cover
     , text-area   = \TalkAUrect
                       [ l ] {  1 } [ b ] {  2 }
                       [ r ] { 12 } [ t ] { 10 }
-    , frame-keys  = {
-                      , frame-style        = plain
-                      , vertical-alignment = center
-                    }
+    , frame-keys  = { vertical-alignment = center }
   }
 \DeclareInstance { frame-design } { cover-angle } { talkau }
   {
-    , name           = cover-angle
     , grid-layout    = cover
     , text-area      = \TalkAUrect
                          [ l ] { 1 } [ b ] {  2 }
@@ -1587,24 +1576,17 @@
                          \TalkAUx [ r ] { 12 } , 0pt
                        }
     , angle-position = \TalkAUxy [ r ] { 9 } [ b ] { 5 }
-    , frame-keys     = {
-                         , frame-style        = plain
-                         , vertical-alignment = center
-                       }
+    , frame-keys     = { vertical-alignment = center }
   }
 \DeclareInstance { frame-design } { cover-super } { talkau }
   {
-    , name           = cover-super
     , grid-layout    = cover
     , text-area      = \TalkAUrect
                          [ l ] {  1 } [ b ] {  2 }
                          [ r ] { 12 } [ t ] { 10 }
     , super-bg-color = black!10
     , super-fg-color = white
-    , frame-keys     = {
-                         , frame-style        = plain
-                         , vertical-alignment = center
-                       }
+    , frame-keys     = { vertical-alignment = center }
   }
 %    \end{macrocode}
 %
@@ -1625,25 +1607,22 @@
             \group_begin:
               \EditInstance { frame-design } { cover-super }
                 {
+                  , font           = \fontsize { 16pt } { 24pt }
+                                     \bfseries
+                                     \color { white }
                   , super-bg-color = purple
                   , super-fg-color = purple!90
                 }
-              \begin { frame }
-                [
-                  , design = cover-super
-                  , font   = \fontsize { 16pt } { 24pt }
-                             \bfseries
-                             \color { white }
-                ]
+              \begin { frame } [ design = cover-super ]
                 \hbox_set:Nn \l_tmpa_box
-                  { We ~ respectfully ~ acknowledge ~ the ~ Kaurna, }
+                  { Peoples ~ and ~ their ~ Elders ~ past ~ and ~ present, }
                 \centering
                 \parbox [ t ] { \box_wd:N \l_tmpa_box }
                   {
                     \raggedright
                     We ~ respectfully ~ acknowledge ~ the ~ Kaurna, ~
                     Boandik, ~ and ~ Barngarla ~ First ~ Nations ~
-                    People ~ and ~ their ~ Elders ~ past ~ and ~ Present, ~
+                    Peoples ~ and ~ their ~ Elders ~ past ~ and ~ present, ~
                     who ~ are ~ the ~ Traditional ~ Owners ~ of ~ the ~
                     lands ~ that ~ are ~ home ~ to ~ our ~ campuses ~
                     across ~ Adelaide ~ and ~ South ~ Australia.
@@ -1669,17 +1648,14 @@
   }
 \DeclareInstance { frame-design } { section } { talkau }
   {
-    , name           = section
     , text-area      = \TalkAUrect
                          [ l ] {  1 } [ b ] {  3 }
                          [ r ] { 12 } [ c ] { 14 }
     , angle-color    = purple
     , angle-position = \TalkAUxy [ l ] { 1 } [ b ] { 9 }
-    , frame-keys     = {
-                         , font = \sffamily \bfseries
-                                  \@@_fontsize_from_capheight:nn
-                                    { 1.8 \c_@@_grid_row_std_dim } { 1 }
-                       }
+    , font = \sffamily \bfseries
+             \@@_fontsize_from_capheight:nn
+               { 1.8 \c_@@_grid_row_std_dim } { 1 }
   }
 %    \end{macrocode}
 %
