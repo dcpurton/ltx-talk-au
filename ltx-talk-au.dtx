@@ -12,10 +12,61 @@
 %
 %<*driver>
 \RequirePackage{pdfmanagement}
+\SetKeys[document/metadata]{pdfversion=2.0}
 \documentclass[a4paper]{l3doc}
 
 \usepackage{microtype}
 \usepackage{pmboxdraw}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\ExplSyntaxOn
+\str_new:N \l__talkau_example_slides_str
+\file_if_exist:nTF { ltx-talk-au-example.pdf }
+  {
+    \str_set:Nn \l__talkau_example_slides_str { ltx-talk-au-example.pdf }
+  }
+  {
+    \str_set:Nn \l__talkau_example_slides_str { example-image.jpg }
+  }
+\NewDocumentCommand \ExampleSlide { m m }
+  {
+    \group_begin:
+      \dim_set_eq:NN \fboxsep \c_zero_dim
+      \dim_set:Nn \fboxrule { 0.4pt }
+      \dim_set:Nn \l_tmpa_dim {#2}
+      \color { black!20 }
+      \fbox
+        {
+          \includegraphics
+            [
+              , page = #1
+              , width = \l_tmpa_dim
+              , height = 0.5625 \l_tmpa_dim
+            ]
+            { \l__talkau_example_slides_str }
+        }
+    \group_end:
+  }
+\NewDocumentEnvironment { ExampleCodeAndSlide } { m }
+  {
+    \minipage [ t ] { 0.5 \linewidth }
+      \dim_zero:N \parindent
+      \footnotesize
+      \verbatim
+  }
+  {
+      \endverbatim
+    \endminipage
+    \hfill
+    \minipage [ t ] { 0.48 \linewidth }
+      \dim_zero:N \parindent
+      \skip_vertical:n { -1.5ex }
+      \ExampleSlide {#1} { \linewidth - 2 \fboxrule }
+    \endminipage
+  }
+\ExplSyntaxOff
+
 
 \AddToHook{env/macrocode/before}{%
   \addvspace{\medskipamount}}
@@ -41,6 +92,462 @@
 % \date{2026-10-01 v1.0}
 %
 % \maketitle
+%
+% \begin{abstract}
+%   The \pkg{ltx-talk-au} class implements an unofficial style for
+%   \pkg{ltx-talk} for Adelaide University. The various frame layouts, colours
+%   and fonts specified for presentations at the Adelaide University
+%   \href{https://staff.adelaide.edu.au/external-engagement/access-marketing-communications-resources/use-brand-and-logo/branded-and-self-service-templates/}{branded
+%   templates} staff web page are supported.
+%   \pkg{ltx-talk-au} is compatible with the \LaTeX{} tagging project and so
+%   tagged accessible PDFs conforming with the PDF/UA-2 standard (including
+%   mathematics tagged with MathML) can be produced.
+% \end{abstract}
+%
+% \tableofcontents
+%
+% \section{Fonts}
+%
+% Adelaide University uses \emph{Roboto Serif} for body font. Happily, this
+% font is in \TeX Live, so this font is used as the default.
+%
+% Unfortunately, the Adelaide University heading font,
+% \href{https://klim.co.nz/fonts/national-2-condensed/}{\emph{National 2
+% Condensed}} from Klim Type Foundry, is commercial. The \cls{ltx-talk-au}
+% uses this font if available. Otherwise it falls back to
+% \href{https://fonts.google.com/specimen/Barlow+Condensed}{\emph{Barlow
+% Condensed}}. \emph{Barlow Condensed} is \emph{not} in \TeX Live, so you'll
+% need to download and install it locally.
+%
+% For testing, Klim Type Foundry offers a set of test fonts with limited
+% character support and no OpenType features. Note that the test font licence
+% does not permit using these fonts in a real presentation. If you have the test
+% fonts installed, \cls{ltx-font-au} can be instructed to use them, falling
+% back to \emph{Barlow Condensed} for missing characters.
+%
+% \emph{Roboto Serif} does not support mathematics, so \emph{TeX Gyre DejaVu
+% Math} is used. This font blends reasonably well with \emph{Roboto Serif}.
+%
+% \subsection{Font related class options}
+%
+% \DescribeOption{testnational2}
+% Select \emph{Test National 2 Condensed} font for headings. Default: |false|.
+%
+% \subsection{Font related functions}
+%
+% \begin{function}{\TalkAUFontSizeFromCapHeight}
+%   \begin{syntax}
+%    \marg{X height} \marg{Leading ratio}
+%   \end{syntax}
+%   Set the point size of the current font from the specified height of a
+%   capital X along with line leading as a ratio of the font size. Used to set
+%   the font height to fit the frame grid layout.
+% \end{function}
+%
+% \section{Colours}
+%
+% \begin{function}{\TalkAUThemeDefine}
+%   \begin{syntax}
+%     \marg{name} \marg{colours}
+%   \end{syntax}
+%   Define a set of \pkg{ltx-talk} colours which can later be selected with
+%   \cs{TalkAUThemeSelect}. \meta{|colours|} is a comma separated list
+%   specifying colours for |background|, |structure|, |alert| and |example|.
+%
+%   The themes |std| (default), |darkblue|, |limestone|, |brightblue| and
+%   |purple| are pre-defined.
+% \end{function}
+%
+% \begin{function}{\TalkAUThemeSelect}
+%   \begin{syntax}
+%     \marg{name}
+%   \end{syntax}
+%   Select a theme previously defined using \cs{TalkAUThemeDefine}.
+% \end{function}
+%
+% \section{Grid}
+%
+% In theory, Adelaide University slides are laid out on a grid. Standard
+% slides have eighteen rows and cover slides have twelve rows. Both types of
+% slides have twelve columns separated by small gaps. Figure~\ref{grid} shows
+% the two kinds of grid layouts. Grids can be displayed by passing the |grid|
+% option to the \env{frame} environment.
+%
+% \begin{figure}
+%   \centering
+%   \ExampleSlide{24}{0.48\linewidth}\hfill
+%   \ExampleSlide{25}{0.48\linewidth}
+%   \caption{Cover and standard grid layouts.}
+%   \label{grid}
+% \end{figure}
+%
+% \subsection{Grid placement}
+%
+% A set of functions are provided for grid placement. These functions convert
+% grid cell references to page positions. Grid cell (1, 1) is in the bottom
+% left corner of the frame. Page positions are in points with the origin at
+% the top left corner of the page.
+%
+% \begin{function}{\TalkAUx}
+%   \begin{syntax}
+%     \oarg{col pos} \marg{col}
+%   \end{syntax}
+%   Return a single value corresponding to the $x$ page position for the
+%   specified column. \meta{col pos} can be |l|, |c|, |r| or a value between 0
+%   and 1 specifying the relative position between the left and right sides of
+%   the grid column. The default \meta{col pos} is |c|.
+% \end{function}
+%
+% \begin{function}{\TalkAUy}
+%   \begin{syntax}
+%     \oarg{row pos} \marg{row}
+%   \end{syntax}
+%   Return a single value corresponding to the $y$ page position for the
+%   specified row. \meta{row pos} can be |b|, |c|, |t| or a value between 0
+%   and 1 specifying the relative position between the bottom and top sides of
+%   the grid row. The default \meta{row pos} is |c|.
+% \end{function}
+%
+% \begin{function}{\TalkAUxy}
+%   \begin{syntax}
+%     \oarg{col pos} \marg{col} \oarg{row pos} \marg{row}
+%   \end{syntax}
+%   Return two comma separated values corresponding to the $(x,\,y)$ page
+%   position for the specified cell. \meta{col pos} can be |l|, |c|, |r| or a
+%   value between 0 and 1 specifying the relative position between the left
+%   and right sides of the grid column. \meta{row pos} can be |b|, |c|, |t| or
+%   a value between 0 and 1 specifying the relative position between the
+%   bottom and top sides of the grid row. The default \meta{col pos} and
+%   \meta{row pos} values are |c|.
+% \end{function}
+%
+% \begin{function}{\TalkAUrect}
+%   \begin{syntax}
+%     \oarg{ll col pos} \marg{ll col} \oarg{ll row pos} \marg{ll row}
+%     \oarg{ur col pos} \marg{ur col} \oarg{ur row pos} \marg{ur row}
+%   \end{syntax}
+%   Return four comma separated values corresponding to the lower left
+%   $(x,\,y)$ page position and upper right $(x,\,y)$ page position for the
+%   rectangle between the specified lower left cell and upper right cell.
+%   \meta{ll col pos} and \meta{ur col pos} can be |l|, |c|, |r| or a value
+%   between 0 and 1 specifying the relative position between the left and
+%   right sides of the grid column. \meta{ll row pos} and \meta{ur row pos}
+%   can be |b|, |c|, |t| or a value between 0 and 1 specifying the relative
+%   position between the bottom and top sides of the grid row. The default
+%   \meta{ll col pos}, \meta{ll row pos}, \meta{ur col pos} and \meta{ur row
+%   pos} values are |c|.
+% \end{function}
+%
+% \section{Frames}
+%
+% The following custom options are supported by the \env{frame} environment.
+%
+% \begin{itemize}
+%   \item |design =| \meta{boolean} The name of frame design template instance
+%     to use.
+%   \item |grid =| \meta{boolean} Whether to show the grid on not over the
+%     frame.
+%   \item |theme =| \meta{token list} The colour theme to use for the frame.
+%     This needs to have been previously defined with \cs{TalkAUThemeDefine}.
+% \end{itemize}
+%
+% \subsection{Frame headings}
+%
+% \begin{function}{\TalkAUFrameHeading, \TalkAUFrameSubheading}
+%   \begin{syntax}
+%     |<|\meta{overlay spec}|>| \marg{heading text}
+%     |<|\meta{overlay spec}|>| \marg{subheading text}
+%   \end{syntax}
+%   Output headings and subheadings \emph{within} a frame. These are one level
+%   lower than the frame title.
+% \end{function}
+%
+% \subsection{Frame images}
+%
+% \begin{function}{\TalkAUFrameImage}
+%   \begin{syntax}
+%     |<|\meta{overlay spec}|>| \oarg{options} \marg{image filename}
+%   \end{syntax}
+%   Insert \meta{image filename} into one of the standard image slots set up
+%   by the current frame design. \meta{options} supported are:
+%   \begin{itemize}
+%     \item |alt =| \meta{token list} Accessible alternative text for the
+%       image.
+%     \item |artifact =| \meta{boolean} Flag to indicate that the image is an
+%       artifact.
+%     \item |slot =| \meta{choice} One of |a|, |b| or |bg|. (It's also
+%       possible to specify |a|, |b| or |bg| directly without using |slot|.)
+%       Default: |a|.
+%   \end{itemize}
+% \end{function}
+%
+% \subsection{Cover frames}
+%
+% Cover frames are inserted as usual with \cs{maketitle}. This function can be
+% used standalone or within a \env{frame} environment for more control of the
+% frame design.
+%
+% \begin{function}{\maketitle}
+%   \begin{syntax}
+%     \oarg{options}
+%   \end{syntax}
+%   Insert a cover page with specified \meta{options}. The \meta{options} are
+%   passed to the |titlepage| template. Figure~\ref{cover} shows pre-defined
+%   cover page designs.
+% \end{function}
+%
+% \begin{figure}
+%   \begin{ExampleCodeAndSlide}{2}
+% \begin{frame}[design=cover]
+%   \TalkAUFrameImage[bg, artifact]
+%                    {example-image.jpg}
+%   \title{Enabling success \\
+%          for South Australia}
+%   \subtitle{Subtitle goes here}
+%   \maketitle
+% \end{frame}
+%   \end{ExampleCodeAndSlide}
+%
+%   \bigskip
+%
+%   \begin{ExampleCodeAndSlide}{5}
+% \begin{frame}[design=cover-angle]
+%   \TalkAUFrameImage[a, alt=Example Image A]
+%                    {example-image-a.jpg}
+%   \TalkAUFrameImage[b, alt=Example Image B]
+%                    {example-image-b.jpg}
+%   \title{Enabling success \\
+%          for South Australia}
+%   \subtitle{Subtitle goes here}
+%   \maketitle
+% \end{frame}
+%   \end{ExampleCodeAndSlide}
+%
+%   \bigskip
+%
+%   \begin{ExampleCodeAndSlide}{6}
+% \begin{frame}[design=cover-super]
+%   \title{Enabling success \\
+%          for South Australia}
+%   \subtitle{Subtitle goes here}
+%   \maketitle
+% \end{frame}
+%   \end{ExampleCodeAndSlide}
+%   \caption{Cover frames showing \texttt{cover}, \texttt{cover-angle}, and
+%     \texttt{cover-super} designs.}
+%   \label{cover}
+% \end{figure}
+%
+% \subsection{Acknowledgement of country frames}
+%
+% \begin{function}{\TalkAUAcknowledgementCountry}
+%   Insert an acknowledgement of country frame as shown in
+%   Figure~\ref{acknowledgement}.
+% \end{function}
+%
+% \begin{figure}
+%   \centering
+%   \ExampleSlide{9}{0.48\linewidth}
+%   \caption{Acknowledgement of country frame.}
+%   \label{acknowledgement}
+% \end{figure}
+%
+% \subsection{Statement frames}
+%
+% Two kinds of statement designs are defined, with and without images. See
+% Figure~\ref{statement}.
+%
+% \begin{figure}
+%   \centering
+%   \begin{ExampleCodeAndSlide}{12}
+% \begin{frame}[design=statement-image,
+%               theme=limestone]
+%   \TalkAUFrameImage[a, alt=Example Image A]
+%                    {example-image-a.jpg}
+%   \TalkAUFrameImage[b, alt=Example Image B]
+%                    {example-image-b.jpg}
+%   Simple statement—as appropriate in key
+%   statements and quotes, a key word or
+%   short phrase may be in another colour
+%   for \alert{emphasis}.
+% \end{frame}
+%   \end{ExampleCodeAndSlide}
+%
+% \bigskip
+%
+%   \begin{ExampleCodeAndSlide}{13}
+% \begin{frame}[design=statement]
+%   Simple statement—as appropriate in key
+%   statements and quotes, a key word or
+%   short phrase may be in another colour
+%   for \alert{emphasis}.
+% \end{frame}
+%   \end{ExampleCodeAndSlide}
+%   \caption{Statement frames showing \texttt{statement-image} and
+%     \texttt{statement} designs.}
+%   \label{statement}
+% \end{figure}
+%
+% \subsection{Text and image frames}
+%
+% Text and image frames are defined for the various proven and audacious
+% styles specified by the Adelaide University branding guidelines. See
+% Figure~\ref{text}.
+%
+% \begin{figure}
+%   \centering
+%   \begin{ExampleCodeAndSlide}{19}
+% \begin{frame}[design=proven a,
+%               theme=limestone]
+%   \frametitle{Design: Proven a}
+%   \TalkAUFrameImage[alt=Example Image]
+%                    {example-image.jpg}
+%   Lorem ipsum dolor sit amet,
+%   consectetuer adipiscing elit.
+%   \begin{itemize}
+%     \item Bullet level 1
+%       \begin{itemize}
+%         \item Bullet level 2
+%           \begin{itemize}
+%             \item Bullet level 3
+%           \end{itemize}
+%       \end{itemize}
+%   \end{itemize}
+%   \TalkAUFrameHeading{Heading level}
+%   \TalkAUFrameSubheading{Subheading level}
+% \end{frame}
+%   \end{ExampleCodeAndSlide}
+%
+%   \bigskip
+%
+%   \begin{ExampleCodeAndSlide}{20}
+% \begin{frame}[design=proven b]
+%   \frametitle{Design: Proven b}
+%   \TalkAUFrameImage[alt=Example Image]
+%                    {example-image.jpg}
+%   Lorem ipsum dolor sit amet,
+%   consectetuer adipiscing elit.
+%
+%   Ut purus elit, vestibulum ut, placerat
+%   ac, adipiscing vitae, felis. Curabitur
+%   dictum gravida mauris.
+% \end{frame}
+%   \end{ExampleCodeAndSlide}
+%
+%   \bigskip
+%
+%   \begin{ExampleCodeAndSlide}{22}
+% \begin{frame}[design=audacious,
+%               theme=brightblue]
+%   \frametitle{Design: Audacious}
+%   \TalkAUFrameImage[a, alt=Example Image A]
+%                    {example-image-a.jpg}
+%   \TalkAUFrameImage[b, alt=Example Image B]
+%                    {example-image-b.jpg}
+%   Lorem ipsum dolor sit amet, consectetuer
+%   adipiscing elit. Ut purus elit, vestibulum
+%   ut, placerat ac, adipiscing vitae, felis.
+%
+%   Curabitur dictum gravida mauris. Nam arcu
+%   libero, nonummy eget, consectetuer id,
+%   vulputate a, magna. Donec vehicula augue
+%   eu neque.
+% \end{frame}
+%   \end{ExampleCodeAndSlide}
+%   \caption{Text and image frames showing \texttt{proven a}, \texttt{proven
+%   b} and \texttt{audacious} designs.}
+%   \label{text}
+% \end{figure}
+%
+% \subsection{Section divider frames}
+%
+% Section divider slides are inserted along with the \cs{section} command.
+%
+% \begin{function}{\section}
+%   \begin{syntax}
+%     |<|\meta{overlay spec}|>| \oarg{settings} \marg{section text}
+%   \end{syntax}
+%   Insert a section heading and section divider frame. In addition to the
+%   standard \pkg{ltx-talk} keys, the optional argument can also take a
+%   |theme| key which is passed to the section divider \env{frame}
+%   environment. A selection of section divider frames are shown in
+%   Figure~\ref{section}.
+% \end{function}
+%
+% \begin{figure}
+%   \centering
+%   \ExampleSlide{15}{0.48\linewidth}\hfill
+%   \ExampleSlide{16}{0.48\linewidth}
+%
+%   \bigskip
+%
+%   \ExampleSlide{17}{0.48\linewidth}\hfill
+%   \ExampleSlide{18}{0.48\linewidth}
+%   \caption{Example section divider frames with various \texttt{theme}
+%     options specified.}
+%   \label{section}
+% \end{figure}
+%
+% \section{Frame designs}
+%
+% Frame designs are made by creating instances of the |frame-design| template.
+% These are then used for a particular frame by passing the name of the
+% instance to the |design| key of the \env{frame} environment.
+%
+% The |frame-design| template recognises the following keys:
+% \begin{description}
+%   \item[\texttt{font}] Font to set for the frame.
+%   \item[\texttt{frame-style}] The frame style to use for the design, e.g.,
+%     |talk|, |wallpaper|, |plain|, |cover|).
+%   \item[\texttt{grid-layout}] The grid layout the template uses (|std| or
+%     |cover|).
+%   \item[\texttt{text-area}] Four comma separated dimension values
+%     corresponding to the bottom left and top right corner of the text area.
+%   \item[\texttt{image-a-area}] Four comma separated dimension values
+%     corresponding to the bottom left and top right corner of image area a.
+%   \item[\texttt{image-b-area}] Four comma separated dimension values
+%     corresponding to the bottom left and top right corner of image area b.
+%   \item[\texttt{image-bg-area}] Four comma separated dimension values
+%     corresponding to the bottom left and top right corner of image area bg.
+%     This is defined by default to fill the entire frame.
+%   \item[\texttt{angle-color}] The colour of angle graphic if it is to be
+%     displayed.
+%   \item[\texttt{angle-position}] Two comma separated dimension values
+%     corresponding to the lower left corner of the angle graphic. If this
+%     key is empty, no angle graphic is included.
+%   \item[\texttt{super-bg-color}] The background colour of the Adelaide
+%     University super graphic.
+%   \item[\texttt{super-fg-color}] The foreground colour of the Adelaide
+%     University super graphic.
+%   \item[\texttt{frame-keys}] Additional keys passed to the frame environment
+%     for the design.
+% \end{description}
+%
+% \subsection{Defined frame design instances}
+%
+% The following instances of the |frame-design| template are defined:
+% \begin{description}
+%   \item[\texttt{std}] The default frame design.
+%   \item[\texttt{proven a}] Text and image frame with text on the left and
+%     the image on the right.
+%   \item[\texttt{proven b}] Text and image frame with text on the top and the
+%     image below.
+%   \item[\texttt{audacious}] Text and image frame with text on the top and
+%     two images on the left and on the bottom.
+%   \item[\texttt{statement-image}] Statement frame with the statement on the
+%     bottom and two images on the left and on the top.
+%   \item[\texttt{statement}] Statement frame.
+%   \item[\texttt{cover}] Cover frame which can optionally take a background
+%     image.
+%   \item[\texttt{cover-angle}] Cover frame with two images on bottom and top
+%     right.
+%   \item[\texttt{cover-super}] Cover frame with super graphic.
+%   \item[\texttt{section}] A section divider frame
+%   \item[\texttt{splash}] A splash frame which sets the page style to
+%     |plain|.
+% \end{description}
+%
+% \clearpage
 %
 % \section{Implementation}
 %
