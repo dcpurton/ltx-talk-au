@@ -12,4 +12,6 @@
 \START
 \showoutput
 \section[theme=purple]{Divider headline here}
+\section*{Unumbered headline}
+\section[theme=darkblue]{Divider headline here}
 \end{document}

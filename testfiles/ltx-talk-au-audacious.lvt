@@ -16,7 +16,7 @@
   \TalkAUFrameImage[a, alt=Example Image A]{example-image-a.jpg}
   \TalkAUFrameImage[b, alt=Example Image B]{example-image-b.jpg}
 
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Ut purus elit,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit,
   vestibulum ut, placerat ac, adipiscing vitae, felis.
 
   Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer

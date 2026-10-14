@@ -8,13 +8,15 @@
 \AddToDocumentProperties[hyperref]
   {pdftitle}
   {ltx-talk-au grid test file}
-\SetKeys[talk/frame]{grid, logo=false, framestyle=plain}
+\SetKeys[talk/frame]{grid}
 \begin{document}
 \START
 \showoutput
 \begin{frame}[design=cover]
+  \thispagestyle{plain}
 \end{frame}
 
 \begin{frame}
+  \thispagestyle{plain}
 \end{frame}
 \end{document}

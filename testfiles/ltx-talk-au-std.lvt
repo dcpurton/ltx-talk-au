@@ -1,0 +1,23 @@
+\DocumentMetadata{
+  , lang        = en
+  , pdfstandard = ua-2
+  , tagging     = on
+}
+\input{regression-test}
+\documentclass[testnational2]{ltx-talk-au}
+\AddToDocumentProperties[hyperref]
+  {pdftitle}
+  {ltx-talk-au std test file}
+\begin{document}
+\START
+\showoutput
+\begin{frame}
+  \frametitle{Standard frame test file}
+  
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit,
+  vestibulum ut, placerat ac, adipiscing vitae, felis.
+
+  Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer
+  id, vulputate a, magna. Donec vehicula augue eu neque.
+\end{frame}
+\end{document}

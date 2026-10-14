@@ -73,7 +73,7 @@ File: example-image-b.jpg Graphic file (type jpg)
 Package luatex.def Info: example-image-b.jpg  used on input line ....
 (luatex.def)             Requested size: 401.49901pt x 301.12425pt.
 Completed box being shipped out [1]
-\vbox(201.3386+0.0)x411.69029, direction TLT
+\vbox(201.3386+1.8036)x411.69029, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\kern-72.26999
@@ -263,9 +263,9 @@ Completed box being shipped out [1]
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(201.3386+0.0)x411.69029, direction TLT
+.\vbox(201.3386+1.8036)x411.69029, direction TLT
 ..\glue -184.1788
-..\vbox(385.5174+0.0)x328.4349, shifted 83.25539, direction TLT
+..\vbox(385.5174+1.8036)x328.4349, shifted 83.25539, direction TLT
 ...\vbox(147.72699+0.0)x328.4349, glue set 147.72699fil, direction TLT
 ....\glue 0.0 plus 1.0fil
 ....\pdflinkstate 1
@@ -539,20 +539,19 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ...\pdflinkstate 1
-...\glue(\baselineskip) 22.87134
-...\hbox(5.104+0.0)x328.4349, direction TLT
+...\glue(\baselineskip) 13.98767
+...\hbox(13.98767+1.8036)x328.4349, direction TLT
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
-....\hbox(5.104+0.0)x328.4349, direction TLT
+....\hbox(13.98767+1.8036)x328.4349, direction TLT
 .....\glue -155.52538
-.....\glue 99.73694
-.....\vbox(5.104+0.0)x384.25188, direction TLT
+.....\glue 21.83795
+.....\vbox(13.98767+1.8036)x462.15086, direction TLT
 ......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
 ......\glue(\parskip) 0.0
 ......\glue(\parskip) 0.0
-......\hbox(5.104+0.0)x384.25188, glue set 379.77188fil, direction TLT
-.......\glue(\leftskip) 0.0 plus 1.0fil
+......\hbox(13.98767+1.8036)x462.15086, glue set 391.2475fill, direction TLT
 .......\localpar
 ........\localinterlinepenalty=0
 ........\localbrokenpenalty=0
@@ -560,11 +559,31 @@ Completed box being shipped out [1]
 ........\localrightbox=null
 .......\hbox(0.0+0.0)x0.0, direction TLT
 .......\glue 0.0
+.......\hbox(13.98767+1.8036)x66.42337, direction TLT
+........\hbox(13.98767+1.8036)x66.42337, direction TLT
+.........\hbox(13.98767+1.8036)x66.42337, direction TLT
+..........\kern0.0
+..........\hbox(13.98767+1.8036)x66.42337, direction TLT
+...........\pdfliteral page <lua data reference ...>
+...........\pdfliteral page <lua data reference ...>
+...........\pdfsave
+...........\pdfsetmatrix{0.09251 0 0 0.09251}
+...........\hbox(151.199+19.496)x0.0, glue set - 718.0fil, direction TLT
+............\hbox(151.199+19.496)x718.0, direction TLT
+.............\box(151.199+19.496)x718.0
+............\glue 0.0 plus 1.0fil minus 1.0fil
+...........\pdfrestore
+..........\glue 0.0 plus 1.0fil minus 1.0fil
+.......\glue 0.0
+.......\glue 0.0 plus 1.0fill
+.......\glue 0.0
 .......\hbox(5.104+0.0)x4.48, direction TLT
+........\pdfliteral page <lua data reference ...>
+........\pdfliteral page <lua data reference ...>
 ........\TU/RobotoSerif(0)/m/n/8 1
 .......\glue 0.0
 .......\penalty 10000
-.......\glue(\parfillskip) 0.0
+.......\glue(\parfillskip) 0.0 plus 1.0fil
 .......\glue(\rightskip) 0.0
 ......\pdfcolorstack 0 pop
 .....\glue -0.02853
@@ -572,37 +591,20 @@ Completed box being shipped out [1]
 ...\pdfliteral page <lua data reference ...>
 ...\pdfliteral page <lua data reference ...>
 ...\pdflinkstate 0
-.\kern-201.3386
+.\kern-203.1422
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\hbox(13.98767+1.8036)x0.0, glue set - 88.26132fil, shifted 273.60858, direction TLT
-.....\kern21.83795
-.....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
-.....\hbox(13.98767+1.8036)x66.42337, direction TLT
-......\hbox(13.98767+1.8036)x66.42337, direction TLT
-.......\kern0.0
-.......\hbox(13.98767+1.8036)x66.42337, direction TLT
-........\pdfsave
-........\pdfsetmatrix{0.09251 0 0 0.09251}
-........\hbox(151.199+19.496)x0.0, glue set - 718.0fil, direction TLT
-.........\hbox(151.199+19.496)x718.0, direction TLT
-..........\box(151.199+19.496)x718.0
-.........\glue 0.0 plus 1.0fil minus 1.0fil
-........\pdfrestore
-.......\glue 0.0 plus 1.0fil minus 1.0fil
-.....\glue 0.0 plus 1.0fil minus 1.0fil
-....\pdfcolorstack 0 pop
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\kern201.3386
+.\kern203.1422
 .\kern0.0
 .\kern0.0
-.\kern-201.3386
+.\kern-203.1422
 .\hbox(0.0+0.0)x0.0, direction TLT
-.\kern201.3386
+.\kern203.1422
 .\pdfliteral page <lua data reference ...>
 <../example-image-a.jpg><../example-image-b.jpg><<latex-list-css.html>><<latex-align-css.html>> (ltx-talk-au-statement-image.aux)
 MathML statistic

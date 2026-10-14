@@ -64,12 +64,12 @@ LaTeX template Info: Declaring instance 'subtitle' of type titlepage-element on 
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
-<example-image-a.jpg, id=36, 401.5pt x 301.125pt>
+<example-image-a.jpg, id=37, 401.5pt x 301.125pt>
 File: example-image-a.jpg Graphic file (type jpg)
 <use example-image-a.jpg>
 Package luatex.def Info: example-image-a.jpg  used on input line ....
 (luatex.def)             Requested size: 401.49901pt x 301.12425pt.
-<example-image-b.jpg, id=37, 401.5pt x 301.125pt>
+<example-image-b.jpg, id=38, 401.5pt x 301.125pt>
 File: example-image-b.jpg Graphic file (type jpg)
 <use example-image-b.jpg>
 Package luatex.def Info: example-image-b.jpg  used on input line ....
@@ -262,14 +262,52 @@ Completed box being shipped out [1]
 .\vbox(190.41962+0.0)x255.89232, direction TLT
 ..\glue -72.25513
 ..\vbox(262.67474+0.0)x306.32436, shifted -50.43204, direction TLT
-...\vbox(41.90768+0.0)x306.32436, glue set 41.90768fil, direction TLT
+...\vbox(41.90768+0.0)x306.32436, glue set 21.83795fil, direction TLT
 ....\glue 0.0 plus 1.0fil
 ....\pdflinkstate 1
-....\hbox(0.0+0.0)x306.32436, direction TLT
+....\hbox(20.06973+14.58784)x306.32436, direction TLT
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfcolorstack 0 push {1.0 g 1.0 G}
-.....\hbox(0.0+0.0)x306.32436, glue set 306.32434fil, direction TLT
+.....\hbox(20.06973+14.58784)x306.32436, direction TLT
+......\glue -21.83795
+......\glue 21.83795
+......\vbox(20.06973+14.58784)x462.15086, direction TLT
+.......\pdfcolorstack 0 push {1.0 g 1.0 G}
+.......\glue(\parskip) 0.0
+.......\glue(\parskip) 0.0
+.......\hbox(20.06973+14.58784)x462.15086, glue set 366.84555fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\vbox(20.06973+14.58784)x95.30531, direction TLT
+.........\glue 0.0
+.........\glue 0.0
+.........\hbox(20.06973+2.58784)x95.30531, direction TLT
+..........\hbox(20.06973+2.58784)x95.30531, direction TLT
+...........\kern0.0
+...........\hbox(20.06973+2.58784)x95.30531, direction TLT
+............\pdfliteral page <lua data reference ...>
+............\pdfliteral page <lua data reference ...>
+............\pdfsave
+............\pdfsetmatrix{0.13274 0 0 0.13274}
+............\hbox(151.199+19.496)x0.0, glue set - 718.0fil, direction TLT
+.............\hbox(151.199+19.496)x718.0, direction TLT
+..............\box(151.199+19.496)x718.0
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+............\pdfrestore
+...........\glue 0.0 plus 1.0fil minus 1.0fil
+.........\glue 12.0 plus 4.0 minus 4.0
+.........\glue 0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+.......\pdfliteral page <lua data reference ...>
+.......\pdfliteral page <lua data reference ...>
+.......\pdfcolorstack 0 pop
+......\glue -155.8265
 ......\glue 0.0 plus 1.0fil
 .....\pdfcolorstack 0 pop
 ....\pdfliteral page <lua data reference ...>
@@ -492,6 +530,25 @@ Completed box being shipped out [1]
 ....\pdfliteral page <lua data reference ...>
 ....\pdfcolorstack 0 push {1.0 g 1.0 G}
 ....\hbox(0.0+0.0)x306.32436, direction TLT
+.....\glue -21.83795
+.....\glue 21.83795
+.....\vbox(0.0+0.0)x462.15086, direction TLT
+......\pdfcolorstack 0 push {1.0 g 1.0 G}
+......\glue(\parskip) 0.0
+......\glue(\parskip) 0.0
+......\hbox(0.0+0.0)x462.15086, glue set 462.15088fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+......\pdfcolorstack 0 pop
+.....\glue -155.8265
+.....\glue 0.0 plus 1.0fil
 ....\pdfcolorstack 0 pop
 ...\pdfliteral page <lua data reference ...>
 ...\pdfliteral page <lua data reference ...>
@@ -502,23 +559,6 @@ Completed box being shipped out [1]
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
 ...\hbox(0.0+0.0)x0.0, direction TLT
-....\hbox(20.06973+2.58784)x0.0, glue set - 117.14326fil, shifted 41.90768, direction TLT
-.....\kern21.83795
-.....\pdfcolorstack 0 push {1.0 g 1.0 G}
-.....\hbox(20.06973+2.58784)x95.30531, direction TLT
-......\hbox(20.06973+2.58784)x95.30531, direction TLT
-.......\kern0.0
-.......\hbox(20.06973+2.58784)x95.30531, direction TLT
-........\pdfsave
-........\pdfsetmatrix{0.13274 0 0 0.13274}
-........\hbox(151.199+19.496)x0.0, glue set - 718.0fil, direction TLT
-.........\hbox(151.199+19.496)x718.0, direction TLT
-..........\box(151.199+19.496)x718.0
-.........\glue 0.0 plus 1.0fil minus 1.0fil
-........\pdfrestore
-.......\glue 0.0 plus 1.0fil minus 1.0fil
-.....\glue 0.0 plus 1.0fil minus 1.0fil
-....\pdfcolorstack 0 pop
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\kern190.41962
@@ -537,8 +577,8 @@ MathML statistic
 ==> 0 fitting MathML AF found
 ==> 0 MathML AF attached
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~11 structure objects
-(tagpdf)             with ~7 'MC' leaf nodes.
+(tagpdf)             Writing out ~12 structure objects
+(tagpdf)             with ~9 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 Package tagpdf Info: writing ParentTree
 Package tagpdf Info: writing IDTree
