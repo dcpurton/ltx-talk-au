@@ -1313,7 +1313,7 @@
 \hook_gput_code:nnn { env / frame / begin } { . }
   {
     \@@_frame_image_clear_all:
-    \keys_set:nn { talk / frame } { design = std }
+    \UseInstance { frame-design } { std }
     \AssignTaggingSocketPlug { sec / begin } { noop }
     \AssignTaggingSocketPlug { sec / end } { noop }
   }
