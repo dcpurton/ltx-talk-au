@@ -1708,7 +1708,9 @@
               , theme      = \l_@@_section_frame_theme_tl
             ]
       }
-      \thesection
+      \strut
+      \bool_if:NT \l_@@_section_frame_numbered_bool
+        { \thesection }
       \par
       \skip_vertical:n { 0.25 \c_@@_grid_row_std_dim }
       \skip_set:Nn \leftskip
@@ -1742,7 +1744,14 @@
         \__talk_if_overlay:nT {#2}
           {
             \use:c { __talk_head_1:Nnn } #1 {#3} {#4}
-            \UseTemplate { section-frame } { talkau } { } {#3}
+            \bool_if:NTF #1
+              {
+                \UseTemplate { section-frame } { talkau } { }
+                  { numbered = false , #3 }
+              }
+              {
+                \UseTemplate { section-frame } { talkau } { } {#3}
+              }
           }
       }
   }
