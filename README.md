@@ -1,6 +1,12 @@
 # ltx-talk-au
 
-A `ltx-talk` style for Adelaide University.
+The `ltx-talk-au` class implements an unofficial style for `ltx-talk` for
+Adelaide University. The various frame layouts, colours and fonts specified
+for presentations at the Adelaide University [branded
+templates](https://staff.adelaide.edu.au/external-engagement/access-marketing-communications-resources/use-brand-and-logo/branded-and-self-service-templates/)
+staff web page are supported. `ltx-talk-au` is compatible with the LaTeX
+tagging project and so tagged accessible PDFs conforming with the PDF/UA-2
+standard (including mathematics tagged with MathML) can be produced.
 
 ## Installation
 
@@ -26,26 +32,29 @@ recompile the documentation and use the class.
 
 ## Fonts
 
-Adelaide University specifies [National 2
-Condensed](https://klim.co.nz/fonts/national-2-condensed/) from Klim Type
-Foundry for headings and subheadings. Unfortunately this font is commercial.
+Adelaide University specifies [*National 2
+Condensed*](https://klim.co.nz/fonts/national-2-condensed/) from Klim Type
+Foundry for headings and subheadings. Unfortunately, this font is commercial.
 
-If National 2 Condensed is not available, `ltx-talk-au` falls back to [Barlow
-Condensed](https://fonts.google.com/specimen/Barlow+Condensed). This font is
-not distributed with TeXLive so you'll need to download and install the Medium
-and Bold weights yourself in order to use `ltx-talk-au`. Barlow Condensed is
-much closer in style and metrics to National 2 Condensed than Arial Bold which
-is what the University brand guidelines recommend.
+If *National 2 Condensed* is not available, `ltx-talk-au` falls back to
+[*Barlow Condensed*](https://fonts.google.com/specimen/Barlow+Condensed). This
+font is not distributed with TeXLive so you'll need to download and install
+the Medium and Bold weights yourself in order to use `ltx-talk-au`. *Barlow
+Condensed* is much closer in style and metrics to *National 2 Condensed* than
+*Arial Bold* which is what the University brand guidelines recommend.
 
 For testing, Klim Type Foundry offers a set of test fonts with limited
 character support and no OpenType features. Note that the test font licence
 does not permit using these fonts in a real presentation. If you have the test
 fonts installed, `ltx-font-au` can be instructed to use them, falling back to
-Barlow Condensed for missing characters. The `l3build` test files are built
+*Barlow Condensed* for missing characters. The `l3build` test files are built
 using this configuration.
 
-The body font is [Roboto
-Serif](https://fonts.google.com/specimen/Roboto+Serif) which is distributed
+The body font is [*Roboto
+Serif*](https://fonts.google.com/specimen/Roboto+Serif) which is distributed
+with TeXLive.
+
+*TeX Gyre DejaVu Math* is used for mathematics. This font is also distributed
 with TeXLive.
 
 ## Licence
