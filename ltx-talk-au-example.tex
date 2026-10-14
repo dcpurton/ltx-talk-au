@@ -5,6 +5,10 @@
 }
 \documentclass[testnational2]{ltx-talk-au}
 
+\usepackage{amsmath}
+\DeclareMathOperator\Res{Res}
+\newcommand*\diff{\mathop{}\!\mathup{d}}
+
 \begin{document}
 
 \begin{frame}[design=cover]
@@ -65,8 +69,9 @@
 \end{frame}
 \endgroup
 
-\begin{frame}[framestyle=plain, logo=false]
+\begin{frame}
   \TalkAUFrameImage[bg, alt=Example Image]{example-image.jpg}
+  \thispagestyle{plain}
 \end{frame}
 
 \TalkAUAcknowledgementCountry
@@ -143,7 +148,7 @@
   \TalkAUFrameImage[a, alt=Example Image A]{example-image-a.jpg}
   \TalkAUFrameImage[b, alt=Example Image B]{example-image-b.jpg}
 
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Ut purus elit,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit,
   vestibulum ut, placerat ac, adipiscing vitae, felis.
 
   Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer
@@ -155,7 +160,7 @@
   \TalkAUFrameImage[a, alt=Example Image A]{example-image-a.jpg}
   \TalkAUFrameImage[b, alt=Example Image B]{example-image-b.jpg}
 
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Ut purus elit,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit,
   vestibulum ut, placerat ac, adipiscing vitae, felis.
 
   Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer
@@ -164,14 +169,23 @@
 
 \begin{frame}
   \frametitle{Design: Default}
+  Let $f$ be analytic in the region $G$ except for the isolated singularities
+  $a_1,a_2,\dots,a_m$. If $\gamma$ is a closed rectifiable curve in $G$ which
+  does not pass through any of the points $a_k$ and if $\gamma\approx 0$ in
+  $G$, then
+  \[
+    \frac{1}{2\pi i} \int\limits_\gamma
+    f\Bigl(x^{\mathbf{N}\in\mathbb{C}^{N\times 10}}\Bigr) = \sum_{k=1}^m
+    n(\gamma;a_k)\Res(f;a_k)\,.
+  \]
 \end{frame}
 
-\SetKeys[talk/frame]{grid, logo=false, framestyle=plain}
-
-\begin{frame}[design=cover]
+\begin{frame}[design=cover, grid]
+  \thispagestyle{plain}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[grid=true]
+  \thispagestyle{plain}
 \end{frame}
 
 \end{document}
