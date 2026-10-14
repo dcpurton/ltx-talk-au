@@ -748,39 +748,6 @@
   { \c_@@_grid_row_std_dim }
 \box_resize_to_ht:Nn \l_@@_logo_cover_box
   { \c_@@_grid_row_cover_dim }
-\socket_new:nn { talkau / logo } { 1 }
-\socket_new_plug:nnn { talkau / logo } { std }
-  {
-    \put
-      (
-        \c_@@_margin_cover_dim ,
-        \c_@@_margin_footer_dim - \paperheight
-      )
-      {
-        \color_select:n {#1}
-        \box_use:N \l_@@_logo_std_box
-      }
-  }
-\socket_new_plug:nnn { talkau / logo } { cover }
-  {
-    \put
-      (
-        \c_@@_margin_cover_dim ,
-        - \c_@@_margin_cover_dim - \c_@@_grid_row_cover_dim
-      )
-      {
-        \color_select:n {#1}
-        \box_use:N \l_@@_logo_cover_box
-      }
-  }
-\socket_assign_plug:nn { talkau / logo } { std }
-\hook_gput_code:nnn { shipout / foreground } { . }
-  {
-    \bool_if:NT \l_@@_logo_bool
-      {
-        \socket_use:nn { talkau / logo } { structure }
-      }
-  }
 \pdfxform_new:nnn { talkau / logo / super } { }
   {
     \raisebox { -2.160pt }
@@ -1145,6 +1112,29 @@
 %
 % \subsection{Frames}
 %
+% \subsubsection{Frame page styles}
+%
+% Define a page style for cover design pages.
+%
+%    \begin{macrocode}
+\cs_set_protected_nopar:Npn \ps@cover
+  {
+    \cs_set_protected_nopar:Npn \@oddhead
+      {
+        \frametitle { \@logo }
+        \UseInstance { header } { cover }
+        \hfil
+      }
+    \cs_set_protected_nopar:Npn \@oddfoot
+      {
+        \UseInstance { footer } { cover }
+        \hfil
+      }
+    \cs_set_eq:NN \@evenhead \@oddhead
+    \cs_set_eq:NN \@evenfoot \@oddfoot
+  }
+%    \end{macrocode}
+%
 % \subsubsection{Frame text}
 %
 %    \begin{macrocode}
@@ -1164,6 +1154,22 @@
 %    \end{macrocode}
 %
 % \subsubsection{Frame headers and footers}
+%
+% Add additional header and footer elements for the Adelaide University logo.
+%
+%    \begin{macrocode}
+\keys_define:nn { talk / metadata }
+  {
+    , logo       .tl_gset:c = @logo
+    , short-logo .tl_gset:c = @shortlogo
+  }
+\keys_set:nn { talk / metadata }
+  {
+    short-logo = \box_use:N \l_@@_logo_std_box
+  }
+\tl_gset:Nn \@logo { \box_use:N \l_@@_logo_cover_box }
+\DeclareInstance { footer-element } { logo } { talk } { }
+%    \end{macrocode}
 %
 % Set header and footer dimensions.
 %
@@ -1185,12 +1191,10 @@
 \EditInstance { footer } { std }
   {
     , color         = structure
-    , left-hspace   = \c_@@_margin_cover_dim +
-                      2 \c_@@_grid_column_width_dim +
-                      2 \c_@@_grid_column_sep_dim
+    , left-hspace   = \c_@@_margin_cover_dim
     , right-hspace  = \c_@@_margin_cover_dim
-    , element-order = { framenumber }
-    , font          = \raggedleft \fontsize { 8pt } { 10pt } \selectfont
+    , element-order = { logo , framenumber }
+    , font          = \fontsize { 8pt } { 10pt } \selectfont
     , separator     = \hfill
   }
 %    \end{macrocode}
@@ -1203,7 +1207,6 @@
       {
         , height = \c_@@_margin_cover_dim +
                    2 \c_@@_grid_row_cover_dim
-        , print-frame-title = false
       }
     \DeclareInstanceCopy { footer } { cover } { std }
     \EditInstance { footer } { cover }
@@ -1373,13 +1376,13 @@
         \bool_gset_false:N \g_@@_frame_design_grid_cover_bool
         \int_set:Nn \l_@@_grid_rows_int { 18 }
         \socket_assign_plug:nn { talkau / grid } { std }
-        \socket_assign_plug:nn { talkau / logo } { std }
+        \thispagestyle { talk }
       }
       {
         \bool_gset_true:N \g_@@_frame_design_grid_cover_bool
         \int_set:Nn \l_@@_grid_rows_int { 12 }
         \socket_assign_plug:nn { talkau / grid } { cover }
-        \socket_assign_plug:nn { talkau / logo } { cover }
+        \thispagestyle { cover }
       }
     \clist_set:Ne \l_tmpa_clist { \l_@@_frame_design_text_area_tl }
     \dim_set:Nn \l_@@_xa_dim { \clist_item:Nn \l_tmpa_clist { 1 } }
