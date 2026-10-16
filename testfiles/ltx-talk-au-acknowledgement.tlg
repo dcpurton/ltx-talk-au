@@ -63,6 +63,12 @@ LaTeX template Info: Declaring instance 'cover-super' of type frame-design on li
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' will be
+(Font)              scaled to size 9.8259pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' will be
+(Font)              scaled to size 19.18744pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
+(Font)              scaled to size 19.18744pt on input line ....
 Completed box being shipped out [1]
 \vbox(190.41962+0.0)x411.69029, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT

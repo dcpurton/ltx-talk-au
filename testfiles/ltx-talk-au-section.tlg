@@ -62,6 +62,16 @@ Don't change this file in any respect.
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' will be
+(Font)              scaled to size 9.8259pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
+(Font)              scaled to size 9.8259pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
+(Font)              scaled to size 34.53745pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' will be
+(Font)              scaled to size 19.18744pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
+(Font)              scaled to size 19.18744pt on input line ....
 Completed box being shipped out [1]
 \vbox(201.3386+1.8036)x411.69029, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -193,21 +203,21 @@ Completed box being shipped out [1]
 ....\vbox(160.85822+0.0)x462.12233, direction TLT
 .....\glue 0.0
 .....\hbox(160.85822+0.0)x462.12233, direction TLT
-......\vbox(160.85822+0.0)x462.12233, glue set 86.7583fil, direction TLT
+......\vbox(160.85822+0.0)x462.12233, glue set 89.83911fil, direction TLT
 .......\glue 0.0
-.......\hbox(26.38383+11.30753)x462.12233, glue set 217.1342fil, direction TLT
+.......\hbox(25.1778+10.54492)x462.12233, glue set 216.60724fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
 .........\localbrokenpenalty=0
 .........\localleftbox=null
 .........\localrightbox=null
 ........\hbox(0.0+0.0)x0.0, direction TLT
-........\rule(26.38383+11.30753)x0.0
+........\rule(24.60448+10.54492)x0.0
 ........\pdfliteral page <lua data reference ...>
 ........\pdfliteral page <lua data reference ...>
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 0
-........\kern-0.07538 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 1
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 0
+........\kern-0.03453 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 1
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
@@ -215,7 +225,7 @@ Completed box being shipped out [1]
 .......\glue(\parskip) 6.0 plus 2.0
 .......\glue(\parskip) 0.0
 .......\glue(\lineskip) 0.0
-.......\hbox(26.6101+0.30153)x462.12233, glue set 72.62395fil, direction TLT
+.......\hbox(25.4541+0.34537)x462.12233, glue set 72.33112fil, direction TLT
 ........\glue(\leftskip) 45.68497
 ........\localpar
 .........\localinterlinepenalty=0
@@ -223,35 +233,40 @@ Completed box being shipped out [1]
 .........\localleftbox=null
 .........\localrightbox=null
 ........\hbox(0.0+0.0)x0.0, direction TLT
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 D
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 D
+........\kern0.1036 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 i
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 v
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 i
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 d
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 r
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138  
-........\glue(\spaceskip) 0.0 plus 3.22261 minus 2.1484
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 a
-........\kern-0.07538 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 d
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 v
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 d
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\kern-0.03453 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 r
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941  
+........\glue(\spaceskip) 0.0 plus 2.93568 minus 1.95712
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 h
+........\kern0.13815 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 a
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 d
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 l
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 i
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138  
-........\glue(\spaceskip) 0.0 plus 3.22261 minus 2.1484
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 r
-........\kern-0.03769 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 l
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 n
+........\kern0.13815 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941  
+........\glue(\spaceskip) 0.0 plus 2.93568 minus 1.95712
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 h
+........\kern0.13815 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\kern-0.03453 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 r
+........\kern-0.2763 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
@@ -515,16 +530,16 @@ Completed box being shipped out [2]
 ....\vbox(160.85822+0.0)x462.12233, direction TLT
 .....\glue 0.0
 .....\hbox(160.85822+0.0)x462.12233, direction TLT
-......\vbox(160.85822+0.0)x462.12233, glue set 86.7583fil, direction TLT
+......\vbox(160.85822+0.0)x462.12233, glue set 90.41243fil, direction TLT
 .......\glue 0.0
-.......\hbox(26.38383+11.30753)x462.12233, glue set 231.06116fil, direction TLT
+.......\hbox(24.60448+10.54492)x462.12233, glue set 231.06116fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
 .........\localbrokenpenalty=0
 .........\localleftbox=null
 .........\localrightbox=null
 ........\hbox(0.0+0.0)x0.0, direction TLT
-........\rule(26.38383+11.30753)x0.0
+........\rule(24.60448+10.54492)x0.0
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
@@ -532,7 +547,7 @@ Completed box being shipped out [2]
 .......\glue(\parskip) 6.0 plus 2.0
 .......\glue(\parskip) 0.0
 .......\glue(\lineskip) 0.0
-.......\hbox(26.6101+0.30153)x462.12233, glue set 75.4508fil, direction TLT
+.......\hbox(25.4541+0.34537)x462.12233, glue set 74.29976fil, direction TLT
 ........\glue(\leftskip) 45.68497
 ........\localpar
 .........\localinterlinepenalty=0
@@ -542,33 +557,35 @@ Completed box being shipped out [2]
 ........\hbox(0.0+0.0)x0.0, direction TLT
 ........\pdfliteral page <lua data reference ...>
 ........\pdfliteral page <lua data reference ...>
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 U
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 u
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 m
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 U
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 n
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 u
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 m
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 b
-........\kern0.15077 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 r
-........\kern-0.03769 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\kern0.11307 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 d
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138  
-........\glue(\spaceskip) 0.0 plus 3.22261 minus 2.1484
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 a
-........\kern-0.07538 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 d
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 b
+........\kern0.2763 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\kern-0.03453 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 r
+........\kern-0.2763 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\kern0.17268 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 d
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941  
+........\glue(\spaceskip) 0.0 plus 2.93568 minus 1.95712
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 h
+........\kern0.13815 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 a
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 d
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 l
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 i
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 l
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 n
+........\kern0.13815 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
@@ -832,21 +849,20 @@ Completed box being shipped out [3]
 ....\vbox(160.85822+0.0)x462.12233, direction TLT
 .....\glue 0.0
 .....\hbox(160.85822+0.0)x462.12233, direction TLT
-......\vbox(160.85822+0.0)x462.12233, glue set 86.7583fil, direction TLT
+......\vbox(160.85822+0.0)x462.12233, glue set 89.80457fil, direction TLT
 .......\glue 0.0
-.......\hbox(26.38383+11.30753)x462.12233, glue set 214.89157fil, direction TLT
+.......\hbox(25.21234+10.54492)x462.12233, glue set 214.3623fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
 .........\localbrokenpenalty=0
 .........\localleftbox=null
 .........\localrightbox=null
 ........\hbox(0.0+0.0)x0.0, direction TLT
-........\rule(26.38383+11.30753)x0.0
+........\rule(24.60448+10.54492)x0.0
 ........\pdfliteral page <lua data reference ...>
 ........\pdfliteral page <lua data reference ...>
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 0
-........\kern-0.18846 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 3
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 0
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 3
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
@@ -854,7 +870,7 @@ Completed box being shipped out [3]
 .......\glue(\parskip) 6.0 plus 2.0
 .......\glue(\parskip) 0.0
 .......\glue(\lineskip) 0.0
-.......\hbox(26.6101+0.30153)x462.12233, glue set 72.62395fil, direction TLT
+.......\hbox(25.4541+0.34537)x462.12233, glue set 72.33112fil, direction TLT
 ........\glue(\leftskip) 45.68497
 ........\localpar
 .........\localinterlinepenalty=0
@@ -862,35 +878,40 @@ Completed box being shipped out [3]
 .........\localleftbox=null
 .........\localrightbox=null
 ........\hbox(0.0+0.0)x0.0, direction TLT
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 D
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 D
+........\kern0.1036 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 i
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 v
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 i
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 d
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 r
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138  
-........\glue(\spaceskip) 0.0 plus 3.22261 minus 2.1484
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 a
-........\kern-0.07538 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 d
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 v
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 d
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\kern-0.03453 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 r
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941  
+........\glue(\spaceskip) 0.0 plus 2.93568 minus 1.95712
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 h
+........\kern0.13815 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 a
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 d
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 l
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 i
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138  
-........\glue(\spaceskip) 0.0 plus 3.22261 minus 2.1484
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 r
-........\kern-0.03769 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/37.69138 e
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 l
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 n
+........\kern0.13815 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941  
+........\glue(\spaceskip) 0.0 plus 2.93568 minus 1.95712
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 h
+........\kern0.13815 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
+........\kern-0.03453 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 r
+........\kern-0.2763 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/35.14941 e
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil

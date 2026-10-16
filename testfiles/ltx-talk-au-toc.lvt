@@ -4,7 +4,7 @@
   , tagging     = on
 }
 \input{regression-test}
-\documentclass[testnational2]{ltx-talk-au}
+\documentclass{ltx-talk-au}
 \begin{filecontents}[overwrite]{\jobname.toc}
 \contentsline{section}{\numberline{01}First section}{2}{section.1}%
 \contentsline{section}{\numberline{02}Second section}{3}{section.2}%

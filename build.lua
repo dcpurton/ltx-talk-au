@@ -2,17 +2,20 @@
 
 module = "ltx-talk-au"
 
-sourcefiles = {"*.dtx" , "*.ins" , "*.tex"}
+sourcefiles = {"*.dtx" , "*.ins" , "*.tex", "support/*.ttf"}
 
-installfiles = {"*.cls", "*.def"}
+installfiles = {"*.cls", "*.def", "*.ttf"}
+tdslocations = {"fonts/truetype/github/monasans/*.ttf"}
 
 stdengine    = "luatex"
 
 checkformat = "latex"
 checkengines = {"luatex"}
+checksuppfiles = {"*.ttf"}
 checkruns = 2
 
 typesetexe = "lualatex"
+typesetsuppfiles = {"*.ttf"}
 typesetdemofiles = {"ltx-talk-au-example.tex"}
 
 tagfiles = {"*.dtx", "*.ins", "README.md"}

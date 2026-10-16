@@ -115,23 +115,25 @@
 % \href{https://klim.co.nz/fonts/national-2-condensed/}{\emph{National 2
 % Condensed}} from Klim Type Foundry, is commercial. The \cls{ltx-talk-au}
 % uses this font if available. Otherwise it falls back to
-% \href{https://fonts.google.com/specimen/Barlow+Condensed}{\emph{Barlow
-% Condensed}}. \emph{Barlow Condensed} is \emph{not} in \TeX Live, so you'll
-% need to download and install it locally.
+% \href{https://github.com/mona-sans}{\emph{Mona Sans}}.
 %
-% For testing, Klim Type Foundry offers a set of test fonts with limited
-% character support and no OpenType features. Note that the test font licence
-% does not permit using these fonts in a real presentation. If you have the test
-% fonts installed, \cls{ltx-font-au} can be instructed to use them, falling
-% back to \emph{Barlow Condensed} for missing characters.
+% \emph{Mona Sans} was chosen for the following reasons:
+% \begin{itemize}
+%   \item It has an Open Source licence.
+%   \item Like \emph{National 2 Condensed}, it is a grotesque typeface.
+%   \item It uses variable font technology with both a width and a weight
+%     axes. This means it can be tuned to approximately match the look of
+%     \emph{National 2 Condensed}.
+%   \item It contains sufficient stylistic variants to select a double story
+%     a, double story g, and l with a curl, again matching \emph{National 2
+%     Condensed}.
+% \end{itemize}
+%
+% \emph{Mona Sans} is licensed under the SIL Open Font Licence Version 1.1 and
+% distributed along with \cls{ltx-talk-au}.
 %
 % \emph{Roboto Serif} does not support mathematics, so \emph{TeX Gyre DejaVu
 % Math} is used. This font blends reasonably well with \emph{Roboto Serif}.
-%
-% \subsection{Font related class options}
-%
-% \DescribeOption{testnational2}
-% Select \emph{Test National 2 Condensed} font for headings. Default: |false|.
 %
 % \subsection{Font related functions}
 %
@@ -566,15 +568,14 @@
 %
 % \subsection{Fonts}
 %
+% The Adelaide University slide deck template uses quite a small body font
+% size, so use 10pt instead of 11pt by default for |font-size|.
+%
 %    \begin{macrocode}
 \clist_new:N \l_@@_options_clist
 \clist_set:Nn \l_@@_options_clist { font-size = 10pt }
 \keys_define:nn { talkau }
   {
-    , testnational2 .bool_set:N       = \l_@@_use_testnational_font_bool
-    , testnational2 .value_required:n = false
-    , testnational2 .default:n        = true
-    , testnational2 .initial:n        = false
     , unknown       .code:n           = \clist_put_right:NV
                                           \l_@@_options_clist
                                           \CurrentOption
@@ -587,54 +588,49 @@
 % Always use \emph{Roboto Serif} for body font since this font is in \TeX
 % Live. Use \emph{TeX Gyre DejaVu Math} for maths. Heading font is more
 % complicated. Use \emph{National 2 Condensed} if available, otherwise fall
-% back to \emph{Barlow Condensed} (you'll need to download and install this
-% font). For testing, a test version of \emph{National 2 Condensed} with
-% limited character support and no OpenType features exists. \pkg{ltx-talk-au}
-% can be instructed to use this font, falling back to \emph{Barlow Condensed}
-% for missing characters.
+% back to \emph{Mona Sans}.
 %
 %    \begin{macrocode}
 \RequirePackage { fontspec }
-\ExplSyntaxOff
-\directlua{
-  luaotfload.add_fallback("barlow-medium", {
-    "BarlowCondensedMedium:mode=node;"
-  })
-  luaotfload.add_fallback("barlow-bold", {
-    "BarlowCondensedBold:mode=node;"
-  })
-}
-\ExplSyntaxOn
 \setmainfont { Roboto ~ Serif }
 \fontspec_font_if_exist:nTF { National2Condensed-Medium.otf }
   {
     \setsansfont { National2Condensed-Medium.otf }
       [
-        , ItalicFont     = TestNational2Condensed-MediumItalic.otf
-        , BoldFont       = TestNational2Condensed-Bold.otf
-        , BoldItalicFont = TestNational2Condensed-BoldItalic.otf
+        , ItalicFont     = National2Condensed-MediumItalic.otf
+        , BoldFont       = National2Condensed-Bold.otf
+        , BoldItalicFont = National2Condensed-BoldItalic.otf
       ]
   }
   {
-    \bool_if:NTF \l_@@_use_testnational_font_bool
-      {
-        \setsansfont { TestNational2Condensed-Medium.otf }
-          [
-            , RawFeature     = { fallback = barlow-medium }
-            , ItalicFont     = BarlowCondensed-MediumItalic.ttf
-            , BoldFont       = TestNational2Condensed-Bold.otf
-            , BoldFeatures   = { RawFeature = { fallback = barlow-bold } }
-            , BoldItalicFont = BarlowCondensed-BoldItalic.ttf
-          ]
-      }
-      {
-        \setsansfont { BarlowCondensed-Medium.ttf }
-          [
-            , ItalicFont     = BarlowCondensed-MediumItalic.ttf
-            , BoldFont       = BarlowCondensed-Bold.ttf
-            , BoldItalicFont = BarlowCondensed-BoldItalic.ttf
-          ]
-      }
+    \setsansfont { MonaSans-VariableFont_wdth,wght.ttf }
+      [
+        , Renderer           = Harfbuzz
+        , Scale              = MatchLowercase
+        , UprightFeatures    = {
+                                 , Weight       = 450
+                                 , Width        = 80
+                                 , StylisticSet = { 3 , 5 , 6 }
+                               }
+        , ItalicFont         = { MonaSans-Italic-VariableFont_wdth,wght.ttf }
+        , ItalicFeatures     = {
+                                 , Weight       = 450
+                                 , Width        = 80
+                                 , StylisticSet = { 3 }
+                               }
+        , BoldFont           = *
+        , BoldFeatures       = {
+                                 , Weight       = 785
+                                 , Width        = 78
+                                 , StylisticSet = { 3 , 5 , 6 }
+                               }
+        , BoldItalicFont     = { MonaSans-Italic-VariableFont_wdth,wght.ttf }
+        , BoldItalicFeatures = {
+                                 , Weight       = 785
+                                 , Width        = 78
+                                 , StylisticSet = { 3 }
+                               }
+      ]
   }
 \setmathfont { TeX ~ Gyre ~ DejaVu ~ Math } [ Scale = MatchLowercase ]
 \setmathrm { Roboto ~ Serif }

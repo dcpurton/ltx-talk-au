@@ -62,6 +62,12 @@ Don't change this file in any respect.
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' will be
+(Font)              scaled to size 9.8259pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' will be
+(Font)              scaled to size 19.18744pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
+(Font)              scaled to size 19.18744pt on input line ....
 <example-image-a.jpg, id=39, 401.5pt x 301.125pt>
 File: example-image-a.jpg Graphic file (type jpg)
 <use example-image-a.jpg>
@@ -238,30 +244,30 @@ Completed box being shipped out [1]
 .\vbox(201.3386+1.8036)x411.69029, direction TLT
 ..\glue -72.27744
 ..\vbox(273.61603+1.8036)x267.37486, shifted 144.31543, direction TLT
-...\vbox(35.82562+0.0)x267.37486, glue set 21.04225fil, direction TLT
+...\vbox(35.82562+0.0)x267.37486, glue set 21.68448fil, direction TLT
 ....\glue 0.0 plus 1.0fil
 ....\pdflinkstate 1
-....\hbox(14.78337+15.58067)x267.37486, direction TLT
+....\hbox(14.14114+15.2043)x267.37486, direction TLT
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfcolorstack 0 push {1.0 g 1.0 G}
-.....\hbox(14.78337+15.58067)x267.37486, direction TLT
+.....\hbox(14.14114+15.2043)x267.37486, direction TLT
 ......\glue -216.58542
 ......\glue 21.83795
-......\vbox(14.78337+15.58067)x462.15086, direction TLT
+......\vbox(14.14114+15.2043)x462.15086, direction TLT
 .......\pdfcolorstack 0 push {1.0 g 1.0 G}
 .......\glue(\parskip) 0.0
 .......\glue(\parskip) 0.0
-.......\hbox(14.78337+15.58067)x462.15086, direction TLT
+.......\hbox(14.14114+15.2043)x462.15086, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
 .........\localbrokenpenalty=0
 .........\localleftbox=null
 .........\localrightbox=null
-........\vbox(14.78337+15.58067)x462.15086, direction TLT
+........\vbox(14.14114+15.2043)x462.15086, direction TLT
 .........\glue 0.0
 .........\glue 0.0
-.........\hbox(14.78337+3.58067)x462.15086, glue set 330.23126fil, direction TLT
+.........\hbox(14.14114+3.2043)x462.15086, glue set 329.97498fil, direction TLT
 ..........\localpar
 ...........\localinterlinepenalty=0
 ...........\localbrokenpenalty=0
@@ -270,36 +276,46 @@ Completed box being shipped out [1]
 ..........\hbox(0.0+0.0)x0.0, direction TLT
 ..........\pdfliteral page <lua data reference ...>
 ..........\pdfliteral page <lua data reference ...>
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 D
-..........\kern0.02094 (font)
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 e
 ..........\discretionary (penalty 50)
-...........< \kern0.16751 (font)
-...........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 -
-...........= \kern0.04189 (font)
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 s
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 i
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 g
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 n
-..........\FONT73 :
-..........\FONT73  
-..........\glue(\spaceskip) 0.5863 plus 3.58069 minus 0.59677
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 A
-..........\kern-0.12564 (font)
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 u
+...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 D
+...........< \kern0.1535 (font)
+...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 e
+...........< \kern0.1535 (font)
+...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
+...........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
+...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 D
+...........= \kern0.1535 (font)
+...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 e
+...........= \kern0.03838 (font)
+...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 g
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 n
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 :
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742  
+..........\glue(\spaceskip) 1.0873 plus 3.26187 minus 0.54364
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 A
+..........\kern-0.11513 (font)
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 u
 ..........\discretionary (penalty 50)
-...........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 -
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 d
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 a
+...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 d
 ..........\discretionary (penalty 50)
-...........< \kern-0.08376 (font)
-...........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 -
-...........= \kern-0.06282 (font)
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 c
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 i
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 o
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 u
-..........\TU/TestNational2Condensed-Medium.otf(0)/b/n/20.93962 s
+...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 a
+...........< \kern-0.07675 (font)
+...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
+...........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 c
+...........> \kern-0.01918 (font)
+...........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
+...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 a
+...........= \kern-0.01918 (font)
+...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 c
+...........= \kern-0.01918 (font)
+...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 o
+..........\kern0.07675 (font)
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 u
+..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
 ..........\penalty 10000
 ..........\glue(\parfillskip) 0.0 plus 1.0fil
 ..........\glue(\rightskip) 0.0

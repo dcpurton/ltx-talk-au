@@ -62,6 +62,16 @@ Don't change this file in any respect.
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' will be
+(Font)              scaled to size 9.8259pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
+(Font)              scaled to size 9.8259pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
+(Font)              scaled to size 30.70003pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' will be
+(Font)              scaled to size 19.18744pt on input line ....
+LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
+(Font)              scaled to size 19.18744pt on input line ....
 Completed box being shipped out [1]
 \vbox(201.3386+1.8036)x411.69029, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
@@ -162,9 +172,9 @@ Completed box being shipped out [1]
 ....\vbox(223.80273+0.0)x462.12233, direction TLT
 .....\glue 0.0
 .....\hbox(223.80273+0.0)x462.12233, direction TLT
-......\vbox(223.80273+0.0)x462.12233, glue set 94.17754fil, direction TLT
+......\vbox(223.80273+0.0)x462.12233, glue set 102.3179fil, direction TLT
 .......\glue 0.0
-.......\hbox(23.6535+5.72911)x462.12233, glue set 17.69783fil, direction TLT
+.......\hbox(22.62592+5.1269)x462.12233, glue set 20.10329fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
 .........\localbrokenpenalty=0
@@ -173,207 +183,267 @@ Completed box being shipped out [1]
 ........\hbox(0.0+0.0)x0.0, direction TLT
 ........\pdfliteral page <lua data reference ...>
 ........\pdfliteral page <lua data reference ...>
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 L
-........\kern0.067 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\kern-0.03351 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 g
-........\kern-0.30153 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\kern-0.20102 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\kern-0.13402 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 L
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\kern-0.1535 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 g
+........\kern-0.4912 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
 ........\discretionary (penalty 50)
-.........< \kern0.26804 (font)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 m
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\FONT73 —
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 p
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+.........< \kern-0.1228 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........< \kern-0.0614 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+.........< \kern0.2456 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 -
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 m
+.........> \kern0.1228 (font)
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+.........> \kern-0.0307 (font)
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........> \kern-0.4605 (font)
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 —
+.........> \kern-0.0307 (font)
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+.........> \kern0.1228 (font)
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+.........= \kern-0.1228 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........= \kern-0.0614 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+.........= \kern-0.0307 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 m
+.........= \kern0.1228 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+.........= \kern-0.0307 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........= \kern-0.4605 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 —
+.........= \kern-0.0307 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+.........= \kern0.1228 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 p
 ........\discretionary (penalty 50)
-.........< \kern0.30153 (font)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 p
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\kern-0.03351 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 p
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\kern-0.2456 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
 ........\discretionary (penalty 50)
-.........< \kern0.30153 (font)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 p
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 i
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 p
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 i
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\kern-0.20102 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\kern-0.13402 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 i
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 k
-........\kern-0.67007 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\kern-0.36855 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 y
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\rightskip) -5.72911 plus 1.0fil
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+........\kern-0.1228 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+........\kern-0.0614 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 k
+........\kern-0.5526 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\kern-0.4605 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 y
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\rightskip) -5.21901 plus 1.0fil
 .......\penalty 150
-.......\glue(\baselineskip) 4.12093
-.......\hbox(23.6535+5.72911)x462.12233, glue set 36.79486fil, direction TLT
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\kern-0.20102 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\kern-0.13402 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
+.......\glue(\baselineskip) 3.73677
+.......\hbox(22.38033+5.1269)x462.12233, glue set 37.8786fil, direction TLT
 ........\discretionary (penalty 50)
-.........< \kern0.26804 (font)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 m
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 d
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 q
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 u
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\kern-0.13402 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\kern0.067 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 ,
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 3.58067 minus 1.52776
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 k
-........\kern-0.67007 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\kern-0.36855 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 y
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 w
-........\kern-0.33504 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 d
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\rightskip) -5.72911 plus 1.0fil
-.......\glue(\baselineskip) 4.12093
-.......\hbox(23.6535+5.72911)x462.12233, glue set 30.0606fil, direction TLT
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\kern0.10051 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 p
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\kern-0.10051 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 m
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\kern-0.50255 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 y
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 b
-........\kern0.13402 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 i
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 n
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 n
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+.........< \kern-0.1228 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........< \kern-0.0614 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+.........< \kern0.2456 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 -
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 m
+.........> \kern0.1228 (font)
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+.........> \kern-0.0307 (font)
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+.........= \kern-0.1228 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........= \kern-0.0614 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+.........= \kern-0.0307 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 m
+.........= \kern0.1228 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+.........= \kern-0.0307 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+........\kern0.0614 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 d
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 q
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 u
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+........\kern-0.0614 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\kern0.0614 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 ,
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 3.26187 minus 1.39172
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 k
+........\kern-0.5526 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\kern-0.4605 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 y
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 w
+........\kern-0.2149 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\kern-0.1228 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 d
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\rightskip) -5.21901 plus 1.0fil
+.......\glue(\baselineskip) 3.49118
+.......\hbox(22.62592+5.1269)x462.12233, glue set 30.05005fil, direction TLT
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 h
+........\kern0.1228 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\kern0.1842 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 p
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 h
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\kern-0.307 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+........\kern0.1228 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+........\kern0.0307 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 m
+........\kern0.0614 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+........\kern-0.5219 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 y
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 b
+........\kern0.2456 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 t
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 c
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
-........\kern0.03351 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 l
-........\kern-0.067 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 u
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\rightskip) -5.72911 plus 1.0fil
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+.........< \kern0.1228 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 -
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 n
+.........= \kern0.1228 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 t
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 h
+........\kern0.1228 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\kern-0.0307 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 c
+........\kern-0.0307 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+........\kern0.0921 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 l
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+........\kern0.1228 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 u
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\rightskip) -5.21901 plus 1.0fil
 .......\penalty 150
-.......\glue(\baselineskip) 3.8529
-.......\hbox(23.92152+5.46107)x462.12233, glue set 153.9025fil, direction TLT
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 f
-........\kern-0.13402 (font)
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 o
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 r
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354  
-........\glue(\spaceskip) 0.0 plus 2.86455 minus 1.9097
+.......\glue(\baselineskip) 3.49118
+.......\hbox(22.62592+5.1269)x462.12233, glue set 153.28265fil, direction TLT
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 f
+........\kern-0.0921 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 o
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 r
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244  
+........\glue(\spaceskip) 0.0 plus 2.6095 minus 1.73967
 ........\pdfcolorstack 0 push {0.51373 0.41962 1.0 rg 0.51373 0.41962 1.0 RG}
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 e
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 m
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 e
+........\kern-0.0307 (font)
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 m
 ........\discretionary (penalty 50)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 p
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 h
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 a
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 -
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 p
 ........\discretionary (penalty 50)
-.........< \kern-0.13402 (font)
-.........< \TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 -
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 i
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 s
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 h
+.........< \kern0.0614 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+.........< \kern-0.1228 (font)
+.........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 -
+.........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 h
+.........= \kern0.0614 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 a
+.........= \kern0.1228 (font)
+.........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 i
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 s
 ........\pdfcolorstack 0 pop
-........\TU/TestNational2Condensed-Medium.otf(0)/b/n/33.50354 .
+........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/31.244 .
 ........\penalty 10000
 ........\glue(\parfillskip) 0.0 plus 1.0fil
 ........\glue(\rightskip) 0.0 plus 1.0fil
