@@ -37,8 +37,9 @@ This will install the following files into your local texmf tree:
 
 ## Overleaf template
 
-The LaTeX and `ltx-talk` are updated regularly, so it is probably best to use
-`ltx-talk-au` with a local TeX installation, but it does work with Overleaf.
+The LaTeX tagging project and `ltx-talk` class are updated regularly, so it is
+probably best to use `ltx-talk-au` with a local TeX installation, but it does
+work with Overleaf.
 
 [Open overleaf template](https://www.overleaf.com/docs?snip_uri=https://github.com/dcpurton/ltx-talk-au/releases/latest/download/ltx-talk-au-overleaf.zip).
 
