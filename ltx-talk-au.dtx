@@ -1644,13 +1644,27 @@
 \RequirePackage { parskip }
 %    \end{macrocode}
 %
+% The \env{column} environment sets \cs{parskip} to zero. Hook in to reset it
+% to that set by the \pkg{parskip} package.
+%
+%    \begin{macrocode}
+\hook_gput_code:nnn { cmd / @parboxrestore / after } { . }
+  {
+    \skip_set:Nn \parskip { .5 \baselineskip plus 2pt }
+  }
+%    \end{macrocode}
+%
+% Align text in frames to the top.
+%
 %    \begin{macrocode}
 \keys_set:nn { talk }
   {
     , frame / vertical-alignment = top
   }
 %    \end{macrocode}
-
+%
+% Set bullet symbols to match Adelaide University style.
+%
 %    \begin{macrocode}
 \cs_set:Npn \labelitemiii { \labelitemfont \textgreater }
 \cs_set:Npn \labelitemiv  { \labelitemfont \textasteriskcentered }
