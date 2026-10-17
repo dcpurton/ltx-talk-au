@@ -2044,6 +2044,13 @@
                       \@@_fontsize_from_capheight:nn
                         { 0.6 \c_@@_grid_row_cover_dim } { 1 }
   }
+\EditInstance { titlepage-element } { author }
+  {
+    , before-skip = 0.4 \c__talkau_grid_row_cover_dim
+    , font        = \__talkau_fontsize_from_capheight:nn
+                      { 0.4 \c__talkau_grid_row_cover_dim } { 1 }
+                    \bfseries
+  }
 \EditInstance { titlepage-element } { date }
   {
     , before-skip = 0.3 \c_@@_grid_row_cover_dim
@@ -2053,9 +2060,15 @@
   }
 \EditTemplateDefaults { titlepage } { talk }
   {
-    , element-order        = { title , subtitle , date }
-    , frame-style          = cover
+    , element-order        = { title , subtitle , author , date }
     , horizontal-alignment = left
+  }
+\@ifclasslater { ltx-talk } { 2026-10-06 }
+  {
+    \EditTemplateDefaults { titlepage } { talk } { frame-style = cover }
+  }
+  {
+    \EditTemplateDefaults { titlepage } { talk } { framestyle = cover }
   }
 \DeclareInstance { frame-design } { cover } { talkau }
   {
