@@ -18,13 +18,22 @@ Clone the git repository using:
 git clone https://github.com/dcpurton/ltx-talk-au.git
 ```
 
-Change to the `ltx-talk-au` directory, and then the style file
-(`afesbrand.cls`), its support files and documentation (`ltx-talk-au.pdf` and
-`ltx-talk-au-example.pdf`) can be installed by running:
+Change to the `ltx-talk-au` directory, and then the class file, its support
+files and documentation can be installed by running:
 
 ```
 l3build install --full
 ```
+
+This will install the following files into your local texmf tree:
+
+- doc/latex/ltx-talk-au/README.md
+- doc/latex/ltx-talk-au/ltx-talk-au-example.pdf
+- doc/latex/ltx-talk-au/ltx-talk-au.pdf
+- fonts/truetype/github/monasans/MonaSans-Italic-VariableFont_wdth,wght.ttf
+- fonts/truetype/github/monasans/MonaSans-VariableFont_wdth,wght.ttf
+- tex/latex/ltx-talk-au/ltx-talk-au-logo.def
+- tex/latex/ltx-talk-au/ltx-talk-au.cls
 
 ## Fonts
 
