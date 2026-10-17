@@ -27,13 +27,13 @@ l3build install --full
 
 This will install the following files into your local texmf tree:
 
-- doc/latex/ltx-talk-au/README.md
-- doc/latex/ltx-talk-au/ltx-talk-au-example.pdf
-- doc/latex/ltx-talk-au/ltx-talk-au.pdf
-- fonts/truetype/github/monasans/MonaSans-Italic-VariableFont_wdth,wght.ttf
-- fonts/truetype/github/monasans/MonaSans-VariableFont_wdth,wght.ttf
-- tex/latex/ltx-talk-au/ltx-talk-au-logo.def
-- tex/latex/ltx-talk-au/ltx-talk-au.cls
+- `doc/latex/ltx-talk-au/README.md`
+- `doc/latex/ltx-talk-au/ltx-talk-au-example.pdf`
+- `doc/latex/ltx-talk-au/ltx-talk-au.pdf`
+- `fonts/truetype/github/monasans/MonaSans-Italic-VariableFont_wdth,wght.ttf`
+- `fonts/truetype/github/monasans/MonaSans-VariableFont_wdth,wght.ttf`
+- `tex/latex/ltx-talk-au/ltx-talk-au-logo.def`
+- `tex/latex/ltx-talk-au/ltx-talk-au.cls`
 
 ## Fonts
 
