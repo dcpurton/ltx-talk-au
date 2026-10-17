@@ -27,7 +27,7 @@ local function build_overleaf()
   local zipexe   = "zip"
   local zipopts  = "-j"
   local zipname  = module .. "-overleaf.zip"
-  local stagedir = builddir .. "/overleaf-zip"
+  local stagedir = builddir .. "/overleaf"
   cleandir(stagedir)
   local absstage = abspath(stagedir)
   local zippath  = abspath(currentdir) .. "/" .. zipname
