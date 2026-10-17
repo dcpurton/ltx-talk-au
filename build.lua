@@ -6,8 +6,9 @@ sourcefiles = {"*.dtx" , "*.ins" , "*.tex", "support/*.ttf"}
 
 installfiles = {"*.cls", "*.def", "*.ttf"}
 tdslocations = {"fonts/truetype/github/monasans/*.ttf"}
+packtdszip = true
 
-stdengine    = "luatex"
+stdengine = "luatex"
 
 checkformat = "latex"
 checkengines = {"luatex"}
