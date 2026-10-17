@@ -35,6 +35,24 @@ This will install the following files into your local texmf tree:
 - `tex/latex/ltx-talk-au/ltx-talk-au-logo.def`
 - `tex/latex/ltx-talk-au/ltx-talk-au.cls`
 
+## Overleaf template
+
+The LaTeX and `ltx-talk` are updated regularly, so it is probably best to use
+`ltx-talk-au` with a local TeX installation, but it does work with Overleaf.
+
+[Open overleaf template](https://www.overleaf.com/docs?snip_uri=https://github.com/dcpurton/ltx-talk-au/releases/latest/download/ltx-talk-au-overleaf.zip).
+
+## Documentation
+
+If installed locally, documentation is available by running `texdoc
+ltx-talk-au`. Example slides build from `ltx-talk-au-exmaple.tex` is available
+by running `texdoc ltx-talk-au-example`.
+
+The latest versions of these files are also available online:
+
+- [`ltx-talk-au.pdf`](https://github.com/dcpurton/ltx-talk-au/releases/latest/download/ltx-talk-au.pdf)
+- [`ltx-talk-au-example.pdf`](https://github.com/dcpurton/ltx-talk-au/releases/latest/download/ltx-talk-au-example.pdf)
+
 ## Fonts
 
 Adelaide University specifies [*National 2
