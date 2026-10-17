@@ -1,0 +1,57 @@
+\DocumentMetadata
+    {
+        , lang        = en-AU
+        , pdfstandard = ua-2
+        , tagging     = on
+    }
+
+\documentclass{ltx-talk-au}
+
+\begin{document}
+
+\begin{frame}[design=cover-super]
+    \title{[Presentation title]}
+    \author{[Your name]}
+    \maketitle
+\end{frame}
+
+\TalkAUAcknowledgementCountry
+
+\section[theme=darkblue]{A section heading}
+
+\begin{frame}[design=proven a, theme=limestone]
+    \frametitle{Design: Proven a}
+    \TalkAUFrameImage[alt=Example Image]{example-image.jpg}
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    \begin{itemize}
+    \item Bullet level 1
+        \begin{itemize}
+            \item Bullet level 2
+                \begin{itemize}
+                    \item Bullet level 3
+                \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \TalkAUFrameHeading{Heading level}
+    \TalkAUFrameSubheading{Subheading level}
+\end{frame}
+
+\begin{frame}
+    \frametitle{[Frame title]}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \includegraphics[width=\linewidth, alt=Example Image A]{example-image-a.jpg}
+                \caption{An example image.}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            Euler's formula states that, for any real number $x$, one has
+            \[
+                e^{ix} = \cos x + i\sin x
+            \]
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}

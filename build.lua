@@ -18,6 +18,44 @@ typesetexe = "lualatex"
 typesetsuppfiles = {"*.ttf"}
 typesetdemofiles = {"ltx-talk-au-example.tex"}
 
+-- Build an Overleaf template archive
+-- run l3build overleaf
+
+overleaf = { "main.tex", "latexmkrc" }
+
+local function build_overleaf()
+  local zipexe   = "zip"
+  local zipopts  = "-j"
+  local zipname  = module .. "-overleaf.zip"
+  local stagedir = builddir .. "/overleaf-zip"
+  cleandir(stagedir)
+  local absstage = abspath(stagedir)
+  local zippath  = abspath(currentdir) .. "/" .. zipname
+  for _, f in ipairs(overleaf) do
+    cp(f, maindir .. "/overleaf", stagedir)
+  end
+  for _, g in ipairs(installfiles) do
+    cp(g, unpackdir, stagedir)
+  end
+  local files = {}
+  for _, name in ipairs(filelist(stagedir)) do
+    files[#files + 1] = '"' .. absstage .. "/" .. name .. '"'
+  end
+  rm(currentdir, zipname)
+  return run(currentdir,
+             zipexe .. " " .. zipopts .. " \"" .. zippath .. "\" "
+             .. table.concat(files, " "))
+end
+
+target_list = target_list or {}
+target_list.overleaf = {
+  func = build_overleaf,
+  desc = "Creates Overleaf template archive",
+  pre  = function() return unpack() end,
+}
+
+-- Tagging
+
 tagfiles = {"*.dtx", "*.ins", "README.md"}
 
 function update_tag(file, content, tagname, tagdate)
