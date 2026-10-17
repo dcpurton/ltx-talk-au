@@ -274,19 +274,19 @@ Completed box being shipped out [1]
 .\vbox(201.3386+1.8036)x411.69029, direction TLT
 ..\glue -184.1788
 ..\vbox(385.5174+1.8036)x328.4349, shifted 83.25539, direction TLT
-...\vbox(147.72699+0.0)x328.4349, glue set 147.72699fil, direction TLT
+...\vbox(147.72699+0.0)x328.4349, glue set 137.96329fil, direction TLT
 ....\glue 0.0 plus 1.0fil
 ....\pdflinkstate 1
-....\hbox(0.0+12.0)x328.4349, direction TLT
+....\hbox(9.7637+12.0)x328.4349, direction TLT
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
-.....\hbox(0.0+12.0)x328.4349, direction TLT
+.....\hbox(9.7637+12.0)x328.4349, direction TLT
 ......\glue -155.52538
 ......\glue 21.83795
-......\vbox(0.0+12.0)x462.15086, direction TLT
+......\vbox(9.7637+12.0)x462.15086, direction TLT
 .......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
-.......\glue(\parskip) 0.0
+.......\glue(\parskip) 9.7637 plus 2.0
 .......\glue(\parskip) 0.0
 .......\hbox(0.0+12.0)x462.15086, glue set 462.15088fil, direction TLT
 ........\localpar
@@ -608,17 +608,17 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ...\pdflinkstate 1
-...\glue(\baselineskip) 13.98767
-...\hbox(13.98767+1.8036)x328.4349, direction TLT
+...\glue(\baselineskip) 4.22397
+...\hbox(23.75137+1.8036)x328.4349, direction TLT
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
-....\hbox(13.98767+1.8036)x328.4349, direction TLT
+....\hbox(23.75137+1.8036)x328.4349, direction TLT
 .....\glue -155.52538
 .....\glue 21.83795
-.....\vbox(13.98767+1.8036)x462.15086, direction TLT
+.....\vbox(23.75137+1.8036)x462.15086, direction TLT
 ......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
-......\glue(\parskip) 0.0
+......\glue(\parskip) 9.7637 plus 2.0
 ......\glue(\parskip) 0.0
 ......\hbox(13.98767+1.8036)x462.15086, glue set 391.2475fill, direction TLT
 .......\localpar

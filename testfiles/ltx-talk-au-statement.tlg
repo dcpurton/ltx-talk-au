@@ -73,7 +73,7 @@ LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/m/n' w
 LaTeX Font Info:    Font shape `TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n' will be
 (Font)              scaled to size 19.18744pt on input line ....
 Completed box being shipped out [1]
-\vbox(201.3386+1.8036)x411.69029, direction TLT
+\vbox(202.97292+1.8036)x411.69029, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\kern-72.26999
@@ -119,22 +119,22 @@ Completed box being shipped out [1]
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(201.3386+1.8036)x411.69029, direction TLT
+.\vbox(202.97292+1.8036)x411.69029, direction TLT
 ..\glue -72.27744
-..\vbox(273.61603+1.8036)x462.12233, shifted -50.43204, direction TLT
-...\vbox(35.82562+0.0)x462.12233, glue set 35.82562fil, direction TLT
+..\vbox(275.25035+1.8036)x462.12233, shifted -50.43204, direction TLT
+...\vbox(35.82562+0.0)x462.12233, glue set 20.20363fil, direction TLT
 ....\glue 0.0 plus 1.0fil
 ....\pdflinkstate 1
-....\hbox(0.0+12.0)x462.12233, direction TLT
+....\hbox(15.622+12.0)x462.12233, direction TLT
 .....\pdfliteral page <lua data reference ...>
 .....\pdfliteral page <lua data reference ...>
 .....\pdfcolorstack 0 push {1.0 g 1.0 G}
-.....\hbox(0.0+12.0)x462.12233, direction TLT
+.....\hbox(15.622+12.0)x462.12233, direction TLT
 ......\glue -21.83795
 ......\glue 21.83795
-......\vbox(0.0+12.0)x462.15086, direction TLT
+......\vbox(15.622+12.0)x462.15086, direction TLT
 .......\pdfcolorstack 0 push {1.0 g 1.0 G}
-.......\glue(\parskip) 0.0
+.......\glue(\parskip) 15.622 plus 2.0
 .......\glue(\parskip) 0.0
 .......\hbox(0.0+12.0)x462.15086, glue set 462.15088fil, direction TLT
 ........\localpar
@@ -455,17 +455,17 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ...\pdflinkstate 1
-...\glue(\baselineskip) 13.98767
-...\hbox(13.98767+1.8036)x462.12233, direction TLT
+...\glue(\lineskip) 0.0
+...\hbox(29.60966+1.8036)x462.12233, direction TLT
 ....\pdfliteral page <lua data reference ...>
 ....\pdfliteral page <lua data reference ...>
 ....\pdfcolorstack 0 push {1.0 g 1.0 G}
-....\hbox(13.98767+1.8036)x462.12233, direction TLT
+....\hbox(29.60966+1.8036)x462.12233, direction TLT
 .....\glue -21.83795
 .....\glue 21.83795
-.....\vbox(13.98767+1.8036)x462.15086, direction TLT
+.....\vbox(29.60966+1.8036)x462.15086, direction TLT
 ......\pdfcolorstack 0 push {1.0 g 1.0 G}
-......\glue(\parskip) 0.0
+......\glue(\parskip) 15.622 plus 2.0
 ......\glue(\parskip) 0.0
 ......\hbox(13.98767+1.8036)x462.15086, glue set 391.2475fill, direction TLT
 .......\localpar
@@ -507,7 +507,7 @@ Completed box being shipped out [1]
 ...\pdfliteral page <lua data reference ...>
 ...\pdfliteral page <lua data reference ...>
 ...\pdflinkstate 0
-.\kern-203.1422
+.\kern-204.77652
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
@@ -515,12 +515,12 @@ Completed box being shipped out [1]
 ...\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\kern203.1422
+.\kern204.77652
 .\kern0.0
 .\kern0.0
-.\kern-203.1422
+.\kern-204.77652
 .\hbox(0.0+0.0)x0.0, direction TLT
-.\kern203.1422
+.\kern204.77652
 .\pdfliteral page <lua data reference ...>
 <<latex-list-css.html>><<latex-align-css.html>> (ltx-talk-au-statement.aux)
 MathML statistic
