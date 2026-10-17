@@ -1625,15 +1625,14 @@
   {
     \cs_set_protected_nopar:Npn \@oddhead
       {
-        \frametitle { \@logo }
-        \UseInstance { header } { cover }
+        \color
+          {
+            \InstanceValue { header } { cover } { color }
+          }
+        \@logo
         \hfil
       }
-    \cs_set_protected_nopar:Npn \@oddfoot
-      {
-        \UseInstance { footer } { cover }
-        \hfil
-      }
+    \cs_set_protected_nopar:Npn \@oddfoot { }
     \cs_set_eq:NN \@evenhead \@oddhead
     \cs_set_eq:NN \@evenfoot \@oddfoot
   }
