@@ -699,6 +699,7 @@
 %    \begin{macrocode}
 \cs_set_nopar:Npn \today
   {
+    \int_compare:nNnT { \day } < { 10 } { 0 }
     \number \day
     \space
     \ifcase \month \or
