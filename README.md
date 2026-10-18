@@ -51,8 +51,8 @@ by running `texdoc ltx-talk-au-example`.
 
 The latest versions of these files are also available online:
 
-- [`ltx-talk-au.pdf`](https://github.com/dcpurton/ltx-talk-au/releases/latest/download/ltx-talk-au.pdf)
-- [`ltx-talk-au-example.pdf`](https://github.com/dcpurton/ltx-talk-au/releases/latest/download/ltx-talk-au-example.pdf)
+- [`ltx-talk-au.pdf`](https://docs.google.com/viewer?url=https%3A%2F%2Fgithub.com%2Fdcpurton%2Fltx-talk-au%2Freleases%2Flatest%2Fdownload%2Fltx-talk-au.pdf)
+- [`ltx-talk-au-example.pdf`](https://docs.google.com/viewer?url=https%3A%2F%2Fgithub.com%2Fdcpurton%2Fltx-talk-au%2Freleases%2Flatest%2Fdownload%2Fltx-talk-au-example.pdf)
 
 ## Fonts
 
