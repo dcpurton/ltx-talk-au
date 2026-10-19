@@ -55,6 +55,20 @@ target_list.overleaf = {
   pre  = function() return unpack() end,
 }
 
+-- Also clean the overleaf build directory
+
+local orig_clean = target_list.clean.func
+target_list.clean.func = function(...)
+  local errorlevel = orig_clean(...)
+  if errorlevel ~= 0 then return errorlevel end
+
+  local dir = builddir .. "/overleaf"
+  if direxists(dir) then
+    cleandir(dir)
+  end
+  return 0
+end
+
 -- Tagging
 
 tagfiles = {"*.dtx", "*.ins", "README.md"}
