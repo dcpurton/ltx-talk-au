@@ -46,8 +46,8 @@ work with Overleaf.
 ## Documentation
 
 If installed locally, documentation is available by running `texdoc
-ltx-talk-au`. Example slides build from `ltx-talk-au-exmaple.tex` is available
-by running `texdoc ltx-talk-au-example`.
+ltx-talk-au`. An example slide deck built from `ltx-talk-au-exmaple.tex` is
+available by running `texdoc ltx-talk-au-example`.
 
 The latest versions of these files are also available online:
 
