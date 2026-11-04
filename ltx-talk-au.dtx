@@ -1305,12 +1305,12 @@
 % following structure:
 % \begin{quote}
 %   \ttfamily
-%   text-unit \\
+%   semantic-para \\
 %   \pmboxdrawuni{2514}\pmboxdrawuni{2500}Div \\
 %   |  |\pmboxdrawuni{2514}\pmboxdrawuni{2500}float
 % \end{quote}
-% The |parent| of the |text-unit| is set to \cs{g__talk_frame_struct_int} in
-% order to insert the figure into the current frame structure.
+% The |parent| of the |semantic-para| is set to \cs{g__talk_frame_struct_int}
+% in order to insert the figure into the current frame structure.
 %
 %    \begin{macrocode}
 \NewTaggingSocket { talkau / background / figure / begin } { 0 }
@@ -1319,7 +1319,7 @@
   {
     \tag_struct_begin:n
       {
-        , tag    = text-unit
+        , tag    = semantic-para
         , parent = \int_use:N \g__talk_frame_struct_int
       }
       \tag_struct_begin:n { tag = Div }
@@ -1747,8 +1747,13 @@
 \NewStructureName    { sec / 6 / title }
 \AssignStructureRole { sec / 6 / title } { frame-subheading }
 \NewStructureName    { sec / 6 / number }
-% TODO: Rename section-number to heading-number at next LaTeX release
-\AssignStructureRole { sec / 6 / number } { section-number }
+\IfFormatAtLeastTF { 2026-11-01 }
+  {
+    \AssignStructureRole { sec / 6 / number } { heading-number }
+  }
+  {
+    \AssignStructureRole { sec / 6 / number } { section-number }
+  }
 \NewStructureName    { sec / 6 / fragment }
 \AssignStructureRole { sec / 6 / fragment } { Span }
 %    \end{macrocode}

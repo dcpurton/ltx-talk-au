@@ -74,11 +74,12 @@ Completed box being shipped out [1]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdfliteral page <lua data reference ...>
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
 ....\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0
 .....\hbox(0.0+0.0)x0.0, direction TLT
-......\pdfliteral page <lua data reference ...>
 ......\pdfsave
 ......\pdfliteral origin{0.39851 w}
 ......\pdfcolorstack 0 push {0.07843 0.05882 0.31374 rg 0.07843 0.05882 0.31374 RG}
@@ -225,6 +226,7 @@ Completed box being shipped out [1]
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
+...\pdflinkstate -3
 ...\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
