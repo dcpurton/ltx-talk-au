@@ -2271,6 +2271,14 @@
 %
 % \subsubsection{Table of contents frames}
 %
+% Number bookmarks.
+%
+%    \begin{macrocode}
+\hypersetup { bookmarksnumbered }
+%    \end{macrocode}
+%
+% Various adjustments to correctly format the table of contents.
+%
 %    \begin{macrocode}
 \hook_gput_code:nnn { contentsline / page / after } { . }
   {
