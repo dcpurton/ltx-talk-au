@@ -259,67 +259,69 @@ Completed box being shipped out [1]
 .......\pdfcolorstack 0 push {1.0 g 1.0 G}
 .......\glue(\parskip) 6.0 plus 2.0
 .......\glue(\parskip) 0.0
-.......\hbox(14.14114+15.2043)x462.15086, direction TLT
+.......\hbox(14.14114+15.2043)x462.15086, glue set 194.776fil, direction TLT
 ........\localpar
 .........\localinterlinepenalty=0
 .........\localbrokenpenalty=0
 .........\localleftbox=null
 .........\localrightbox=null
-........\vbox(14.14114+15.2043)x462.15086, direction TLT
+........\vbox(14.14114+15.2043)x267.37486, direction TLT
 .........\glue 0.0
 .........\glue 0.0
-.........\hbox(14.14114+3.2043)x462.15086, glue set 329.97498fil, direction TLT
-..........\localpar
-...........\localinterlinepenalty=0
-...........\localbrokenpenalty=0
-...........\localleftbox=null
-...........\localrightbox=null
-..........\hbox(0.0+0.0)x0.0, direction TLT
-..........\pdfliteral page <lua data reference ...>
-..........\pdfliteral page <lua data reference ...>
-..........\discretionary (penalty 50)
-...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 D
-...........< \kern0.1535 (font)
-...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 e
-...........< \kern0.1535 (font)
-...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
-...........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
-...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 D
-...........= \kern0.1535 (font)
-...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 e
-...........= \kern0.03838 (font)
-...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 g
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 n
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 :
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742  
-..........\glue(\spaceskip) 1.0873 plus 3.26187 minus 0.54364
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 A
-..........\kern-0.11513 (font)
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 u
-..........\discretionary (penalty 50)
-...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 d
-..........\discretionary (penalty 50)
-...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 a
-...........< \kern-0.07675 (font)
-...........< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
-...........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 c
-...........> \kern-0.01918 (font)
-...........> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
-...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 a
-...........= \kern-0.01918 (font)
-...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 c
-...........= \kern-0.01918 (font)
-...........= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 o
-..........\kern0.07675 (font)
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 u
-..........\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
-..........\penalty 10000
-..........\glue(\parfillskip) 0.0 plus 1.0fil
-..........\glue(\rightskip) 0.0
+.........\hbox(14.14114+3.2043)x267.37486, direction TLT
+..........\vbox(14.14114+3.2043)x267.37486, direction TLT
+...........\hbox(14.14114+3.2043)x267.37486, glue set 135.19896fil, direction TLT
+............\localpar
+.............\localinterlinepenalty=0
+.............\localbrokenpenalty=0
+.............\localleftbox=null
+.............\localrightbox=null
+............\hbox(0.0+0.0)x0.0, direction TLT
+............\pdfliteral page <lua data reference ...>
+............\pdfliteral page <lua data reference ...>
+............\discretionary (penalty 50)
+.............< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 D
+.............< \kern0.1535 (font)
+.............< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 e
+.............< \kern0.1535 (font)
+.............< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
+.............> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
+.............= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 D
+.............= \kern0.1535 (font)
+.............= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 e
+.............= \kern0.03838 (font)
+.............= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 g
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 n
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 :
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742  
+............\glue(\spaceskip) 1.0873 plus 3.26187 minus 0.54364
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 A
+............\kern-0.11513 (font)
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 u
+............\discretionary (penalty 50)
+.............< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 d
+............\discretionary (penalty 50)
+.............< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 a
+.............< \kern-0.07675 (font)
+.............< \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 -
+.............> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 c
+.............> \kern-0.01918 (font)
+.............> \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
+.............= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 a
+.............= \kern-0.01918 (font)
+.............= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 c
+.............= \kern-0.01918 (font)
+.............= \TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 i
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 o
+............\kern0.07675 (font)
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 u
+............\TU/MonaSans-VariableFont_wdth,wght.ttf(0)/b/n/19.52742 s
+............\penalty 10000
+............\glue(\parfillskip) 0.0 plus 1.0fil
+............\glue(\rightskip) 0.0
 .........\glue 12.0 plus 4.0 minus 4.0
 .........\glue 0.0
 ........\penalty 10000
